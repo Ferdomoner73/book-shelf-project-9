@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
-    "perfect-scrollbar": "^1.5.5",
     "simplebar": "^6.2.5"
   },
   "devDependencies": {
