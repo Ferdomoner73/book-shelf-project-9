@@ -5,17 +5,17 @@ const supUkrList = [
 title: 'Save the Children',
 url:
 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-img: null,
+img: './images/logo_save_the_child.png',
 },
 {
 title: 'Project HOPE',
 url: 'https://www.projecthope.org/country/ukraine/',
-img: null,
+img: '../images/logo_project_Hope.png',
 },
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-img: null,
+img: '/images/logo_united24.png',
 },
 {
 title: 'International Medical Corps',
@@ -64,7 +64,7 @@ function createListOrg(supUkrList) {
             return `<div class="supportUkraine__list-card">
         <p>${listNumber.slice(-2)}</p>
     <a href="${url}" target ="_blank">
-      <img class="photo-img" src="" alt="${title}" loading="lazy" />
+      <img class="photo-img" src="${img}" alt="${title}" loading="lazy" />
     </a>
     </div>`;
         }
