@@ -1,0 +1,2 @@
+console.log(5);const o=document.querySelector(".categories-list");(async function(){try{const o="https://books-backend.p.goit.global/books/category-list",n=await fetch(o),t=await n.json();return console.log(t),t.hits}catch(o){console.log(o)}})().then((n=>function(n){console.log(n);const t=n.map((()=>`\n    <li>\n        <a>\n            <p>${n.list_name}</p>\n        </a>\n    </li>\n    `)).join("");o.insertAdjacentHTML("beforeend",t)}(n)));
+//# sourceMappingURL=index.aa61be37.js.map
