@@ -1,0 +1,111 @@
+@import './common';
+@import './example';
+
+@font-face {
+    font-display: swap;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/dm-sans-v13-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/dm-sans-v13-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/dm-sans-v13-latin-700.woff2') format('woff2');
+}
+
+
+:root {
+    --clr-text-primary: #111111;
+    --clr-text-primary-dark-theme: #ffffff;
+    --clr-text-secondary-light-theme: #ffffff;
+    --clr-text-secondary: #B4AFAF;
+    --clr-text-logo: #000000;
+
+    --clr-text-modified: #4F2EE8;
+    --clr-text-modified-dark-theme: #EAC645;
+
+    --clr-text-modal: #000000;
+    --clr-text-modal-modified: #fcf1e0;
+
+    --clr-back-ground-primary: #F6F6F6;;
+    --clr-back-ground-secondary: #FFFFFF;
+    --clr-back-ground-primary-dark-theme: #202024;
+    --clr-back-ground-secondary-dark-theme: #111111;
+
+    --clr-back-ground-primary-modified: #4F2EE8;
+    --clr-back-ground-secondary-modified: #EAC645;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    
+    background-color: #F6F6F6;;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        max-width: 375px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
