@@ -1,0 +1,50 @@
+.registration-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f6f6f6;
+  padding: 40px 20px;
+  border: 2px solid;
+  border-radius: 18px;
+  max-width: 335px;
+}
+.input-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+.modal-icon {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  stroke: #111111;
+  fill: #d9d9d9;
+}
+.modal-sign-btn-wrapper {
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+  margin-top: 14px;
+  @media screen and (min-width: 768px) {
+    margin-top: 20px;
+  }
+}
+.modal-close-icon {
+  stroke: #111111;
+  fill: #d9d9d9;
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    height: 14px;
+  }
+}
+.modal-close-btn {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  border: none;
+  background-color: transparent;
+}
