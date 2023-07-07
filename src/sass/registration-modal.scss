@@ -6,7 +6,8 @@
   height: 100%;
   background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
   z-index: 999;
-  display: block;
+  display: none;
+  //   display: block;
 }
 .registration-modal {
   position: absolute;
@@ -17,10 +18,12 @@
   padding: 40px 20px;
   border: 2px solid;
   border-radius: 18px;
+  width: 90vw;
   max-width: 375px;
+
   @media screen and (min-width: 768px) {
     max-width: 530px;
-    padding: 80px 40px 40px;
+    padding: 80px 40px 20px;
   }
   @media screen and (min-width: 1440px) {
     max-width: 580px;
@@ -73,4 +76,22 @@
 
   border: none;
   background-color: transparent;
+}
+.modal-input {
+  width: 90%;
+
+  border-radius: 40px;
+  padding: 16px 24px;
+  line-height: 1.12;
+
+  background-color: #f6f6f6;
+
+  &:focus {
+    border-color: #4f2ee8;
+    outline: transparent;
+    & ~ .modal-icon {
+      stroke: #4f2ee8;
+      fill: #d9d9d9;
+    }
+  }
 }
