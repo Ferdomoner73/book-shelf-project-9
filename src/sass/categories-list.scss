@@ -1,3 +1,45 @@
 .categories-list-container {
-    height: 228px;
+    max-height: 228px;
+    overflow: auto;
+    width: 337px;
+}
+
+
+// .categories-list {
+//     width: 309px;
+// }
+
+.simplebar-scrollbar:before {
+    background-color: #E0E0E0 !important;
+}
+
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+.categories-list-item {
+    font-size: 16px;
+    line-height: 1.125;
+    font-weight: var(--font-weight-regular);
+    color: #11111199;
+}
+
+.categories-list-item.active {
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    color: var(--clr-text-modified);
+}
+
+@media screen and (min-width: 768px) {
+    .categories-list-container {
+        max-height: 472px;
+        width: 339px;
+    }
+
+    .categories-list {
+        gap: 32px;
+    }
 }
