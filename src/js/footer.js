@@ -10,7 +10,7 @@ closeModal.addEventListener('click', openBtn)
 
 function openBtn(){
     console.log('hello')
-    ourTeamModal.classList.toggle("is-hidden")
+    ourTeamModal.classList.toggle("footer-modal-hiden")
     bodyEl.classList.toggle('no-scroll')
 
 }

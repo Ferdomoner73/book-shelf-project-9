@@ -22,7 +22,7 @@
     fill: #FFFFFF;
 
 }
-.is-hidden{
+.footer-modal-hiden{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -30,7 +30,7 @@
 .no-scroll {
     overflow: hidden;
 }
-.backdrop {
+.footer-backdrop {
     position: fixed;
     top: 0;
     width: 100%;
@@ -38,7 +38,7 @@
     background-color: rgba(46, 47, 66, 0.4);
     transition: opacity var(--tra), visibility var(--tra);
 }
-.modal {
+.footer-modal {
     box-sizing: border-box;
     position: absolute;
 
@@ -59,18 +59,18 @@
     transition: transform var(--tra);
 
 }
-.backdrop.is-hidden .modal {
+.footer-backdrop.footer-modal-hiden .footer-modal {
     transform: translate(-50%, -50%) scale(0) rotate(360deg);
 }
 @media screen and (max-width: 405px) {
-    .modal {
+    .footer-modal {
         width: 100%;
         height: 100%;
         top: 50%;
     }
 }
 @media screen and (min-width: 768px) {
-    .modal {
+    .footer-modal {
         top: 50%;
     }
 }
