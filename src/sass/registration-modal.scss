@@ -1,3 +1,13 @@
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
+  z-index: 999;
+  display: block;
+}
 .registration-modal {
   position: absolute;
   left: 50%;
@@ -7,16 +17,32 @@
   padding: 40px 20px;
   border: 2px solid;
   border-radius: 18px;
-  max-width: 335px;
+  max-width: 375px;
+  @media screen and (min-width: 768px) {
+    max-width: 530px;
+    padding: 80px 40px 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 580px;
+  }
 }
+
 .input-wrapper {
   position: relative;
   margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 28px;
+    &:nth-child(3) {
+      margin-bottom: 40px;
+    }
+  }
 }
+
 .modal-icon {
   position: absolute;
-  top: 18px;
-  right: 24px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   stroke: #111111;
   fill: #d9d9d9;
 }
