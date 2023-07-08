@@ -12,9 +12,15 @@
     .supportUkraine__title {
         display: flex;
         top: 24px;
-        left: 40px;
+        margin-left: 40px;
         gap: 12px;
         font-size: 18px;
+
+        font-family: DM Sans;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: -0.04em;
+            text-align: left;
 
     }
 
@@ -25,6 +31,8 @@
     }
 
     .supportUkraine__list {
+        top: 96px;
+        margin-left: 40px;
         gap: 20px;
         flex-direction: column;
     }
@@ -35,6 +43,7 @@
     }
 
     .photo-img {
+        stroke: #ffffff;
         fill: #ffffff;
     }
 //}
