@@ -22,11 +22,11 @@
   max-width: 335px;
 
   @media screen and (min-width: 768px) {
-    max-width: 579px;
+    max-width: 530px;
     padding: 80px 40px 40px;
   }
   @media screen and (min-width: 1440px) {
-    max-width: 579px;
+    max-width: 580px;
   }
 }
 
@@ -61,6 +61,23 @@
     }
   }
 }
+
+.modal-form {
+  width: 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media screen and (min-width: 1200px) {
+    width: 500px;
+    gap: 28px;
+  }
+}
+
+.modal-form__input-field {
+  position: relative;
+}
+
 .input-container {
   width: 100%;
   max-width: 295px; /* Налаштуйте максимальну ширину відповідно до вашого дизайну */
@@ -150,4 +167,16 @@
 
   border: none;
   background-color: transparent;
+}
+.registration-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--accent-color);
+  z-index: 1000;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(3px);
+  overflow-y: scroll;
 }
