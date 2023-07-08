@@ -34,3 +34,16 @@ closeButton.addEventListener('click', closeModal);
 // Наприклад, при кліку на кнопку "Sign up"
 // const signUpButton = document.querySelector('[data-sign="up"]');
 // signUpButton.addEventListener('click', openModal);
+
+const form = document.querySelector('.modal-form');
+const submitBtn = document.querySelector('.modal-submit-up-btn');
+
+submitBtn.addEventListener('click', event => {
+  event.preventDefault();
+  form.reportValidity(); // Перевірка валідності форми
+
+  if (form.checkValidity()) {
+    form.reset(); // Очищення полів форми
+    closeModal(); // Закриття модального вікна
+  }
+});

@@ -130,13 +130,14 @@
   color: hsl(0, 0%, 60%);
   padding: 0;
   &.is-active {
-    color: #4f2ee8;
+    color: var(--clr-text-modified);
     text-decoration: underline;
   }
   &:hover,
   &:focus {
-    color: #4f2ee8;
+    color: var(--clr-text-modified);
     text-decoration: underline;
+    transition: color var(--time-function);
   }
 }
 
@@ -151,7 +152,7 @@
 }
 
 .modal-close-icon {
-  stroke: #111111;
+  stroke: var(--clr-back-ground-secondary-dark-theme);
   width: 20px;
   height: 20px;
   @media screen and (min-width: 768px) {
@@ -173,7 +174,8 @@
   &:hover,
   &:focus {
     .modal-close-icon {
-      stroke: #4f2ee8;
+      stroke: var(--clr-back-ground-primary-modified);
+      transition: stroke var(--time-function);
     }
   }
   @media screen and (min-width: 768px) {
