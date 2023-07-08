@@ -49,6 +49,7 @@ img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
 },
 ]
 
+
 const supportUkraineList = document.querySelector('.supportUkraine__list');
 
 createListOrg(supUkrList);
