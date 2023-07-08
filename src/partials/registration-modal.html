@@ -1,13 +1,13 @@
 <div id="backdrop">
-    <div id="login-modal" class="registration-modal-wrapper ">
-        <div class="registration-modal">
-            <button class="modal-close-btn">
+    <div id="login-modal" class="auth-modal-wrapper">
+        <div class="auth-modal">
+            <button class="modal-close-btn js-modal-close">
                 <svg class="modal-close-icon" width="14" height="14">
                     <use href="./images/icons.svg#icon-x-close"></use>
                 </svg>
 
             </button>
-            <form class="modal-form">
+            <form action="submit" class="modal-form">
                 <div class="input-wrapper">
                     <input required class="modal-input username-input" type="text" name="username" placeholder="name" />
                 </div>
@@ -24,13 +24,13 @@
                         <use href="./images/icons.svg#icon-lock-02" />
                     </svg>
                 </div>
-                <button class="modal-up-btn" type="button" name="signUpBtn">SIGN UP</button>
+                <button class="modal-submit-up-btn modal-submit-btn" type="button" name="submitUpBtn">SIGN UP</button>
 
                 <div class="modal-sign-btn-wrapper">
-                    <button class="sign-up-btn" name="signUp" type="button" class="modal-sign-btn">
+                    <button data-sign="up" name="signUp" type="button" class="modal-sign-btn is-active">
                         Sign up
                     </button>
-                    <button class="sign-in-btn" name="signIn" type="button" class="modal-sign-btn">
+                    <button data-sign="in" name="signIn" type="button" class="modal-sign-btn">
                         Sign in
                     </button>
                 </div>
