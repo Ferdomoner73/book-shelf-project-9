@@ -5,7 +5,7 @@ const supUkrList = [
 title: 'Save the Children',
 url:
 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-img: './images/logo_save_the_child.png',
+img: './images/image 4.png',
 },
 {
 title: 'Project HOPE',
@@ -20,7 +20,7 @@ img: '/images/logo_united24.png',
 {
 title: 'International Medical Corps',
 url: 'https://internationalmedicalcorps.org/country/ukraine/',
-img: null,
+img: '/src/images/logo_IMC.png',
 },
 {
 title: 'Medicins Sans Frontieres',
