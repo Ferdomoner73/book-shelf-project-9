@@ -1,0 +1,48 @@
+//media screen and (max-width: 767px) {
+    .supportUkraine {
+        max-width: 335px;
+        max-height: 352px;
+        border-radius: 16px;
+        font-size: 24px;
+        background-color: #4F2EE8;
+        color: #ffffff;
+        
+    }
+
+    .supportUkraine__title {
+        display: flex;
+        top: 24px;
+        left: 40px;
+        gap: 12px;
+        font-size: 18px;
+
+    }
+
+    .supportUkraine__title-logo {
+        fill: #ffffff;
+        width: 20px;
+        height: 32px;
+    }
+
+    .supportUkraine__list {
+        gap: 20px;
+        flex-direction: column;
+    }
+    .supportUkraine__list-card {
+        display: flex;
+        gap: 16px;
+
+        
+    }
+//}
+
+//media screen and (min-width: 768px) {
+//    .supportUkraine {
+//        width: 335 px;
+//        height: 472 px;
+//        border: 1px;
+//        font-size: 24px;
+//        background-color: #4F2EE8;
+//    }
+
+//}
