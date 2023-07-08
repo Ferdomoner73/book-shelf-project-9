@@ -1,25 +1,16 @@
-#backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
-  z-index: 999;
-  // display: none;
-  display: block;
-}
-.registration-modal {
+.auth-modal {
+  position: absolute;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
   background-color: #f6f6f6;
   padding: 40px 20px;
   border: 2px solid;
   border-radius: 18px;
   width: 90vw;
-  max-width: 335px;
+  max-width: 375px;
 
   @media screen and (min-width: 768px) {
     max-width: 530px;
@@ -30,28 +21,7 @@
   }
 }
 
-.modal-up-btn {
-  flex: 1;
-  cursor: pointer;
-  width: 100%;
-  text-transform: uppercase;
-  background: #111111;
-  color: #f3f3f3;
-
-  border-style: none;
-  border-radius: 40px;
-  padding: 20px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.33;
-}
-
-.modal-up-btn:hover,
-.modal-up-btn:focus {
-  background-color: #4f2ee8;
-}
 .input-wrapper {
-  width: 100%;
   position: relative;
   margin-bottom: 24px;
   @media screen and (min-width: 768px) {
@@ -62,29 +32,27 @@
   }
 }
 
-.modal-form {
-  width: 295px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  @media screen and (min-width: 1200px) {
-    width: 500px;
-    gap: 28px;
+.modal-icon {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  stroke: #111111;
+  fill: #d9d9d9;
+  @media screen and (min-width: 768px) {
+    top: 15px;
+    width: 24px;
+    height: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 28px;
+    height: 28px;
+    top: 18px;
+    right: 32px;
   }
 }
 
-.modal-form__input-field {
-  position: relative;
-}
-
-.input-container {
-  width: 100%;
-  max-width: 295px; /* Налаштуйте максимальну ширину відповідно до вашого дизайну */
-  margin: 0 auto;
-}
 .modal-input {
-  flex: 1;
+  box-sizing: border-box;
   width: 100%;
   border: 2px solid #111111;
   border-radius: 40px;
@@ -99,7 +67,6 @@
     outline: transparent;
     & ~ .modal-icon {
       stroke: #4f2ee8;
-      fill: #d9d9d9;
     }
   }
 
@@ -113,14 +80,26 @@
     padding: 20px 40px;
   }
 }
-.modal-icon {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  stroke: #111111;
-  fill: #d9d9d9;
+
+.modal-submit-btn {
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border-radius: 40px;
+  color: #f3f3f3;
+  border-style: none;
+  background-color: #111111;
 }
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+  background-color: #4f2ee8;
+}
+
 .modal-sign-btn {
   cursor: pointer;
   background-color: transparent;
@@ -131,12 +110,12 @@
 
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #111111;
+  color: hsl(0, 0%, 60%);
   padding: 0;
-  // &.is-active {
-  //   color: var(--accent-color);
-  //   text-decoration: underline;
-  // }
+  &.is-active {
+    color: #4f2ee8;
+    text-decoration: underline;
+  }
 }
 
 .modal-sign-btn-wrapper {
@@ -151,12 +130,13 @@
 
 .modal-close-icon {
   stroke: #111111;
-  fill: #d9d9d9;
+
   @media screen and (min-width: 768px) {
     width: 14px;
     height: 14px;
   }
 }
+
 .modal-close-btn {
   cursor: pointer;
   margin: 0;
@@ -167,16 +147,36 @@
 
   border: none;
   background-color: transparent;
+  &:hover,
+  &:focus {
+    .modal-close-icon {
+      stroke: #4f2ee8;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
 }
-.registration-modal-wrapper {
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
+  z-index: 999;
+  // display: none;
+  display: block;
+}
+
+.auth-modal-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--accent-color);
   z-index: 1000;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(3px);
   overflow-y: scroll;
 }
