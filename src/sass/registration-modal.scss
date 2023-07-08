@@ -5,9 +5,10 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
-  z-index: 999;
-  display: none;
-  // display: block;
+  z-index: 1000;
+
+  // display: none;
+  display: block;
 }
 
 .auth-modal {
@@ -17,12 +18,13 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
-  background-color: #f6f6f6;
+  background-color: var(--clr-back-ground-primary);
   padding: 40px 20px;
-  border: 2px solid;
+  border: 2px solid #111111;
   border-radius: 18px;
-  width: 90vw;
-  max-width: 375px;
+  width: 100vw;
+  max-width: 335px;
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) {
     max-width: 530px;
@@ -48,8 +50,8 @@
   position: absolute;
   top: 18px;
   right: 24px;
-  stroke: #111111;
-  fill: #d9d9d9;
+  stroke: var(--clr-text-primary);
+  fill: transparent;
   @media screen and (min-width: 768px) {
     top: 15px;
     width: 24px;
@@ -66,25 +68,27 @@
 .modal-input {
   box-sizing: border-box;
   width: 100%;
-  border: 2px solid #111111;
+  border: 2px solid var(--clr-text-primary);
   border-radius: 40px;
   padding: 16px 24px;
   line-height: 1.12;
   font-weight: 700;
 
-  background-color: #f6f6f6;
+  background-color: var(--clr-back-ground-primary);
 
   &:focus {
-    border-color: #4f2ee8;
+    border-color: var(--clr-back-ground-primary-modified);
     outline: transparent;
+    transition: border-color var(--time-function);
     & ~ .modal-icon {
-      stroke: #4f2ee8;
+      stroke: var(--clr-back-ground-primary-modified);
+      transition: stroke var(--time-function);
     }
   }
 
   &::placeholder {
     text-transform: uppercase;
-    color: #111111;
+    color: var(--clr-text-primary);
   }
 
   @media screen and (min-width: 1440px) {
@@ -104,12 +108,13 @@
   border-radius: 40px;
   color: #f3f3f3;
   border-style: none;
-  background-color: #111111;
+  background-color: var(--clr-back-ground-secondary-dark-theme);
 }
 
 .modal-submit-btn:hover,
 .modal-submit-btn:focus {
-  background-color: #4f2ee8;
+  background-color: var(--clr-back-ground-primary-modified);
+  transition: background-color var(--time-function);
 }
 
 .modal-sign-btn {
@@ -128,6 +133,11 @@
     color: #4f2ee8;
     text-decoration: underline;
   }
+  &:hover,
+  &:focus {
+    color: #4f2ee8;
+    text-decoration: underline;
+  }
 }
 
 .modal-sign-btn-wrapper {
@@ -142,10 +152,11 @@
 
 .modal-close-icon {
   stroke: #111111;
-
+  width: 20px;
+  height: 20px;
   @media screen and (min-width: 768px) {
-    width: 14px;
-    height: 14px;
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -178,6 +189,5 @@
   width: 100vw;
   height: 100vh;
   z-index: 1000;
-  backdrop-filter: blur(3px);
   overflow-y: scroll;
 }
