@@ -1,7 +1,7 @@
 .categories-list-container {
     max-height: 228px;
     overflow: auto;
-    width: 337px;
+    width: 335px;
 }
 
 
@@ -42,4 +42,11 @@
     .categories-list {
         gap: 32px;
     }
+}
+
+.test {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
