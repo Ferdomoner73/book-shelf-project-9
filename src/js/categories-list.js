@@ -1,5 +1,3 @@
-// import PerfectScrollbar from 'perfect-scrollbar';
-// import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.min.css';
 
@@ -25,7 +23,6 @@ async function getCategoriesList() {
 getCategoriesList().then(response => renderCategoriesList(response));
 
 function renderCategoriesList(data) {
-    console.log(data);
     const listOfCategories = data.map((array) => {
         return `
     <li class='categories-list-item'>
@@ -37,3 +34,7 @@ function renderCategoriesList(data) {
 
     categoriesListEl.insertAdjacentHTML('beforeend', listOfCategories);
 }
+
+
+
+
