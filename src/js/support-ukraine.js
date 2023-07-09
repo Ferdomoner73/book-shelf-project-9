@@ -5,49 +5,50 @@ const supUkrList = [
 title: 'Save the Children',
 url:
 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-img: '/images/image-4.png',
+img: new URL('/src/images/logo_SAVE_CHILDREN.png', import.meta.url),
 },
 {
 title: 'Project HOPE',
 url: 'https://www.projecthope.org/country/ukraine/',
-img: '../images/logo_project_Hope.png',
+img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 },
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-img: '/images/logo_united24.png',
+img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
 },
 {
 title: 'International Medical Corps',
 url: 'https://internationalmedicalcorps.org/country/ukraine/',
-img: '../src/images/logo_IMC.png',
+img: new URL('/src/images/logo_IMC.png', import.meta.url),
 },
 {
 title: 'Medicins Sans Frontieres',
 url: 'https://www.msf.org/ukraine',
-img: './images/logo_project_Hope.png',
+img: new URL('/src/images/logo_MSF.png', import.meta.url),
 },
 {
 title: 'RAZOM',
 url: 'https://www.razomforukraine.org/',
-img: './images/logo_project_Hope.png',
+img: new URL ('/src/images/logo_RAZOM.png', import.meta.url),
 },
 {
 title: 'Action against hunger',
 url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-img: './images/logo_project_Hope.png',
+img: new URL ('/src/images/logo_AAH.png', import.meta.url),
 },
 {
 title: 'World vision',
 url: 'https://www.wvi.org/emergencies/ukraine',
-img: './images/logo_project_Hope.png',
+img: new URL ('/src/images/logo_WORLD_VISION.png', import.meta.url),
 },
 {
 title: 'Serhiy Prytula Charity Foundation',
 url: 'https://prytulafoundation.org/en',
-img: '/src/images/logo_prytula.png',
+img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
 },
 ]
+
 
 const supportUkraineList = document.querySelector('.supportUkraine__list');
 
