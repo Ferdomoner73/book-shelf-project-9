@@ -1,0 +1,33 @@
+$primary-background-color: #f6f6f6;
+$white-gray-color: #f3f3f3;
+$text-gray-color: #b4afaf;
+$dark-color: #111111;
+$blue-color: #4f2ee8;
+$yellow-color: #eac645;
+$white-color: #ffffff;
+$cubic-time: 250ms cubic-bezier(0.17, 0.67, 0.91, 1.61);
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border: 1.5px solid #111111;
+    border-radius: 0px 0px 8px 8px;
+    width: 100%;
+    background-color:#f6f6f6;
+    transition: all 0.3s ease 0s;
+
+   
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 1440px) {
+        width: 100%;
+    }
+}
+
+
