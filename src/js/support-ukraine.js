@@ -17,8 +17,8 @@ img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
-//img: '../images/logo_UNITED24.png',
+//img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
+img: '../images/logo_UNITED24.png',
 },
 {
 title: 'International Medical Corps',
@@ -60,7 +60,23 @@ img: '../src/images/logo_PRYTULA.png',
 
 const supportUkraineList = document.querySelector('.supportUkraine__list');
 
+console.log(document.documentElement.clientWidth);
+console.log(window.innerWidth);
+window.addEventListener('resize', onAdaptiveView);
+
+
 createListOrg(supUkrList);
+
+function onAdaptiveView() { 
+    if (document.documentElement.clientWidth < 767 && window.innerWidth <767) {
+        console.log('4 element visible', document.documentElement.clientWidth);
+        createListOrg(supUkrList);
+    } else {
+        console.log('6 element visible', window.innerWidth);
+    createListOrg(supUkrList);
+    }
+    
+}
 
 function createListOrg(supUkrList) {
     clearListOrg();
