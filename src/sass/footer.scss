@@ -1,36 +1,22 @@
-// :root{
-//     --tra: 250ms cubic-bezier(0.4, 0, 0.2, 1)
-// }
-.teem-icon{
-    stroke: black;
+
+.teem-icon-close{
+    stroke: #111111;
     position: absolute;
     right: 24px;
     top: 24px;
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
 
-    background-color: #E7E9FC;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // display: flex;
 }
-.teem-icon:hover,
-.teem-icon:focus {
-    background-color: #4f2ee8;
-    fill: #FFFFFF;
-
+.teem-icon-close:hover,
+.teem-icon-close:focus {
+    stroke: #4F2EE8;
 }
-// .footer-modal-hiden{
-//     opacity: 0;
-//     visibility: hidden;
-//     pointer-events: none;
-// }
-// .no-scroll {
-//     overflow: hidden;
-// }
-.footer-backdrop {
+.footer-modal {
     position: fixed;
     left: 0;
     top: 0;
@@ -38,11 +24,16 @@
     height: 100vh;
     z-index: 9999;
     background-color: rgba(46, 47, 66, 0.4);
-    // transition: opacity var(--tra), visibility var(--tra);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
 }
-.footer-modal {
-    // position: absolute;
-
+.footer-modal-box {
+    position: relative;
     padding-top: 72px;
     padding-left: 24px;
     padding-right: 24px;
@@ -50,28 +41,24 @@
 
     max-width: 500px;
     z-index: 1;
-    
+    margin: 30px 15px;
+    transform: scale(0);
+    transition: transform .8s;
 
-    // top: 35%;
-    // left: 50%;
     background-color: #FCFCFC;
-    // width: 408px;
-    
-    // box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    // border-radius: 4px;
-    
-    // transform: translate(-50%, -50%) scale(1) rotate(0);
-    // transition: transform var(--tra);
-
 }
-// .footer-backdrop.footer-modal-hiden .footer-modal {
-//     transform: translate(-50%, -50%) scale(0) rotate(360deg);
-// }
-// #our-team-btn{
-//     color: #4f2ee8;
-//     fill: #4f2ee8;
-//     cursor: pointer;
-// }
+.footer-modal.footer-open{
+    visibility: visible;
+    opacity: 1;
+}
+.footer-modal.footer-open .footer-modal-box{
+    transform: scale(1);
+}
+#our-team-btn{
+    color: #4f2ee8;
+    fill: #4f2ee8;
+    cursor: pointer;
+}
 // @media screen and (max-width: 405px) {
 //     .footer-modal {
 //         width: 100%;

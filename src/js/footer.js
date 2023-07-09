@@ -1,18 +1,29 @@
+const footerModalEl = document.getElementById('our-team')
+const openBtnEl = document.getElementById('our-team-btn')
+const closeBtnEl = document.querySelector('.teem-icon-close')
 
-const openModal = document.getElementById('our-team-btn')
-const ourTeamModal = document.getElementById('our-team')
-const closeModal = document.querySelector('.teem-icon')
-const bodyEl = document.querySelector('body')
-const modalEl = document.querySelector('.footer-modal')
+openBtnEl.addEventListener('click', openModal)
+closeBtnEl.addEventListener('click', closeModal)
 
-openModal.addEventListener('click', openBtn)
-closeModal.addEventListener('click', openBtn)
-
-
-function openBtn(){
-    console.log('hello')
-    // modalEl.showModal()
-    ourTeamModal.classList.toggle("footer-modal-hiden")
-    // bodyEl.classList.toggle('no-scroll')
-
+function openModal(){
+    footerModalEl.classList.add('footer-open')
 }
+
+function closeModal(){
+    footerModalEl.classList.remove('footer-open')
+}
+
+window.addEventListener('keydown', (e)=> {
+    if (e.key === 'Escape') {
+        closeModal()
+    }
+})
+
+footerModalEl.addEventListener('click', e => {
+    if (e._isClickWithInModal) return;
+    e.currentTarget.classList.remove('footer-open')
+})
+
+// function getRandomHexColor() {
+//     return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
+//   }
