@@ -47,3 +47,8 @@ submitBtn.addEventListener('click', event => {
     closeModal(); // Закриття модального вікна
   }
 });
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeModal(); // Закриття модального вікна при натисканні ESC
+  }
+});
