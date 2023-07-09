@@ -1,7 +1,23 @@
-const openModal = document.getElementById('our-team')
+const footerModalEl = document.getElementById('our-team')
+const openBtnEl = document.getElementById('our-team-btn')
+const closeBtnEl = document.querySelector('.teem-icon-close')
 
-openModal.addEventListener('click', openBtn)
+openBtnEl.addEventListener('click', openModal)
+closeBtnEl.addEventListener('click', closeModal)
 
-function openBtn(){
-    console.log('hello')
+function openModal(){
+    footerModalEl.classList.add('footer-open')
 }
+
+function closeModal(){
+    footerModalEl.classList.remove('footer-open')
+}
+
+window.addEventListener('keydown', (e)=> {
+    if (e.key === 'Escape') {
+        closeModal()
+    }
+})
+footerModalEl.addEventListener('click', (e) => {
+    if(e.currentTarget === e.target)
+    closeModal()})
