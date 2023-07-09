@@ -35,14 +35,14 @@ img: new URL('/src/images/logo_MSF.png', import.meta.url),
 {
 title: 'RAZOM',
 url: 'https://www.razomforukraine.org/',
-img: new URL ('/src/images/logo_RAZOM.png', import.meta.url),
-//img: '../images/logo_RAZOM.png',
+//img: new URL ('/src/images/logo_RAZOM.png', import.meta.url),
+img: '../images/logo_RAZOM.png',
 },
 {
 title: 'Action against hunger',
 url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-img: new URL ('/src/images/logo_AAH.png', import.meta.url),
-//img: '../images/logo_AAH.png',
+//img: new URL ('/src/images/logo_AAH.png', import.meta.url),
+img: '../images/logo_AAH.png',
 },
 {
 title: 'World vision',
@@ -53,8 +53,8 @@ img: new URL ('/src/images/logo_WORLD_VISION.png', import.meta.url),
 {
 title: 'Serhiy Prytula Charity Foundation',
 url: 'https://prytulafoundation.org/en',
-img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
-//img: '../src/images/logo_PRYTULA.png',
+//img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
+img: '../images/logo_PRYTULA.png',
 },
 ]
 
