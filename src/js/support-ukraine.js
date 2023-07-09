@@ -17,8 +17,8 @@ img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
-//img: '../images/logo_UNITED24.png',
+//img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
+img: '../images/logo_UNITED24.png',
 },
 {
 title: 'International Medical Corps',
