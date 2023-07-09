@@ -5,55 +5,57 @@ const supUkrList = [
 title: 'Save the Children',
 url:
 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-img: './images/image 4.png',
+img: new URL('/src/images/logo_SAVE_CHILDREN.png', import.meta.url),
 },
 {
 title: 'Project HOPE',
 url: 'https://www.projecthope.org/country/ukraine/',
-img: '../images/logo_project_Hope.png',
+img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 },
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-img: '/images/logo_united24.png',
+img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
 },
 {
 title: 'International Medical Corps',
 url: 'https://internationalmedicalcorps.org/country/ukraine/',
-img: '/src/images/logo_IMC.png',
+img: new URL('/src/images/logo_IMC.png', import.meta.url),
 },
 {
 title: 'Medicins Sans Frontieres',
 url: 'https://www.msf.org/ukraine',
-img: null,
+img: new URL('/src/images/logo_MSF.png', import.meta.url),
 },
 {
 title: 'RAZOM',
 url: 'https://www.razomforukraine.org/',
-img: null,
+img: new URL ('/src/images/logo_RAZOM.png', import.meta.url),
 },
 {
 title: 'Action against hunger',
 url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-img: null,
+img: new URL ('/src/images/logo_AAH.png', import.meta.url),
 },
 {
 title: 'World vision',
 url: 'https://www.wvi.org/emergencies/ukraine',
-img: null,
+img: new URL ('/src/images/logo_WORLD_VISION.png', import.meta.url),
 },
 {
 title: 'Serhiy Prytula Charity Foundation',
 url: 'https://prytulafoundation.org/en',
-img: null,
+img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
 },
 ]
+
 
 const supportUkraineList = document.querySelector('.supportUkraine__list');
 
 createListOrg(supUkrList);
 
 function createListOrg(supUkrList) {
+    clearListOrg();
     const createCardOrg = supUkrList.map(
         ({
             title,
@@ -64,11 +66,16 @@ function createListOrg(supUkrList) {
             return `<div class="supportUkraine__list-card">
         <p>${listNumber.slice(-2)}</p>
     <a href="${url}" target ="_blank">
-      <img class="photo-img" src="${img}" alt="${title}" loading="lazy" />
+      <img class="photo-img" src="${img}" alt="${title}"/>
     </a>
     </div>`;
         }
     )
     .join(''); 
     supportUkraineList.insertAdjacentHTML('beforeend', createCardOrg);
+}
+
+function clearListOrg() { 
+    
+    supportUkraineList.innerHTML = '';
 }

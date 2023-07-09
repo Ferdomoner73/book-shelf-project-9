@@ -12,9 +12,15 @@
     .supportUkraine__title {
         display: flex;
         top: 24px;
-        left: 40px;
+        margin-left: 40px;
         gap: 12px;
         font-size: 18px;
+
+        font-family: DM Sans;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: -0.04em;
+            text-align: left;
 
     }
 
@@ -25,17 +31,20 @@
     }
 
     .supportUkraine__list {
+        top: 96px;
+        margin-left: 40px;
         gap: 20px;
         flex-direction: column;
     }
     .supportUkraine__list-card {
         display: flex;
+        text-align:justify;
         gap: 16px;
         font-size: 14px;
     }
 
     .photo-img {
-        fill: #ffffff;
+        filter: brightness(0) invert(1);//спочатку робимо колір повністю черним, а потім інвертируємо
     }
 //}
 
