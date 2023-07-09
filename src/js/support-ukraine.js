@@ -17,8 +17,8 @@ img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-//img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
-img: '../images/logo_UNITED24.png',
+img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
+//img: '../images/logo_UNITED24.png',
 },
 {
 title: 'International Medical Corps',
@@ -29,8 +29,8 @@ img: new URL('/src/images/logo_IMC.png', import.meta.url),
 {
 title: 'Medicins Sans Frontieres',
 url: 'https://www.msf.org/ukraine',
-//img: new URL('/src/images/logo_MSF.png', import.meta.url),
-img: './src/images/logo_MSF.png',
+img: new URL('/src/images/logo_MSF.png', import.meta.url),
+//img: './src/images/logo_MSF.png',
 },
 {
 title: 'RAZOM',
@@ -47,14 +47,14 @@ img: new URL ('/src/images/logo_AAH.png', import.meta.url),
 {
 title: 'World vision',
 url: 'https://www.wvi.org/emergencies/ukraine',
-//img: new URL ('/src/images/logo_WORLD_VISION.png', import.meta.url),
-img: '/src/images/logo_WORLD_VISION.png',
+img: new URL ('/src/images/logo_WORLD_VISION.png', import.meta.url),
+//img: '/src/images/logo_WORLD_VISION.png',
 },
 {
 title: 'Serhiy Prytula Charity Foundation',
 url: 'https://prytulafoundation.org/en',
-//img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
-img: '../src/images/logo_PRYTULA.png',
+img: new URL ('/src/images/logo_PRYTULA.png', import.meta.url),
+//img: '../src/images/logo_PRYTULA.png',
 },
 ]
 
