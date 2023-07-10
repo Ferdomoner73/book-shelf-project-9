@@ -1,3 +1,4 @@
+@import '/node_modules/modern-normalize/modern-normalize.css';
 @import url('./categories-list.scss');
 @import url('./footer.scss');
 @import url('./gallery.scss');
@@ -117,5 +118,15 @@ body {
         max-width: 1440px;
         padding-right: 24px;
         padding-left: 24px;
+    }
+}
+
+.main {
+    padding-top: 104px;
+}
+
+@media screen and (min-width: 768px) {
+.main {
+        padding-top: 122px;
     }
 }
