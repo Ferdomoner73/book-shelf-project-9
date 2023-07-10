@@ -47,8 +47,8 @@ img: new URL('/src/images/logo_AAH.png', import.meta.url),
 {
 title: 'World vision',
 url: 'https://www.wvi.org/emergencies/ukraine',
-img: new URL('/src/images/logo_WORLD_VISION.png', import.meta.url),
-//img: '/src/images/logo_WORLD_VISION.png',
+//img: new URL('/src/images/logo_WORLD_VISION.png', import.meta.url),
+img: '/src/images/logo_WORLD_VISION.png',
 },
 {
 title: 'Serhiy Prytula Charity Foundation',
