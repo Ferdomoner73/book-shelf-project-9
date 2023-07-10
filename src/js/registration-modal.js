@@ -29,6 +29,7 @@ function closeModal() {
 
 // Додати обробник події для кнопки закриття
 closeButton.addEventListener('click', closeModal);
+backdrop.addEventListener('click', closeModal);
 
 // Додати обробник події для відкриття модального вікна
 // Наприклад, при кліку на кнопку "Sign up"
@@ -47,8 +48,14 @@ submitBtn.addEventListener('click', event => {
     closeModal(); // Закриття модального вікна
   }
 });
-document.addEventListener('keydown', event => {
+
+const escapeKeyListener = event => {
   if (event.key === 'Escape') {
     closeModal(); // Закриття модального вікна при натисканні ESC
   }
-});
+};
+
+document.addEventListener('keydown', escapeKeyListener);
+
+// Для зняття слухача події використовуйте removeEventListener:
+document.removeEventListener('keydown', escapeKeyListener);
