@@ -59,13 +59,20 @@
         fill: #4F2EE8;;
         background-color: #ffffff;
         border: 0 none #ffffff;
+        transform-origin: center center;
     }
 
     .supportUkraine__button-icon {
         text-align: center;
-            width: 12px;
-            height: 6px;
+            width: 24px;
+            height: 12px;
+            transition: transform 1s ease;
+            transform-origin: center center;
     }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
 //}
 
 //media screen and (min-width: 768px) {

@@ -1,6 +1,6 @@
 
 
-const supUkrList = [
+const array_supportUkraine = [
 {
 title: 'Save the Children',
 url:
@@ -62,13 +62,14 @@ const supportUkraineList = document.querySelector('.supportUkraine__list');
 const btnNextPage = document.querySelector('.supportUkraine__button-button');
 
 let MAX_ROW = 0;
-const TOTAL_ROW = supUkrList.length;
+let PAGE = 1;
+let listNumber = null;
+const TOTAL_ROW = array_supportUkraine.length;
 
 btnNextPage.addEventListener('click', onClickBtn);
 window.addEventListener('resize', onAdaptiveView);
 
 onAdaptiveView();
-//createListOrg(supUkrList);
 
 function onAdaptiveView() { 
     //Є два варіанти отримати ширіну екрану користувача для атаптивної верстці, якій використовувати правільніше - не розібрався.. один використовую, інший закоментил на всяк випадок
@@ -76,33 +77,60 @@ function onAdaptiveView() {
     const userScreenWidth = window.innerWidth;
     if (userScreenWidth < 768) {
         MAX_ROW = 4;
-        createListOrg(supUkrList, MAX_ROW);
     } else {
         MAX_ROW = 6;
-    createListOrg(supUkrList, MAX_ROW);
     }
+    createListOrg(array_supportUkraine, MAX_ROW);
 }
-function onClickBtn() {
-    console.log(TOTAL_ROW);
- }
 
-function createListOrg(supUkrList, MAX_ROW) {
+function onClickBtn() {
+    //PAGE += 1;
+    // if (Math.ceil(TOTAL_ROW/MAX_ROW)===PAGE) {
+    //    btnNextPage.classList.toggle('rotate');
+    //    createListOrg(supUkrList, MAX_ROW);
+    //}
+    updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
+} 
+    function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
+        clearListOrg();
+        const updateCardOrg = array_supportUkraine
+        .map(({ title, url, img}, index) => {
+            listNumber = "0" + (index + 1);
+            {
+                if ((TOTAL_ROW - MAX_ROW) > MAX_ROW && index+1 > MAX_ROW && index < MAX_ROW * PAGE) {
+                   //PAGE += 1;
+                    console.log(PAGE);
+                     return `<div class="supportUkraine__list-card">
+                        <p>${listNumber.slice(-2)}</p>
+                        <a href="${url}" target ="_blank">
+                        <img class="photo-img" src="${img}" alt="${title}"/>
+                        </a>
+                        </div>`;
+                    } 
+            }
+            })        
+        .join(''); 
+   supportUkraineList.insertAdjacentHTML('beforeend', updateCardOrg);
+}    
+    
+   // if ( && (index + 1) <= MAX_ROW * PAGE && (index + 1) > (MAX_ROW * PAGE - MAX_ROW * (PAGE - 1))) {
+
+function createListOrg(array_supportUkraine, MAX_ROW) {
     clearListOrg();
-    const createCardOrg = supUkrList.map(
-        ({
-            title,
-            url,
-            img,
-        }, index) => {
-            const listNumber = "0" + (index + 1);
-            if ((index+1) <= MAX_ROW) {
-            return `<div class="supportUkraine__list-card">
+    PAGE += 1;
+    const createCardOrg = array_supportUkraine.map(
+        ({ title, url, img }, index) => {
+            listNumber = "0" + (index + 1);
+             {
+                if ((index + 1) <= MAX_ROW) {
+                    return `<div class="supportUkraine__list-card">
                     <p>${listNumber.slice(-2)}</p>
                     <a href="${url}" target ="_blank">
                     <img class="photo-img" src="${img}" alt="${title}"/>
                     </a>
-                    </div>`;    
-                }
+                    </div>`;
+                } 
+            }
             })
     .join(''); 
     supportUkraineList.insertAdjacentHTML('beforeend', createCardOrg);
