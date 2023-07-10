@@ -47,8 +47,8 @@ img: new URL('/src/images/logo_AAH.png', import.meta.url),
 {
 title: 'World vision',
 url: 'https://www.wvi.org/emergencies/ukraine',
-//img: new URL('/src/images/logo_WORLD_VISION.png', import.meta.url),
-img: '/src/images/logo_WORLD_VISION.png',
+img: new URL('/src/images/logo_WORLD_VISION.png', import.meta.url),
+//img: '/src/images/logo_WORLD_VISION.png',
 },
 {
 title: 'Serhiy Prytula Charity Foundation',
@@ -84,37 +84,54 @@ function onAdaptiveView() {
 }
 
 function onClickBtn() {
-    //PAGE += 1;
-    if (Math.ceil(TOTAL_ROW/MAX_ROW)===PAGE) {
+   
+    if (Math.ceil(TOTAL_ROW / MAX_ROW) === PAGE) {
         btnNextPage.classList.toggle('rotate');
-       // createListOrg(supUkrList, MAX_ROW);
+        updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
+       
+    } else if (Math.ceil(TOTAL_ROW / MAX_ROW) < PAGE) {
+        PAGE = 1;
+        btnNextPage.classList.toggle('rotate');
+        createListOrg(array_supportUkraine, MAX_ROW);
+    } else { 
+        updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
     }
-    updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
 } 
-    function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
-        clearListOrg();
-        const updateCardOrg = array_supportUkraine
-        .map(({ title, url, img}, index) => {
+
+
+function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
+    clearListOrg();
+    const updateCardOrg = array_supportUkraine
+        .map(({ title, url, img }, index) =>
+        {
             listNumber = "0" + (index + 1);
             {
-                if ((TOTAL_ROW - MAX_ROW) > MAX_ROW && index+1 > MAX_ROW && index < MAX_ROW * PAGE) {
-                   //PAGE += 1;
-                     return `<div class="supportUkraine__list-card">
+                if ((TOTAL_ROW - MAX_ROW * (PAGE - 1)) > MAX_ROW && index + 1 > MAX_ROW && index < MAX_ROW * PAGE)
+                {
+                    //PAGE += 1;
+                        return `<div class="supportUkraine__list-card">
                         <p>${listNumber.slice(-2)}</p>
                         <a href="${url}" target ="_blank">
                         <img class="photo-img" src="${img}" alt="${title}"/>
                         </a>
                         </div>`;
-                    } 
-            }
-            })        
+                } else if ((TOTAL_ROW - MAX_ROW * (PAGE - 1)) < MAX_ROW && (index + 1) > MAX_ROW * (PAGE - 1) - (TOTAL_ROW - MAX_ROW * (PAGE - 1)))
+                    {
+                        return `<div class="supportUkraine__list-card">
+                        <p>${listNumber.slice(-2)}</p>
+                        <a href="${url}" target ="_blank">
+                        <img class="photo-img" src="${img}" alt="${title}"/>
+                        </a>
+                        </div>`;
+                    }
+            }   
+        })        
         .join(''); 
         supportUkraineList.insertAdjacentHTML('beforeend', updateCardOrg);
-        PAGE += 1;
+    PAGE += 1;
+    console.log(PAGE);
 }    
     
-   // if ( && (index + 1) <= MAX_ROW * PAGE && (index + 1) > (MAX_ROW * PAGE - MAX_ROW * (PAGE - 1))) {
-
 function createListOrg(array_supportUkraine, MAX_ROW) {
     clearListOrg();
     PAGE += 1;
