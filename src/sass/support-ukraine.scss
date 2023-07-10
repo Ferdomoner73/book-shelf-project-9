@@ -46,6 +46,26 @@
     .photo-img {
         filter: brightness(0) invert(1);//спочатку робимо колір повністю черним, а потім інвертируємо
     }
+
+         
+    .supportUkraine__button {
+        text-align: center;
+         }
+
+    .supportUkraine__button-button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        fill: #4F2EE8;;
+        background-color: #ffffff;
+        border: 0 none #ffffff;
+    }
+
+    .supportUkraine__button-icon {
+        text-align: center;
+            width: 12px;
+            height: 6px;
+    }
 //}
 
 //media screen and (min-width: 768px) {

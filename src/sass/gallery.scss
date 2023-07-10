@@ -2,344 +2,398 @@
 
 /* MOBILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
 @media screen and (max-width: 767px) {
-    .section-padding-wrappers {
-      padding-right: 20px;
-      padding-left: 20px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  
-    .overlay-card-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 335px;
-      height: 485px;
-    }
+  .five-books-cards-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .blue-title-color {
+    color: rgba(79, 46, 232, 1);
+  }
+
+  .overlay-card-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 335px;
+    height: 485px;
+  }
+
   .gallery-list-item-wrapper {
     margin-bottom: 8px;
   }
-    .gallery-category {
-      margin-bottom: 18px;
-    }
-  
-    .gallery-title {
-      color: #111;
-      font-size: 48px;
-      line-height: 52px;
-      letter-spacing: -1.92px;
-      margin-bottom: 40px;
-    }
-  
-    .five-books-cards-wrapper {
-      list-style: none;
-    }
-  
-    .card-subtitle-and-description-wrapper {
-      padding-top: 14px;
-    }
-  
-    .cards-quick-view-wrapper {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(234, 198, 69, 1);
-      text-align: center;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      transform: translate(0, 100%);
-      transition: transform 250ms linear;
-      border-radius: 4px;
-    }
-  
-    .gallery-list-item-description {
-      color: #B4AFAF;
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 14px;
-      letter-spacing: -0.48px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  
-    .gallery-list-item-subtitle {
-      color: #111;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 18px;
-      letter-spacing: -0.64px;
-      margin-bottom: 4px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  
-    .gallery-list {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      gap: 24px;
-      list-style: none;
-      margin-bottom: 8px;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .gallery-list-item:hover .cards-quick-view-wrapper {
-      transform: translate(0, 0);
-    }
-  
-    .gallery-list-item:hover {
-      border-radius: 4px;
-      box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    }
-  
-    .see-more-button {
-      line-height: 18px;
-      letter-spacing: -0.14px;
-      text-transform: uppercase;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      padding-right: 28px;
-      padding-left: 28px;
-      border-radius: 40px;
-      border: 2px solid #4F2EE8;
-      background-color: #F6F6F6;
-      transition: background-color 250ms linear;
-      display: flex;
-      justify-content: flex-end;
-      margin-left: auto;
-      margin-bottom: 40px;
-    }
-  
-    .see-more-button:hover {
-      color: #FFF;
-      background-color: #4F2EE8;
-    }
+
+  .gallery-category {
+    margin-bottom: 18px;
+    color: #B4AFAF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
   }
-  
-  /* TABLETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    .section-padding-wrappers {
-      padding-right: 32px;
-      padding-left: 32px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  
-    .overlay-card-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 218px;
-      height: 316px;
-    }
-  
-    .gallery-category {
-      margin-bottom: 18px;
-    }
-  
-    .gallery-title {
-      margin-bottom: 40px;
-    }
-  
-  
-    .card-subtitle-and-description-wrapper {
-      padding-top: 14px;
-    }
-  
-    .cards-quick-view-wrapper {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(234, 198, 69, 1);
-      text-align: center;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      transform: translate(0, 100%);
-      transition: transform 250ms linear;
-      border-radius: 4px;
-    }
-  
-    .gallery-list-item-description {
-      color: #B4AFAF;
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 14px;
-      letter-spacing: -0.48px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      max-width: 218px;
-    }
-  
-    .gallery-list-item-subtitle {
-      color: #111;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 18px;
-      letter-spacing: -0.64px;
-      margin-bottom: 4px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      max-width: 218px;
-    }
-  
-    .gallery-list {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      margin-bottom: 20px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  
-    .gallery-list-item:hover .cards-quick-view-wrapper {
-      transform: translate(0, 0);
-    }
-  
-    .gallery-list-item:hover {
-      border-radius: 4px;
-      box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    }
-  
-    .see-more-button {
-      line-height: 18px;
-      letter-spacing: -0.14px;
-      text-transform: uppercase;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      padding-right: 28px;
-      padding-left: 28px;
-      border-radius: 40px;
-      border: 2px solid #4F2EE8;
-      background-color: #F6F6F6;
-      transition: background-color 250ms linear;
-      display: flex;
-      justify-content: flex-end;
-      margin-left: auto;
-      margin-bottom: 40px;
-    }
-  
-    .see-more-button:hover {
-      color: #FFF;
-      background-color: #4F2EE8;
-    }
+
+  .gallery-title {
+    color: #111;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+    margin-bottom: 40px;
   }
-  
-  /* DESCTOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP */
-  @media screen and (min-width: 1200px) {
-    .section-padding-wrappers {
-      padding-right: 25px;
-      padding-left: 25px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  
-    .overlay-card-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 180px;
-      height: 256px;
-    }
-  
-    .gallery-category {
-      margin-bottom: 18px;
-    }
-  
-    .gallery-title {
-      margin-bottom: 40px;
-    }
-  
-    .card-subtitle-and-description-wrapper {
-      padding-top: 14px;
-    }
-  
-    .cards-quick-view-wrapper {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(234, 198, 69, 1);
-      text-align: center;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      transform: translate(0, 100%);
-      transition: transform 250ms linear;
-      border-radius: 4px;
-    }
-  
-    .gallery-list-item-description {
-      color: #B4AFAF;
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 14px;
-      letter-spacing: -0.48px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      max-width: 180px;
-    }
-  
-    .gallery-list-item-subtitle {
-      color: #111;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 18px;
-      letter-spacing: -0.64px;
-      margin-bottom: 4px;
-      max-width: 180px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  
-    .gallery-list {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      margin-bottom: 32px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  
-    .gallery-list-item:hover .cards-quick-view-wrapper {
-      transform: translate(0, 0);
-    }
-  
-    .gallery-list-item:hover {
-      border-radius: 4px;
-      box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    }
-  
-  
-    .see-more-button {
-      line-height: 18px;
-      letter-spacing: -0.14px;
-      text-transform: uppercase;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      padding-right: 28px;
-      padding-left: 28px;
-      border-radius: 40px;
-      border: 2px solid #4F2EE8;
-      background-color: #F6F6F6;
-      transition: background-color 250ms linear;
-      display: flex;
-      justify-content: flex-end;
-      margin-left: auto;
-      margin-bottom: 40px;
-    }
-  
-    .see-more-button:hover {
-      color: #FFF;
-      background-color: #4F2EE8;
-    }
+
+  .five-books-cards-wrapper {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+
+  .card-subtitle-and-description-wrapper {
+    padding-top: 14px;
+  }
+
+  .cards-quick-view-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(234, 198, 69, 1);
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transform: translate(0, 100%);
+    transition: transform 250ms linear;
+    border-radius: 4px;
+  }
+
+  .gallery-list-item-description {
+    color: #B4AFAF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .gallery-list-item-subtitle {
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.64px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    margin-bottom: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-list-item:hover .cards-quick-view-wrapper {
+    transform: translate(0, 0);
+  }
+
+  .gallery-list-item:hover {
+    border-radius: 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
+
+  .see-more-button {
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-right: 28px;
+    padding-left: 28px;
+    border-radius: 40px;
+    border: 2px solid #4F2EE8;
+    background-color: #F6F6F6;
+    transition: background-color 250ms linear;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+
+  .see-more-button:hover {
+    color: #FFF;
+    background-color: #4F2EE8;
+  }
+}
+
+/* TABLETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  .overlay-card-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 218px;
+    height: 316px;
+  }
+
+  .blue-title-color {
+    color: rgba(79, 46, 232, 1);
+  }
+
+  .gallery-category {
+    margin-bottom: 18px;
+    color: #B4AFAF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+  }
+
+  .five-books-cards-wrapper {
+    width: 704px;
+    padding-right: 32px;
+    padding-left: 32px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .gallery-title {
+    margin-bottom: 40px;
+  }
+
+
+  .card-subtitle-and-description-wrapper {
+    padding-top: 14px;
+  }
+
+  .cards-quick-view-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(234, 198, 69, 1);
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transform: translate(0, 100%);
+    transition: transform 250ms linear;
+    border-radius: 4px;
+  }
+
+  .gallery-list-item-description {
+    color: #B4AFAF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 218px;
+  }
+
+  .gallery-list-item-subtitle {
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.64px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 218px;
+  }
+
+  .gallery-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-list-item:hover .cards-quick-view-wrapper {
+    transform: translate(0, 0);
+  }
+
+  .gallery-list-item:hover {
+    border-radius: 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
+
+  .see-more-button {
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-right: 28px;
+    padding-left: 28px;
+    border-radius: 40px;
+    border: 2px solid #4F2EE8;
+    background-color: #F6F6F6;
+    transition: background-color 250ms linear;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+
+  .see-more-button:hover {
+    color: #FFF;
+    background-color: #4F2EE8;
+  }
+}
+
+/* DESCTOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP */
+@media screen and (min-width: 1200px) {
+
+
+  .overlay-card-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 180px;
+    height: 256px;
+  }
+
+  .blue-title-color {
+    color: rgba(79, 46, 232, 1);
+  }
+
+  .five-books-cards-wrapper {
+    width: 996px;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.gallery-category {
+  margin-bottom: 18px;
+  color: #B4AFAF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+
+.gallery-title {
+  margin-bottom: 40px;
+}
+
+.card-subtitle-and-description-wrapper {
+  padding-top: 14px;
+}
+
+.cards-quick-view-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(234, 198, 69, 1);
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  transform: translate(0, 100%);
+  transition: transform 250ms linear;
+  border-radius: 4px;
+}
+
+.gallery-list-item-description {
+  color: #B4AFAF;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.gallery-list-item-subtitle {
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  margin-bottom: 4px;
+  max-width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gallery-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin-bottom: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-list-item:hover .cards-quick-view-wrapper {
+  transform: translate(0, 0);
+}
+
+.gallery-list-item:hover {
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+
+.see-more-button {
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 28px;
+  padding-left: 28px;
+  border-radius: 40px;
+  border: 2px solid #4F2EE8;
+  background-color: #F6F6F6;
+  transition: background-color 250ms linear;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+
+.see-more-button:hover {
+  color: #FFF;
+  background-color: #4F2EE8;
+}

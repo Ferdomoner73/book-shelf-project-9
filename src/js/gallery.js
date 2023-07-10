@@ -2,7 +2,7 @@ const galleryRef = document.querySelector('.five-books-cards-wrapper')
 const galleryListRef = document.querySelector('.gallery-list') 
 function createMainPageCard(book) {
     return `<li class="gallery-list-item">
-    <div class="gallery-list-item-wrapper">
+    <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
       <div class="overlay-card-wrapper">
       <img
         src="${book.book_image}"
@@ -113,72 +113,3 @@ function renderingHomePage() {
 
 // Render Cards by Category CODE
 
-async function fetchByCategory(category) {
-  try {
-    const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-const galleryTitleEl = document.querySelector(".gallery-title");
-let category = "ALL CATEGORIES";
-
-
-
-galleryListRef.addEventListener("click", onMoreBtnClick);
-
-function onMoreBtnClick(e) {
-  if (e.target.classlist.contains("see-more-button")) {
-    category = e.target.getAttribute("id");
-
-    renderBooksByCategory();
-  }
-}
-
-function renderBooksByCategory() {
-  fetchByCategory(category).then((booksArr) => {
-    if (!booksArr.length) {
-      Notify.failure(
-        `Sorry, there are no ${category} books. Please choose another category.`
-      );
-      return;
-    }
-
-    galleryTitleEl.innerHTML = category;
-    galleryListRef.innerHTML = createMoreBooks(booksArr);
-  });
-}
-
-function createMoreBooks(booksArr) {
-  const bookCard = booksArr
-    .map(() => {
-      const markup = `<li class="gallery-list-item">
-             <div class="gallery-list-item-wrapper">
-               <div class="overlay-card-wrapper">
-               <img
-                 src="${book.book_image}"
-                 alt="Book"
-                 width="100%"
-                 height="100%"
-                 class="gallery-book-img"
-                 loading="lazy"
-              />
-              <p class="cards-quick-view-wrapper">quick view</p>
-             </div>
-               <div class="card-subtitle-and-description-wrapper">
-                 <p class="gallery-list-item-subtitle">${book.title}</p>
-                 <p class="gallery-list-item-description">${book.author}n</p>
-               </div>
-             </div>
-           </li>`;
-
-      return markup;
-    })
-    .join("");
-
-  return bookCard;
-}
