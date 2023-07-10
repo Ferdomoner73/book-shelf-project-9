@@ -1,19 +1,15 @@
-body.show-popup .popup-backdrop {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
-    body.show-popup .popup-body {
-        transform: scale(1);
-    }
-}
+
 .popup-backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(17, 17, 17, 0.4);
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 10000;
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
@@ -21,6 +17,8 @@ body.show-popup .popup-backdrop {
 }
 
 .popup__body {
+    overflow: scroll;
+    min-width: 100%;
     min-height: 100%;
     display: flex;
     align-items: center;
@@ -30,49 +28,94 @@ body.show-popup .popup-backdrop {
 
 }
 
+.show-popup {
+    overflow: hidden;
+}
+body.show-popup .popup-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+body.show-popup .popup__body {
+    transform: scale(1);
+}
 .popup__content {
+    border: 2px solid var(--clr-text-primary);
+    border-radius: 18px;
     display: flex;
     flex-direction: column;
+
     position: relative;
+
     background-color: var(--clr-back-ground-secondary);
     color: var(--clr-text-primary);
-    padding: 24px, 40px;
+
+    padding: 40px 24px;
+
     max-width: 335px;
     
 @media screen and (min-width: 768px) {
     max-width: 579px;
+    max-height: 465px;
+
+    padding: 40px;
+
     flex-direction: row;
     flex-wrap: wrap;
 }
 }
 
+.popup__book__info {
+    @media screen and (min-width: 768px) {
+           max-width: 279px;
+           margin-left: 24px;
+        }
+}
 .popup-close-btn {
 width: 24px;
 height: 24px;
 border: none;
 background-color: transparent;
+position: absolute;
+    top: 12px;
+    right: 12px;
+    @media screen and (min-width: 768px) {
+        top: 24px;
+        right: 24px;
+        width: 28px;
+        height: 28px;
+
+    }
 }
 
 .popup-close-icon {
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 12px;
-    right: 12px;
+    width: 14px;
+    height: 14px;
+    
 }
 
 .popup__image {
+    overflow: hidden;
     margin-bottom: 14px;
-        max-width: 287px;
-        max-height: 408px;
+
+        
+       
+
     border-radius: 8px;
     margin-bottom: 14px;
+
     @media screen and (min-width: 768px) {
             max-width: 192px;
             max-height: 281px;
+            margin-bottom: 40px;
         }
 }
-
+.popup__image > img {
+    height: 100%;
+    width: 100%;
+    
+    
+}
 .popup__book_name {
     font-size: 16px;
     font-weight: 700;
@@ -107,6 +150,7 @@ background-color: transparent;
     margin-bottom: 14px;
     @media screen and (min-width: 768px) {
             margin-bottom: 20px;
+            max-height: 100%;
         }
 }
 
@@ -126,7 +170,7 @@ background-color: transparent;
     border: 2px solid var(--clr-text-modified);
     border-radius: 40px;
 
-    padding: 14px, 23px;
+    padding: 14px 23px;
     margin-bottom: 8px;
 
     color: var(--clr-text-primary);
@@ -136,7 +180,7 @@ background-color: transparent;
     
     @media screen and (min-width: 768px) {
             font-size: 18px;
-padding: 20px, 150px;
+padding: 20px 150px;
         }
 }
 
