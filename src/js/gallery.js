@@ -1,6 +1,7 @@
+import { loaderShow, loaderHidden } from './loader';
+
 const galleryRef = document.querySelector('.five-books-cards-wrapper');
 const galleryListRef = document.querySelector('.gallery-list');
-import { loaderShow, loaderHidden } from './loader';
 
 function createMainPageCard(book) {
   return `<li class="gallery-list-item">
@@ -33,7 +34,9 @@ async function fetchingTopBooks() {
     console.log(error);
   }
 }
+
 fetchingTopBooks().then(response => renderingHomePage(response));
+
 function renderingHomePage() {
   galleryRef.innerHTML = '';
   if (document.documentElement.clientWidth < 768) {
