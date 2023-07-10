@@ -1,14 +1,18 @@
 const signUpButton = document.querySelector('[data-sign="up"]');
 const signInButton = document.querySelector('[data-sign="in"]');
 
-signUpButton.addEventListener('click', () => {
+signUpButton.addEventListener('click', event => {
+  event.stopPropagation();
   signUpButton.classList.add('is-active');
   signInButton.classList.remove('is-active');
+  openModal();
 });
 
-signInButton.addEventListener('click', () => {
+signInButton.addEventListener('click', event => {
+  event.stopPropagation();
   signInButton.classList.add('is-active');
   signUpButton.classList.remove('is-active');
+  openModal();
 });
 
 const backdrop = document.getElementById('backdrop');
