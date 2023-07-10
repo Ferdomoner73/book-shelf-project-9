@@ -1,4 +1,4 @@
-//import 'supUkr.css';
+
 
 const supUkrList = [
 {
@@ -17,8 +17,8 @@ img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 {
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
-img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
-//img: '../images/logo_UNITED24.png',
+//img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
+img: '../images/logo_UNITED24.png',
 },
 {
 title: 'International Medical Corps',
@@ -59,24 +59,29 @@ img: new URL('/src/images/logo_PRYTULA.png', import.meta.url),
 ]
 
 const supportUkraineList = document.querySelector('.supportUkraine__list');
+const btnNextPage = document.querySelector('.supportUkraine__button-button');
 
-console.log(document.documentElement.clientWidth);
-console.log(window.innerWidth);
+let MAX_ROW = 0;
+const TOTAL_ROW = supUkrList.length;
+
+btnNextPage.addEventListener('click', onClickBtn);
 window.addEventListener('resize', onAdaptiveView);
 
 
 createListOrg(supUkrList);
 
 function onAdaptiveView() { 
-    if (document.documentElement.clientWidth < 767 && window.innerWidth <767) {
-        console.log('4 element visible', document.documentElement.clientWidth);
+    if (document.documentElement.clientWidth < 768 && window.innerWidth <768) {
+        MAX_ROW = 4;
         createListOrg(supUkrList);
     } else {
-        console.log('6 element visible', window.innerWidth);
+        MAX_ROW = 6;
     createListOrg(supUkrList);
     }
-    
 }
+function onClickBtn() {
+    console.log(TOTAL_ROW);
+ }
 
 function createListOrg(supUkrList) {
     clearListOrg();
@@ -100,6 +105,5 @@ function createListOrg(supUkrList) {
 }
 
 function clearListOrg() { 
-    
     supportUkraineList.innerHTML = '';
 }
