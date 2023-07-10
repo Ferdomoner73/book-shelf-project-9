@@ -85,10 +85,10 @@ function onAdaptiveView() {
 
 function onClickBtn() {
     //PAGE += 1;
-    // if (Math.ceil(TOTAL_ROW/MAX_ROW)===PAGE) {
-    //    btnNextPage.classList.toggle('rotate');
-    //    createListOrg(supUkrList, MAX_ROW);
-    //}
+    if (Math.ceil(TOTAL_ROW/MAX_ROW)===PAGE) {
+        btnNextPage.classList.toggle('rotate');
+       // createListOrg(supUkrList, MAX_ROW);
+    }
     updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
 } 
     function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
@@ -99,7 +99,6 @@ function onClickBtn() {
             {
                 if ((TOTAL_ROW - MAX_ROW) > MAX_ROW && index+1 > MAX_ROW && index < MAX_ROW * PAGE) {
                    //PAGE += 1;
-                    console.log(PAGE);
                      return `<div class="supportUkraine__list-card">
                         <p>${listNumber.slice(-2)}</p>
                         <a href="${url}" target ="_blank">
@@ -110,7 +109,8 @@ function onClickBtn() {
             }
             })        
         .join(''); 
-   supportUkraineList.insertAdjacentHTML('beforeend', updateCardOrg);
+        supportUkraineList.insertAdjacentHTML('beforeend', updateCardOrg);
+        PAGE += 1;
 }    
     
    // if ( && (index + 1) <= MAX_ROW * PAGE && (index + 1) > (MAX_ROW * PAGE - MAX_ROW * (PAGE - 1))) {
