@@ -67,23 +67,26 @@ const TOTAL_ROW = supUkrList.length;
 btnNextPage.addEventListener('click', onClickBtn);
 window.addEventListener('resize', onAdaptiveView);
 
-
-createListOrg(supUkrList);
+onAdaptiveView();
+//createListOrg(supUkrList);
 
 function onAdaptiveView() { 
-    if (document.documentElement.clientWidth < 768 && window.innerWidth <768) {
+    //Є два варіанти отримати ширіну екрану користувача для атаптивної верстці, якій використовувати правільніше - не розібрався.. один використовую, інший закоментил на всяк випадок
+    //const clientScreenWidth = document.documentElement.clientWidth; 
+    const userScreenWidth = window.innerWidth;
+    if (userScreenWidth < 768) {
         MAX_ROW = 4;
-        createListOrg(supUkrList);
+        createListOrg(supUkrList, MAX_ROW);
     } else {
         MAX_ROW = 6;
-    createListOrg(supUkrList);
+    createListOrg(supUkrList, MAX_ROW);
     }
 }
 function onClickBtn() {
     console.log(TOTAL_ROW);
  }
 
-function createListOrg(supUkrList) {
+function createListOrg(supUkrList, MAX_ROW) {
     clearListOrg();
     const createCardOrg = supUkrList.map(
         ({
@@ -91,15 +94,16 @@ function createListOrg(supUkrList) {
             url,
             img,
         }, index) => {
-            const listNumber = "0"+ (index + 1);
+            const listNumber = "0" + (index + 1);
+            if ((index+1) <= MAX_ROW) {
             return `<div class="supportUkraine__list-card">
-        <p>${listNumber.slice(-2)}</p>
-    <a href="${url}" target ="_blank">
-      <img class="photo-img" src="${img}" alt="${title}"/>
-    </a>
-    </div>`;
-        }
-    )
+                    <p>${listNumber.slice(-2)}</p>
+                    <a href="${url}" target ="_blank">
+                    <img class="photo-img" src="${img}" alt="${title}"/>
+                    </a>
+                    </div>`;    
+                }
+            })
     .join(''); 
     supportUkraineList.insertAdjacentHTML('beforeend', createCardOrg);
 }
