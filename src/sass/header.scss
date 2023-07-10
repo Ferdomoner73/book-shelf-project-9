@@ -17,6 +17,7 @@ $cubic-time: 250ms cubic-bezier(0.17, 0.67, 0.91, 1.61);
     width: 100%;
     background-color:#f6f6f6;
     transition: all 0.3s ease 0s;
+    
 
    
 }
@@ -24,10 +25,76 @@ $cubic-time: 250ms cubic-bezier(0.17, 0.67, 0.91, 1.61);
 .header__container {
     display: flex;
     align-items: center;
+    padding: 18px 0px 18px 0px;
 
     @media screen and (min-width: 1440px) {
         width: 100%;
     }
 }
+.header__togglers {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 14px;
 
+    @media screen and (min-width: 1280px) {
+        margin-left: auto;
+    }
+}
+// toggle switch
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
 
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 19px;
+    height: 18px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.4s;
+}
+
+input:checked+label {
+    background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+}
+
+input:checked+label:after {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 40px;
+}
+
+// burger
+.menu_toggle{
+    background-color: var(--main-text-cl-dark-theme);
+    height: 28px;
+    width: 28px;
+    stroke: #111;
+    border: none;
+    padding: 0;
+    display: flex;
+}
+.icon-burger{
+    stroke: #111;
+    color: black;
+}
