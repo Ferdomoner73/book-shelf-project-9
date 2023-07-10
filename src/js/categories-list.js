@@ -2,8 +2,12 @@ import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.min.css';
 
 
-const container = document.querySelector('.categories-list-container');
-new SimpleBar(container);
+const categoriesContainer = document.querySelector('.categories-list-container');
+// const wholeContainer = document.querySelector('body');
+// console.dir(wholeContainer)
+new SimpleBar(categoriesContainer);
+new SimpleBar(document.body)
+
 
 
 const categoriesListEl = document.querySelector('.categories-list');
