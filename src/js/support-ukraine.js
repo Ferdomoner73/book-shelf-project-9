@@ -84,10 +84,11 @@ function onAdaptiveView() {
 }
 
 function onClickBtn() {
-   
+    
     if (Math.ceil(TOTAL_ROW / MAX_ROW) === PAGE) {
         btnNextPage.classList.toggle('rotate');
         updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
+        PAGE += 1;
        
     } else if (Math.ceil(TOTAL_ROW / MAX_ROW) < PAGE) {
         PAGE = 1;
@@ -95,12 +96,13 @@ function onClickBtn() {
         createListOrg(array_supportUkraine, MAX_ROW);
     } else { 
         updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
+        PAGE += 1;
     }
 } 
 
 
 function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
-    clearListOrg();
+  //  clearListOrg();
     const updateCardOrg = array_supportUkraine
         .map(({ title, url, img }, index) =>
         {
@@ -115,7 +117,7 @@ function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
                         <img class="photo-img" src="${img}" alt="${title}"/>
                         </a>
                         </div>`;
-                } else if ((TOTAL_ROW - MAX_ROW * (PAGE - 1)) < MAX_ROW && (index + 1) > MAX_ROW * (PAGE - 1) - (TOTAL_ROW - MAX_ROW * (PAGE - 1)))
+                } else if ((TOTAL_ROW - MAX_ROW * (PAGE - 1)) < MAX_ROW && (index + 1) > TOTAL_ROW - MAX_ROW)
                     {
                         return `<div class="supportUkraine__list-card">
                         <p>${listNumber.slice(-2)}</p>
@@ -127,8 +129,8 @@ function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
             }   
         })        
         .join(''); 
-        supportUkraineList.insertAdjacentHTML('beforeend', updateCardOrg);
-    PAGE += 1;
+        supportUkraineList.innerHTML = updateCardOrg;
+    //PAGE += 1;
     console.log(PAGE);
 }    
     
