@@ -2,7 +2,7 @@ const galleryRef = document.querySelector('.five-books-cards-wrapper')
 const galleryListRef = document.querySelector('.gallery-list') 
 function createMainPageCard(book) {
     return `<li class="gallery-list-item">
-    <div class="gallery-list-item-wrapper">
+    <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
       <div class="overlay-card-wrapper">
       <img
         src="${book.book_image}"
