@@ -53,7 +53,11 @@ function onEscClick(event) {
 async function renderPopUp(event) {
     const bookId = event.target.closest('.gallery-list-item-wrapper').dataset.bookId;
     const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json());
-    
+    const AMAZON_LOGO = './images/shopping-list/amazon-logo.png'
+    const APPLE_BOOKS_LOGO = './images/shopping-list/apple-books-logo.png'
+  const BOOKSHOP_LOGO = './images/shopping-list/booksshop-logo.png'
+  
+
     popUpContent.innerHTML = `<button type="button" class="popup-close-btn">
         <svg class="popup-close-icon">
           <use href="./images/icons.svg#icon-x-close"></use>
@@ -68,43 +72,80 @@ async function renderPopUp(event) {
       <ul class="popup__market__list">
         <li class="popup__market__list__item">
           <a href="${book.buy_links[0].url}" target="_blank"
-            ><img src="./images/shopping-list/amazon-logo.png" alt="amazon" loading="lazy"
+            ><img src="${AMAZON_LOGO}" alt="amazon"
           /></a>
         </li>
         <li class="popup__market__list__item">
           <a href="${book.buy_links[1].url}" target="_blank"
             ><img
-              src="./images/shopping-list/apple-books-logo.png" loading="lazy"
+              src="${APPLE_BOOKS_LOGO}"
               alt="apple books"
           /></a>
         </li>
         <li class="popup__market__list__item">
           <a href="${book.buy_links[4].url}" target="_blank"
             ><img
-              src="./images/shopping-list/booksshop-logo.png" loading="lazy"
+              src="${BOOKSHOP_LOGO}"
               alt="bookshop"
           /></a>
         </li>
         
       </ul></div>
-      <button type="button" class="popup-add-btn" data-book-id=${bookId}>
+      <button type="button" class="popup-btn popup-add-btn"  data-book-id=${bookId}>
           add to shopping list
         </button>
-        <p class="popup-add-text popup-text-hidden">
+        <button type="button" class="popup-btn popup-remove-btn popup-hidden" data-book-id=${bookId}>
+          remove from the shopping list
+        </button>
+        <p class="popup-add-text popup-hidden">
           Congratulations! You have added the book to the shopping list. To
           delete, press the button "Remove from the shopping list".
         </p>`;
 
+  
     const popUpCloseBtn = document.querySelector('.popup-close-btn');
     popUpCloseBtn.addEventListener('click', onPopUpCloseBtnClick)
     
     const addBtn = document.querySelector('.popup-add-btn')
-    addBtn.addEventListener('click', addBook)
+  addBtn.addEventListener('click', addPopUpBook)
+  
+  const popUpRemoveBtn = document.querySelector('.popup-remove-btn')
+  popUpRemoveBtn.addEventListener('click', removePopUpBook)
+
+  if (localCheckForBook(bookId)) {
+    addBtn.classList.add('popup-hidden')
+    popUpRemoveBtn.classList.remove('popup-hidden')
+    popUpRemoveBtn.nextElementSibling.classList.remove('popup-hidden')
+  }
+  
 }
 
-async function addBook(event) {
+async function addPopUpBook(event) {
     const bookId = event.target.dataset.bookId;
-    const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json());
-    local.addBook(book)
-    
+  const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json());
+  
+  
+  
+  local.addBook(book)
+  const addMessage = event.target.nextElementSibling.nextElementSibling;
+  addMessage.classList.remove('popup-hidden')
+  event.target.nextElementSibling.classList.remove('popup-hidden')
+  event.target.classList.add('popup-hidden')
+}
+
+function removePopUpBook(event) {
+  const bookId = event.target.dataset.bookId
+  local.deleteBookById(bookId)
+  event.target.classList.add('popup-hidden')
+  event.target.previousElementSibling.classList.remove('popup-hidden')
+  event.target.nextElementSibling.classList.add('popup-hidden')
+
+}
+function localCheckForBook(bookId) {
+  local.init()
+  const arrayWithBook = local.getBooks().filter(book => book._id === bookId)
+  if (arrayWithBook.length) {
+    return true
+  }
+  return false
 }
