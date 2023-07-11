@@ -91,6 +91,7 @@ function renderingHomePage() {
 }
 
 
+
  function createMoreBooks(booksArr) {
   const bookCard = booksArr
     .map((book) => {
@@ -115,9 +116,9 @@ function renderingHomePage() {
              </div>
            </li>`;
 
-      return markup;
-    })
-    .join("");
+        return markup;
+      })
+      .join("");
 
   return bookCard;
 }

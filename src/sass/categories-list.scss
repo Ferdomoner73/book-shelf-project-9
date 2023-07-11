@@ -2,7 +2,6 @@
     max-height: 228px;
     overflow: auto;
     width: 335px;
-    padding: 0 20px;
 }
 
 
@@ -17,7 +16,7 @@
 .categories-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    // gap: 24px;
 }
 
 
@@ -26,6 +25,10 @@
     line-height: 1.125;
     font-weight: var(--font-weight-regular);
     color: #11111199;
+
+    padding-bottom: 24px;
+
+    cursor: pointer;
 }
 
 .categories-list-item.active {
@@ -41,7 +44,7 @@
     }
 
     .categories-list {
-        gap: 32px;
+        // gap: 32px;
     }
 }
 
