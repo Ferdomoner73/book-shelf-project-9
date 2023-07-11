@@ -1,1 +1,96 @@
-<p>sdasudasihdhasidyiasd</p>
+<header class="header" id="header">
+  <div class="header__container container">
+    <a href="" class="header_logo">
+      <svg height="28" width="109" class="header_logo_icon">
+        <use href="/src/images/icons.svg#icon-logo-whole-light"></use>
+      </svg>
+    </a>
+    <div class="header__togglers">
+      <input type="checkbox" id="switch" /><label for="switch">Toggle </label>
+      <button
+        type="button"
+        class="menu_toggle"
+        data-action="open-modal"
+        aria-label="Toggle color theme"
+      >
+        <svg height="28" width="28" class="icon-burger">
+          <use href="/src/images/icons.svg#icon-align-left"></use>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="menu_toggle visually-hidden"
+        data-action="close-modal "
+        aria-label="Close modal"
+        style="display: flex"
+      >
+        <svg width="28" height="28">
+          <use href="/src/images/icons.svg#icon-x-close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="backdrop js-backdrop">
+  <div class="modal-menu">
+    <div class="modal__items">
+      <button
+        type="button"
+        class="registration__btn"
+        data-action="registration"
+        aria-label="Registration"
+        style="display: flex"
+      >
+        <span>Sign up</span
+        ><span>
+          <svg class="registration__arrow" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </span>
+      </button>
+      <div class="modal__user visually-hidden">
+        <img href="/src/images/buggs.png" alt="user" />
+        <p>nazar</p>
+      </div>
+        <nav class="modal__nav">
+          <ul class="nav__list nav__List-menu">
+            <li class="home__item">
+              <a
+                href=""
+                class="nav__home nav__link nav__link--current visually-hidden"
+                aria-label="Link to home page"
+                >Home</a
+              >
+            </li>
+            <li class="shop__item">
+              <a
+                href=""
+                class="nav__link nav__shopping visually-hidden"
+                aria-label="Link to Shopping list"
+                ><span>Shopping list</span
+                ><svg width="20" height="20" class="shopping-list-icon">
+                  <use href="/src/images/icons.svg#icon-uil_cart"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          type="button"
+          class="exit_btn"
+          data-action="exit"
+          aria-label="Close modal"
+          style="display: none"
+        >
+          <span>Log out</span
+          ><span
+            ><svg class="registration__arrow" width="20" height="20">
+              <use href="/src/images/icons.svg#icon-arrow-narrow-right"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

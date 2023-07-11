@@ -1,11 +1,10 @@
-// import PerfectScrollbar from 'perfect-scrollbar';
-// import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.min.css';
 
 
-const container = document.querySelector('.categories-list-container');
-new SimpleBar(container);
+const categoriesContainer = document.querySelector('.categories-list-container');
+new SimpleBar(categoriesContainer);
+
 
 
 const categoriesListEl = document.querySelector('.categories-list');
@@ -25,15 +24,22 @@ async function getCategoriesList() {
 getCategoriesList().then(response => renderCategoriesList(response));
 
 function renderCategoriesList(data) {
-    console.log(data);
     const listOfCategories = data.map((array) => {
         return `
     <li class='categories-list-item'>
-        <a href>
-            <p>${array.list_name}</p>
-        </a>
+            <p class='categories-list-text'>${array.list_name}</p>
     </li>
     `}).join('');
 
     categoriesListEl.insertAdjacentHTML('beforeend', listOfCategories);
 }
+
+categoriesListEl.addEventListener('click', handleClickOnList)
+
+function handleClickOnList(e) {
+    if (!e.target.classList.contains('categories-list-text')) {
+        return
+    }
+}
+
+

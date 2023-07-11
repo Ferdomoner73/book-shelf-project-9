@@ -1,0 +1,88 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border: 1.5px solid #111111;
+    border-radius: 0px 0px 8px 8px;
+    width: 100%;
+    background-color:var(--clr-back-ground-primary);
+    transition: all 0.3s ease 0s;
+    
+
+   
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    padding: 18px 0px 18px 0px;
+
+    @media screen and (min-width: 1440px) {
+        width: 100%;
+    }
+}
+.header__togglers {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 14px;
+
+    @media screen and (min-width: 1280px) {
+        margin-left: auto;
+    }
+}
+// toggle switch
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 19px;
+    height: 18px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.4s;
+}
+
+input:checked+label {
+    background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+}
+
+input:checked+label:after {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 40px;
+}
+
+// burger
+.menu_toggle{
+    background-color:var(--clr-back-ground-primary);
+    height: 28px;
+    width: 28px;
+    stroke: #111;
+    border: none;
+    padding: 0;
+    display: flex;
+}
