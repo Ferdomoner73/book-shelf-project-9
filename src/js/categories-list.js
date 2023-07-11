@@ -1,8 +1,11 @@
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.min.css';
 
+import { fetchByCategory, createMoreBooks } from './gallery.js'
+
 
 const categoriesContainer = document.querySelector('.categories-list-container');
+const galleryRef = document.querySelector('.five-books-cards-wrapper');
 new SimpleBar(categoriesContainer);
 
 
@@ -37,9 +40,21 @@ function renderCategoriesList(data) {
 categoriesListEl.addEventListener('click', handleClickOnList)
 
 function handleClickOnList(e) {
+    galleryRef.innerHTML = '';
     if (!e.target.classList.contains('categories-list-text')) {
         return
     }
+
+    galleryRef.innerHTML = `<ul class="gallery-list-each-category container"></ul>`;
+    const galleryListUl = galleryRef.children[0];
+    console.log(galleryListUl)
+
+    const categoryName = e.target.textContent;
+    console.dir(categoryName)
+    fetchByCategory(categoryName).then(response => {
+        console.log(response)
+        galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
+    })
 }
 
 

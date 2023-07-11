@@ -72,7 +72,7 @@ function renderingHomePage() {
 
 // Render Cards by Category CODE
 
-async function fetchByCategory(category) {
+export async function fetchByCategory(category) {
   try {
     const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
     const response = await fetch(url);
@@ -83,11 +83,11 @@ async function fetchByCategory(category) {
   }
 }
 
-function createMoreBooks(booksArr) {
+export function createMoreBooks(booksArr) {
   const bookCard = booksArr
     .map(book => {
-      const markup = `<li class="gallery-list-item">
-            <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
+      const markup = `<li class="gallery-list-item-each-category">
+            <div data-book-id="${book._id}">
                <div class="overlay-card-wrapper">
                <img
                  src="${book.book_image}"
@@ -111,5 +111,5 @@ function createMoreBooks(booksArr) {
     })
     .join('');
 
-  return bookCard;
+  return bookCard
 }

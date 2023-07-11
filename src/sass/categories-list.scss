@@ -92,3 +92,28 @@
   .scroll-dowm-icon:hover  {
     fill: #3c2b88;
   }
+
+
+
+  // categories
+
+.gallery-list-each-category {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+    .gallery-list-each-category {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.gallery-list-item-each-category {
+    width: 100%;
+}
+
+.gallery-book-img {
+    border-radius: 8px;
+}
