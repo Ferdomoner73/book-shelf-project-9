@@ -105,10 +105,8 @@ footer{
     width: 100%;
     // z-index: 999;
     background-color: #f6f6f6;
-    // color: #b4afaf;
 }
 .footer-container{
-    max-width: 375px;
     padding: 15px 15px;
     // border-radius: 8px 8px 0px 0px;
     // border: #111111 solid 1.5px;
@@ -116,6 +114,7 @@ footer{
     justify-content: center;
     display: flex;
     text-align: center;
+    // margin: auto;
 }
 .team-list {
     display: flex;
@@ -160,14 +159,3 @@ footer{
     fill: #4F2EE8;
 }
 
-@media screen and (min-width: 768px) {
-    .footer-container{
-        max-width: 768px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .footer-container {
-        max-width: 1158px;
-        
-    }
-}
