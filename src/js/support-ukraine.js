@@ -1,4 +1,4 @@
-import debounce from 'lodash.debounce';
+import debounce from 'lodash';
 
 const array_supportUkraine = [
 {
@@ -51,7 +51,7 @@ img: new URL('/src/images/logo_PRYTULA.png', import.meta.url),
 ]
 
 const supportUkraineList = document.querySelector('.supportUkraine__list');
-const btnNextPage = document.querySelector('.supportUkraine__button-button');
+const btnNextPage = document.querySelector('.supportUkraine__button');
 
 let MAX_ROW = 0;
 let PAGE = 1;

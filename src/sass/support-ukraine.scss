@@ -14,8 +14,6 @@
 
     .supportUkraine__title {
         display: flex;
-      
-      //  margin-left: 40px;
         gap: 12px;
         font-size: 18px;
 
@@ -24,7 +22,6 @@
             line-height: 32px;
             letter-spacing: -0.04em;
             text-align: left;
-
     }
 
     .supportUkraine__title-logo {
@@ -34,8 +31,6 @@
     }
 
     .supportUkraine__list {
-        //top: 96px;
-        //margin-left: 40px;
         width: Hug (159px);
         height: Hug (188px);
         top: 96px;
@@ -45,22 +40,27 @@
         flex-direction: column;
     }
     .supportUkraine__list-card {
-        display: flex;
-        text-align:justify;
-        gap: 16px;
-        font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-align: left;
     }
 
     .photo-img {
+        max-height: 32px;
         filter: brightness(0) invert(1);//спочатку робимо колір повністю черним, а потім інвертируємо
     }
 
-         
-    .supportUkraine__button {
+    .supportUkraine__blockButton {
         text-align: center;
          }
 
-    .supportUkraine__button-button {
+    .supportUkraine__button {
         width: 32px;
         height: 32px;
         border-radius: 50%;
@@ -68,6 +68,7 @@
         background-color: #ffffff;
         border: 0 none #ffffff;
         transform-origin: center center;
+
     }
 
     .supportUkraine__button-icon {
