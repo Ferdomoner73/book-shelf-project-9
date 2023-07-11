@@ -1,5 +1,5 @@
 import debounce from 'lodash';
-
+//можливо правільніше винести массив в окремий файл
 const array_supportUkraine = [
 {
 title: 'Save the Children',
@@ -92,7 +92,6 @@ function onClickBtn() {
     }
 } 
 
-
 function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
   //  clearListOrg();
     const updateCardOrg = array_supportUkraine
@@ -102,7 +101,6 @@ function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
             {
                 if ((TOTAL_ROW - MAX_ROW * (PAGE - 1)) > MAX_ROW && index + 1 > MAX_ROW && index < MAX_ROW * PAGE)
                 {
-                    //PAGE += 1;
                         return `<div class="supportUkraine__list-card">
                         <p>${listNumber.slice(-2)}</p>
                         <a href="${url}" target ="_blank">
@@ -122,8 +120,6 @@ function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
         })        
         .join(''); 
         supportUkraineList.innerHTML = updateCardOrg;
-    //PAGE += 1;
-    console.log(PAGE);
 }    
     
 function createListOrg(array_supportUkraine, MAX_ROW) {
