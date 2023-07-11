@@ -49,7 +49,7 @@ body {
   font-family: 'DM Sans', sans-serif;
 
   font-size: 12px;
-  line-height: 18px;
+  line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -102,28 +102,97 @@ body {
 .sl-card-info-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+ 
+}
+
+.sl-book-title {
+  margin-bottom: 4px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-align: left;
+
+  color:  var(--clr-text-primary);
+}
+
+.sl-book-category {
+  margin-bottom: 8px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0.03em;
+  text-align: left;
+
+  color: var(--clr-text-secondary);
+}
+
+.sl-book-desc {
+
+font-size: 14px;
+
+line-height: 1.29;
+letter-spacing: -0.04em;
+text-align: left;
+
+color: var(--clr-text-primary);
 }
 
 .sl-card-footer {
-    display: flex;
-justify-content: space-between;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.sl-book-author {
+ 
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 1.18;
+letter-spacing: -0.04em;
+text-align: left;
+color: var(--clr-text-secondary);
 }
 
 // кнопки магазинів
 .sl-book-card-shops {
-    display: flex;
+  display: flex;
+  gap: 8px;
+
+}
+
+.sl-amazon-logo-wrap {
+  width: 32px;
+  height: 11px;
+}
+
+.sl-apple-logo-wrap,
+.sl-bookshop-logo-wrap {
+  width: 16px;
+  height: 16px;
 }
 // кнопка видалити
 .sl-card-delete-btn {
   position: absolute;
   top: 14px;
   right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 28px;
   height: 28px;
   border-radius: 50%;
+  border: none;
   background-color: var(--clr-back-ground-primary-modified);
+}
+
+.sl-card-icon {
+  flex-shrink: 0;
 }
 @media screen and (min-width: 768px) {
   .container {
