@@ -159,33 +159,33 @@ export async function fetchByCategory(category) {
 }
 
 
- export function createMoreBooks(booksArr) {
-  const bookCard = booksArr
-    .map(() => {
-      const markup = `<li class="gallery-list-item">
-            <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
-               <div class="overlay-card-wrapper">
-               <img
-                 src="${book.book_image}"
-                 alt="Book"
-                 width="100%"
-                 height="100%"
-                 class="gallery-book-img"
-                 loading="lazy"
-                 id="${book._id}"
-              />
-              <p class="cards-quick-view-wrapper">quick view</p>
-             </div>
-               <div class="card-subtitle-and-description-wrapper">
-                 <p class="gallery-list-item-subtitle">${book.title}</p>
-                 <p class="gallery-list-item-description">${book.author}n</p>
-               </div>
-             </div>
-           </li>`;
+  export function createMoreBooks(booksArr) {
+    const bookCard = booksArr
+      .map(() => {
+        const markup = `<li class="gallery-list-item">
+              <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
+                <div class="overlay-card-wrapper">
+                <img
+                  src="${book.book_image}"
+                  alt="Book"
+                  width="100%"
+                  height="100%"
+                  class="gallery-book-img"
+                  loading="lazy"
+                  id="${book._id}"
+                />
+                <p class="cards-quick-view-wrapper">quick view</p>
+              </div>
+                <div class="card-subtitle-and-description-wrapper">
+                  <p class="gallery-list-item-subtitle">${book.title}</p>
+                  <p class="gallery-list-item-description">${book.author}n</p>
+                </div>
+              </div>
+            </li>`;
 
-      return markup;
-    })
-    .join("");
+        return markup;
+      })
+      .join("");
 
-  return bookCard;
-}
+    return bookCard;
+  }
