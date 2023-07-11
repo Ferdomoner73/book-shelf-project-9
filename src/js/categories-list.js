@@ -3,10 +3,7 @@ import 'simplebar/dist/simplebar.min.css';
 
 
 const categoriesContainer = document.querySelector('.categories-list-container');
-// const wholeContainer = document.querySelector('body');
-// console.dir(wholeContainer)
 new SimpleBar(categoriesContainer);
-new SimpleBar(document.body)
 
 
 
@@ -30,15 +27,19 @@ function renderCategoriesList(data) {
     const listOfCategories = data.map((array) => {
         return `
     <li class='categories-list-item'>
-        <a href>
-            <p>${array.list_name}</p>
-        </a>
+            <p class='categories-list-text'>${array.list_name}</p>
     </li>
     `}).join('');
 
     categoriesListEl.insertAdjacentHTML('beforeend', listOfCategories);
 }
 
+categoriesListEl.addEventListener('click', handleClickOnList)
 
+function handleClickOnList(e) {
+    if (!e.target.classList.contains('categories-list-text')) {
+        return
+    }
+}
 
 
