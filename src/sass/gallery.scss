@@ -1,5 +1,3 @@
-
-
 /* MOBILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
 @media screen and (max-width: 767px) {
   .five-books-cards-wrapper {
@@ -23,10 +21,13 @@
   .gallery-list-item-wrapper {
     margin-bottom: 8px;
   }
+  .gallery-list .gallery-list-item:nth-of-type(n+2) {
+    display: none;
+  }
 
   .gallery-category {
     margin-bottom: 18px;
-    color: #B4AFAF;
+    color: #b4afaf;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -69,7 +70,7 @@
   }
 
   .gallery-list-item-description {
-    color: #B4AFAF;
+    color: #b4afaf;
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
@@ -109,7 +110,8 @@
 
   .gallery-list-item:hover {
     border-radius: 4px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   }
 
   .see-more-button {
@@ -126,8 +128,8 @@
     padding-right: 28px;
     padding-left: 28px;
     border-radius: 40px;
-    border: 2px solid #4F2EE8;
-    background-color: #F6F6F6;
+    border: 2px solid #4f2ee8;
+    background-color: #f6f6f6;
     transition: background-color 250ms linear;
     display: flex;
     justify-content: flex-end;
@@ -136,14 +138,13 @@
   }
 
   .see-more-button:hover {
-    color: #FFF;
-    background-color: #4F2EE8;
+    color: #fff;
+    background-color: #4f2ee8;
   }
 }
 
 /* TABLETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-
   .overlay-card-wrapper {
     position: relative;
     overflow: hidden;
@@ -157,12 +158,16 @@
 
   .gallery-category {
     margin-bottom: 18px;
-    color: #B4AFAF;
+    color: #b4afaf;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.42px;
     text-transform: uppercase;
+  }
+  
+  .gallery-list .gallery-list-item:nth-of-type(n+4) {
+    display: none;
   }
 
   .five-books-cards-wrapper {
@@ -175,8 +180,12 @@
 
   .gallery-title {
     margin-bottom: 40px;
+    color: #111;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -1.92px;
   }
-
 
   .card-subtitle-and-description-wrapper {
     padding-top: 14px;
@@ -197,7 +206,7 @@
   }
 
   .gallery-list-item-description {
-    color: #B4AFAF;
+    color: #b4afaf;
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
@@ -237,7 +246,8 @@
 
   .gallery-list-item:hover {
     border-radius: 4px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   }
 
   .see-more-button {
@@ -254,8 +264,8 @@
     padding-right: 28px;
     padding-left: 28px;
     border-radius: 40px;
-    border: 2px solid #4F2EE8;
-    background-color: #F6F6F6;
+    border: 2px solid #4f2ee8;
+    background-color: #f6f6f6;
     transition: background-color 250ms linear;
     display: flex;
     justify-content: flex-end;
@@ -264,15 +274,13 @@
   }
 
   .see-more-button:hover {
-    color: #FFF;
-    background-color: #4F2EE8;
+    color: #fff;
+    background-color: #4f2ee8;
   }
 }
 
 /* DESCTOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP */
 @media screen and (min-width: 1200px) {
-
-
   .overlay-card-wrapper {
     position: relative;
     overflow: hidden;
@@ -295,7 +303,7 @@
 
 .gallery-category {
   margin-bottom: 18px;
-  color: #B4AFAF;
+  color: #b4afaf;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -305,6 +313,11 @@
 
 .gallery-title {
   margin-bottom: 40px;
+  color: #111;
+font-size: 48px;
+font-weight: 700;
+line-height: 52px;
+letter-spacing: -1.92px;
 }
 
 .card-subtitle-and-description-wrapper {
@@ -326,7 +339,7 @@
 }
 
 .gallery-list-item-description {
-  color: #B4AFAF;
+  color: #b4afaf;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -366,9 +379,9 @@
 
 .gallery-list-item:hover {
   border-radius: 4px;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-
 
 .see-more-button {
   color: #111;
@@ -384,8 +397,8 @@
   padding-right: 28px;
   padding-left: 28px;
   border-radius: 40px;
-  border: 2px solid #4F2EE8;
-  background-color: #F6F6F6;
+  border: 2px solid #4f2ee8;
+  background-color: #f6f6f6;
   transition: background-color 250ms linear;
   display: flex;
   justify-content: flex-end;
@@ -394,6 +407,6 @@
 }
 
 .see-more-button:hover {
-  color: #FFF;
-  background-color: #4F2EE8;
+  color: #fff;
+  background-color: #4f2ee8;
 }
