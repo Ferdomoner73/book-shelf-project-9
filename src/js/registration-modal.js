@@ -1,18 +1,20 @@
 const signUpButton = document.querySelector('[data-sign="up"]');
 const signInButton = document.querySelector('[data-sign="in"]');
 
-signUpButton.addEventListener('click', event => {
-  event.stopPropagation();
-  signUpButton.classList.add('is-active');
-  signInButton.classList.remove('is-active');
-  openModal();
+signUpButton.addEventListener('click', () => {
+  if (!signUpButton.classList.contains('is-active')) {
+    signUpButton.classList.add('is-active');
+    signInButton.classList.remove('is-active');
+    openModal();
+  }
 });
 
-signInButton.addEventListener('click', event => {
-  event.stopPropagation();
-  signInButton.classList.add('is-active');
-  signUpButton.classList.remove('is-active');
-  openModal();
+signInButton.addEventListener('click', () => {
+  if (!signInButton.classList.contains('is-active')) {
+    signInButton.classList.add('is-active');
+    signUpButton.classList.remove('is-active');
+    openModal();
+  }
 });
 
 const backdrop = document.getElementById('backdrop');
@@ -33,7 +35,6 @@ function closeModal() {
 
 // Додати обробник події для кнопки закриття
 closeButton.addEventListener('click', closeModal);
-backdrop.addEventListener('click', closeModal);
 
 // Додати обробник події для відкриття модального вікна
 // Наприклад, при кліку на кнопку "Sign up"
@@ -52,14 +53,22 @@ submitBtn.addEventListener('click', event => {
     closeModal(); // Закриття модального вікна
   }
 });
-
 const escapeKeyListener = event => {
   if (event.key === 'Escape') {
     closeModal(); // Закриття модального вікна при натисканні ESC
   }
 };
 
-document.addEventListener('keydown', escapeKeyListener);
+// Додавання слухача з анонімною функцією обробника подій
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeModal(); // Закриття модального вікна при натисканні ESC
+  }
+});
 
-// Для зняття слухача події використовуйте removeEventListener:
-document.removeEventListener('keydown', escapeKeyListener);
+// Зняття слухача події з анонімною функцією обробника подій
+document.removeEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeModal(); // Закриття модального вікна при натисканні ESC
+  }
+});
