@@ -93,7 +93,6 @@ function onClickBtn() {
 } 
 
 function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
-  //  clearListOrg();
     const updateCardOrg = array_supportUkraine
         .map(({ title, url, img }, index) =>
         {
