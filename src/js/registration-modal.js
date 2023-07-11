@@ -49,10 +49,22 @@ submitBtn.addEventListener('click', event => {
   form.reportValidity(); // Перевірка валідності форми
 
   if (form.checkValidity()) {
+    // Збереження даних реєстрації у локальне сховище
+    const username = document.querySelector('.username-input').value;
+    const email = document.querySelector('.email-input').value;
+
+    const userData = {
+      username,
+      email,
+    };
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
   }
 });
+
 const escapeKeyListener = event => {
   if (event.key === 'Escape') {
     closeModal(); // Закриття модального вікна при натисканні ESC
