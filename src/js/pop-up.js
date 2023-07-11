@@ -4,7 +4,7 @@ const popUpBackdrop = document.querySelector('.popup-backdrop');
 
 const popUpContent = document.querySelector('.popup__content')
 
-galleryEl = document.querySelector('.five-books-cards-wrapper')
+const galleryEl = document.querySelector('.five-books-cards-wrapper')
 const popUpImage = document.querySelector('[popupimage]');
 const popUpBookName = document.querySelector('.popup__book_name')
 const popUpBookAuthor = document.querySelector('.popup__book_author')
