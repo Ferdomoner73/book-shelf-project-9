@@ -21,6 +21,9 @@
   .gallery-list-item-wrapper {
     margin-bottom: 8px;
   }
+  .gallery-list .gallery-list-item:nth-of-type(n+2) {
+    display: none;
+  }
 
   .gallery-category {
     margin-bottom: 18px;
@@ -161,6 +164,10 @@
     font-weight: 400;
     letter-spacing: 0.42px;
     text-transform: uppercase;
+  }
+  
+  .gallery-list .gallery-list-item:nth-of-type(n+4) {
+    display: none;
   }
 
   .five-books-cards-wrapper {

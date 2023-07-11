@@ -1,9 +1,12 @@
+import _ from 'lodash';
 import { loaderShow, loaderHidden } from './loader';
+const galleryRef = document.querySelector('.five-books-cards-wrapper')
+const galleryListRef = document.querySelector('.gallery-list') 
+
 
 // // CODE FOR RENDERING MAINPAGE
 
-const galleryRef = document.querySelector(".five-books-cards-wrapper");
-const galleryListRef = document.querySelector(".gallery-list");
+
 function createMainPageCard(book) {
   return `<li class="gallery-list-item">
     <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
