@@ -51,7 +51,7 @@ function renderingHomePage() {
             );
             galleryRef.insertAdjacentHTML(
               'beforeend',
-              `<button class="see-more-button">See more</button>`
+              `<button class="see-more-button" data-category="${elem.books[0].list_name}">See more</button>`
             );
           }
         });
@@ -77,7 +77,7 @@ function renderingHomePage() {
             }
             galleryRef.insertAdjacentHTML(
               'beforeend',
-              `<button class="see-more-button">See more</button>`
+              `<button class="see-more-button" data-category="${elem.books[0].list_name}">See more</button>`
             );
           }
         });
@@ -103,13 +103,77 @@ function renderingHomePage() {
           }
           galleryRef.insertAdjacentHTML(
             'beforeend',
-            `<button class="see-more-button">See more</button>`
+            `<button class="see-more-button" data-category="${elem.books[0].list_name}">See more</button>`
           );
         }
       });
     }
 }
 
+window.addEventListener(
+  "resize",
+  _.debounce((e) => {
+    checkViewPort(e);
+  }, 100)
+);
+
+function checkViewPort(e) {
+  // console.log(e);
+  // console.log(e.currentTarget.innerWidth);
+  if (document.documentElement.clientWidth < 768) {
+    fetchingTopBooks().then((response) => renderingHomePage(response));
+  } else if (document.documentElement.clientWidth < 1440) {
+    fetchingTopBooks().then((response) => renderingHomePage(response));
+  } else {
+    fetchingTopBooks().then((response) => renderingHomePage(response));
+  }
+}
+
 
 // Render Cards by Category CODE
+
+
+
+export async function fetchByCategory(category) {
+  try {
+    const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+export function createMoreBooks(booksArr) {
+  const bookCard = booksArr
+    .map(() => {
+      const markup = `<li class="gallery-list-item">
+            <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
+               <div class="overlay-card-wrapper">
+               <img
+                 src="${book.book_image}"
+                 alt="Book"
+                 width="100%"
+                 height="100%"
+                 class="gallery-book-img"
+                 loading="lazy"
+                 id="${book._id}"
+              />
+              <p class="cards-quick-view-wrapper">quick view</p>
+             </div>
+               <div class="card-subtitle-and-description-wrapper">
+                 <p class="gallery-list-item-subtitle">${book.title}</p>
+                 <p class="gallery-list-item-description">${book.author}n</p>
+               </div>
+             </div>
+           </li>`;
+
+      return markup;
+    })
+    .join("");
+
+  return bookCard;
+}
 
