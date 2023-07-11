@@ -1,14 +1,11 @@
-
+import _ from 'lodash';
+import { loaderShow, loaderHidden } from './loader';
 const galleryRef = document.querySelector('.five-books-cards-wrapper')
 const galleryListRef = document.querySelector('.gallery-list') 
-const _ = require('lodash')
-=======
-import { loaderShow, loaderHidden } from './loader';
+
 
 // // CODE FOR RENDERING MAINPAGE
 
-const galleryRef = document.querySelector(".five-books-cards-wrapper");
-const galleryListRef = document.querySelector(".gallery-list");
 
 function createMainPageCard(book) {
   return `<li class="gallery-list-item">
