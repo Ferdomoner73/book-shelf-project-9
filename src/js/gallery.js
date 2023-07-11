@@ -1,9 +1,12 @@
-import _ from 'lodash'
+import _ from 'lodash';
+import { loaderShow, loaderHidden } from './loader';
+
 
 // // CODE FOR RENDERING MAINPAGE
 
 const galleryRef = document.querySelector(".five-books-cards-wrapper");
 const galleryListRef = document.querySelector(".gallery-list");
+
 function createMainPageCard(book) {
   return `<li class="gallery-list-item">
     <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
@@ -76,7 +79,7 @@ function renderingHomePage() {
 
 // Render Cards by Category CODE
 
- export async function fetchByCategory(category) {
+ async function fetchByCategory(category) {
   try {
     const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
     const response = await fetch(url);
@@ -88,7 +91,7 @@ function renderingHomePage() {
 }
 
 
- export function createMoreBooks(booksArr) {
+ function createMoreBooks(booksArr) {
   const bookCard = booksArr
     .map((book) => {
       const markup = `<li class="gallery-list-item">
