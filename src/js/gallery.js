@@ -1,6 +1,7 @@
 const galleryRef = document.querySelector('.five-books-cards-wrapper')
 const galleryListRef = document.querySelector('.gallery-list') 
-const _ = require('lodash')
+import _ from 'lodash'
+
 function createMainPageCard(book) {
     return `<li class="gallery-list-item">
     <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
