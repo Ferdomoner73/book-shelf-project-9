@@ -1,0 +1,222 @@
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
+  z-index: 1000;
+  transition: background var(--time-function);
+  display: none;
+  // display: block;
+  background-size: 200% 200%;
+  animation: changeBackground 8s infinite;
+}
+
+@keyframes changeBackground {
+  0% {
+    background-position: left top;
+  }
+  50% {
+    background-position: right bottom;
+  }
+  100% {
+    background-position: left top;
+  }
+}
+
+.auth-modal {
+  position: absolute;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--clr-back-ground-primary);
+  padding: 40px 20px;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  width: 100vw;
+  max-width: 335px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    max-width: 530px;
+    padding: 80px 40px 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 580px;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 28px;
+    &:nth-child(3) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.modal-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 16px;
+  right: 24px;
+  stroke: var(--clr-text-primary);
+  fill: transparent;
+
+  @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+    top: 14px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 28px;
+    height: 28px;
+    top: 18px;
+    right: 32px;
+  }
+}
+
+.modal-icon-user {
+  fill: #111111;
+  transition: fill var(--time-function);
+}
+
+.modal-input:focus + .modal-icon-user {
+  fill: #4f2ee8;
+}
+
+.modal-input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid var(--clr-text-primary);
+  border-radius: 40px;
+  padding: 16px 24px;
+  line-height: 1.12;
+  font-weight: 700;
+
+  background-color: var(--clr-back-ground-primary);
+  transition: border-color var(--time-function), stroke var(--time-function);
+
+  &:focus {
+    border-color: var(--clr-back-ground-primary-modified);
+    outline: transparent;
+
+    & ~ .modal-icon {
+      stroke: var(--clr-back-ground-primary-modified);
+    }
+  }
+
+  &::placeholder {
+    text-transform: uppercase;
+    color: var(--clr-text-primary);
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    padding: 20px 40px;
+  }
+}
+
+.modal-submit-btn {
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border-radius: 40px;
+  color: #f3f3f3;
+  border-style: none;
+  background-color: var(--clr-back-ground-secondary-dark-theme);
+  transition: background-color var(--time-function);
+}
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+  background-color: var(--clr-back-ground-primary-modified);
+}
+
+.modal-sign-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border-style: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 60%);
+  padding: 0;
+  transition: color var(--time-function);
+  &.is-active {
+    color: var(--clr-text-modified);
+    text-decoration: underline;
+  }
+  &:hover,
+  &:focus {
+    color: var(--clr-text-modified);
+    text-decoration: underline;
+  }
+}
+
+.modal-sign-btn-wrapper {
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+  margin-top: 14px;
+  @media screen and (min-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.modal-close-icon {
+  stroke: var(--clr-back-ground-secondary-dark-theme);
+  width: 20px;
+  height: 20px;
+  @media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.modal-close-btn {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  border: none;
+  background-color: transparent;
+  transition: stroke var(--time-function);
+  &:hover,
+  &:focus {
+    .modal-close-icon {
+      stroke: var(--clr-back-ground-primary-modified);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+.auth-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  overflow-y: scroll;
+}
