@@ -1,4 +1,4 @@
-import LocalStorage from './Classes/local-storage.js';
+import LocalStorage from './сlasses/local-storage.js';
 const local = new LocalStorage();
 const popUpBackdrop = document.querySelector('.popup-backdrop');
 
