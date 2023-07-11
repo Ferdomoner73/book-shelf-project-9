@@ -3,11 +3,11 @@ import cardTemplate from '../templates/sl-book-card.js';
 import LocalStorage from './Classes/local-storage.js';
 const local = new LocalStorage();
 
-// const shopListBtnRef = document.querySelector('.js-shopping-list-btn');
+const shopListBtnRef = document.querySelector('.js-shopping-list-btn');
 const categoriesListSecRef = document.querySelector('.categories-list-section');
 const galleryRef = document.querySelector('.five-books-cards-wrapper');
 
-// shopListBtnRef.addEventListener('click', onShoppingListBtnClick);
+shopListBtnRef.addEventListener('click', onShoppingListBtnClick);
 
 // працює при переході на shopping list
 function onShoppingListBtnClick() {
@@ -40,7 +40,7 @@ function renderNothingToShow() {
   console.log('There is nothing to show');
     prepareToRender();
     const markup =
-        '<div class="sl-wrap"><p class="sl-text">This page is empty, add some books and proceed to order.</p > <div class="sl-img-container"><img src="/src/images/shopping-list/books-tower.png" alt="Books tower" width="322" height="241"></div></div > ';
+        '<div class="sl-wrap"><p class="sl-text">This page is empty, add some books and proceed to order.</p > <div class="sl-img-container"><img src="../images/shopping-list/books-tower.png" alt="Books tower" width="322" height="241"></div></div > ';
   galleryRef.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -68,20 +68,20 @@ function onDeleteBtnClick({ target }) {
   chooseWhatToRender();
 }
 
-// // тимчасові елементи, що замінюють хедер і поп ап
-// const btnAddRef = document.querySelector('.js-add-book-btn');
-// btnAddRef.addEventListener('click', addBookToStorage);
+// тимчасові елементи, що замінюють хедер і поп ап
+const btnAddRef = document.querySelector('.js-add-book-btn');
+btnAddRef.addEventListener('click', addBookToStorage);
 
-// // тимчасова функція для отримання даних та їх завантаження у сховище
-// let counter = 0;
-// function addBookToStorage() {
-//   fetch('https://books-backend.p.goit.global/books/top-books')
-//     .then(r => r.json())
-//     .then(data => {
-//       const oneBook = data[0].books;
+// тимчасова функція для отримання даних та їх завантаження у сховище
+let counter = 0;
+function addBookToStorage() {
+  fetch('https://books-backend.p.goit.global/books/top-books')
+    .then(r => r.json())
+    .then(data => {
+      const oneBook = data[0].books;
 
-//       console.dir(oneBook[0]);
-//       local.addBook(oneBook[counter]);
-//       counter += 1;
-//     });
-// }
+      console.dir(oneBook[0]);
+      local.addBook(oneBook[counter]);
+      counter += 1;
+    });
+}
