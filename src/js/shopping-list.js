@@ -1,6 +1,6 @@
 // імпортуємо розмітку для картки та клас для роботи із сховищем
 import cardTemplate from '../templates/sl-book-card.js';
-import LocalStorage from '../js/classes/local-storage.js';
+import LocalStorage from './classes/local-storage.js';
 const local = new LocalStorage();
 
 // const shopListBtnRef = document.querySelector('.js-shopping-list-btn');
