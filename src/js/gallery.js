@@ -112,26 +112,6 @@ function renderingHomePage() {
     }
 }
 
-window.addEventListener(
-  "resize",
-  _.debounce((e) => {
-    checkViewPort(e);
-  }, 100)
-);
-
-function checkViewPort(e) {
-  // console.log(e);
-  // console.log(e.currentTarget.innerWidth);
-  if (document.documentElement.clientWidth < 768) {
-    fetchingTopBooks().then((response) => renderingHomePage(response));
-  } else if (document.documentElement.clientWidth < 1440) {
-    fetchingTopBooks().then((response) => renderingHomePage(response));
-  } else {
-    fetchingTopBooks().then((response) => renderingHomePage(response));
-  }
-}
-
-
 // Render Cards by Category CODE
 
 
