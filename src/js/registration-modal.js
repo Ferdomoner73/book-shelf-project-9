@@ -2,13 +2,19 @@ const signUpButton = document.querySelector('[data-sign="up"]');
 const signInButton = document.querySelector('[data-sign="in"]');
 
 signUpButton.addEventListener('click', () => {
-  signUpButton.classList.add('is-active');
-  signInButton.classList.remove('is-active');
+  if (!signUpButton.classList.contains('is-active')) {
+    signUpButton.classList.add('is-active');
+    signInButton.classList.remove('is-active');
+    openModal();
+  }
 });
 
 signInButton.addEventListener('click', () => {
-  signInButton.classList.add('is-active');
-  signUpButton.classList.remove('is-active');
+  if (!signInButton.classList.contains('is-active')) {
+    signInButton.classList.add('is-active');
+    signUpButton.classList.remove('is-active');
+    openModal();
+  }
 });
 
 const backdrop = document.getElementById('backdrop');
@@ -43,11 +49,37 @@ submitBtn.addEventListener('click', event => {
   form.reportValidity(); // Перевірка валідності форми
 
   if (form.checkValidity()) {
+    // Збереження даних реєстрації у локальне сховище
+    const username = document.querySelector('.username-input').value;
+    const email = document.querySelector('.email-input').value;
+
+    const userData = {
+      username,
+      email,
+    };
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
   }
 });
-document.addEventListener('keydown', event => {
+
+const escapeKeyListener = event => {
+  if (event.key === 'Escape') {
+    closeModal(); // Закриття модального вікна при натисканні ESC
+  }
+};
+
+// Додавання слухача з анонімною функцією обробника подій
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeModal(); // Закриття модального вікна при натисканні ESC
+  }
+});
+
+// Зняття слухача події з анонімною функцією обробника подій
+document.removeEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeModal(); // Закриття модального вікна при натисканні ESC
   }
