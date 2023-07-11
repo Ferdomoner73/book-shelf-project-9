@@ -86,26 +86,3 @@ label:active:after {
     padding: 0;
     display: flex;
 }
-
-//scroll-down
-.btn-to-down {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: var(--clr-text-modified);
-    border-radius: 50%;
-    border: 10px solid transparent;
-    transition: opacity 1500ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: border 1500ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .btn-to-down:hover {
-        background-color: #3c2b88;
-        transition: all 0.3s;
-      }
-      
-
-      .scroll-dowm-icon {
-        fill: var(--clr-back-ground-primary);
-      }
