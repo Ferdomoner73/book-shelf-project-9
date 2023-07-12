@@ -142,17 +142,21 @@
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
-}
-
-@media screen and (min-width: 768px) {
-    .gallery-list-each-category {
-        display: flex;
-        flex-wrap: wrap;
+    @media screen and (min-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 25px;
     }
 }
 
+
+
 .gallery-list-item-each-category {
     width: 100%;
+
+    @media screen and (min-width: 768px) {
+      
+    }
 }
 
 .gallery-book-img {
