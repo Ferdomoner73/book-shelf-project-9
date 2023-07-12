@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 335px;
+    // width: 335px;
   }
 
   .card-subtitle-and-description-wrapper {
@@ -83,6 +83,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 335px;
   }
 
   .gallery-list-item-subtitle {
@@ -95,6 +96,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 335px;
   }
 
   .gallery-list {
@@ -149,7 +151,7 @@
 }
 
 /* TABLETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .overlay-card-wrapper {
     position: relative;
     overflow: hidden;
@@ -176,7 +178,7 @@
   }
 
   .five-books-cards-wrapper {
-    width: 704px;
+    width: fit-content;
     padding-right: 32px;
     padding-left: 32px;
     margin-right: auto;
@@ -286,7 +288,7 @@
 }
 
 /* DESCTOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .overlay-card-wrapper {
     position: relative;
     overflow: hidden;
@@ -299,7 +301,7 @@
   }
 
   .five-books-cards-wrapper {
-    width: 1004px;
+    width: fit-content;
     padding-right: 24px;
     padding-left: 24px;
     margin-right: auto;

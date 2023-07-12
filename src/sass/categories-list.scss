@@ -55,26 +55,76 @@
     text-overflow: ellipsis;
 }
 
+//scroll down
+
 .btn-to-down {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 12%;
-    right: 2%;
-    width: 64px;
-    height: 64px;
+    z-index: 10;
     cursor: pointer;
     background-color: transparent;
     transition: 0.2s ease-in-out;
     border-radius: 50%;
-    border: 2px solid var(--clr-text-modified);;
-  }
+    border: 2px solid var(--clr-text-modified);
+}
 
-
-  .btn-to-down:hover {
+.btn-to-down:hover,
+.btn-to-down:focus {
     transition: 0.2s ease-in-out;
     border: 2px solid #3c2b88;
+  }
+
+  .scroll-down-icon {
+    fill: var(--clr-text-modified);
+  }
+
+  .scroll-down-icon:hover,
+  .scroll-down-icon:focus {
+    fill: #3c2b88;
+  }
+
+@media screen and (max-width: 767px) {
+    .btn-to-down {
+        top: 11%;
+        right: 3%;
+        width: 44px;
+        height: 44px;
+      }
+
+      .scroll-down-icon {
+        width: 18px;
+        height: 18px;
+      }
+  }
+
+  @media (min-width: 768px) {
+    .btn-to-down {
+        top: 15%;
+        right: 2%;
+        width: 54px;
+        height: 54px;
+      }
+
+      .scroll-down-icon {
+        width: 30px;
+        height: 30px;
+      }
+  }
+
+  @media (min-width: 1158px) {
+    .btn-to-down {
+        top: 15%;
+        right: 3%;
+        width: 64px;
+        height: 64px;
+      }
+
+      .scroll-down-icon {
+        width: 44px;
+        height: 44px;
+      }
   }
 
   .btn-to-down--visible {
@@ -83,12 +133,32 @@
     visibility: visible;
     pointer-events: initial;
   }
-  
 
-  .scroll-dowm-icon {
-    fill: var(--clr-text-modified);
-  }
 
-  .scroll-dowm-icon:hover  {
-    fill: #3c2b88;
-  }
+
+  // categories
+
+.gallery-list-each-category {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    @media screen and (min-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 25px;
+    }
+}
+
+
+
+.gallery-list-item-each-category {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      
+    }
+}
+
+.gallery-book-img {
+    border-radius: 8px;
+}
