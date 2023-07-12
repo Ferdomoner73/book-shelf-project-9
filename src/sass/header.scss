@@ -165,7 +165,7 @@ label:active:after {
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--clr-text-primary);
-    background-color: var(--clr-back-ground-primary);
+    background-color: transparent;
     border: none;
 
     @media screen and (min-width: 1280px) {
