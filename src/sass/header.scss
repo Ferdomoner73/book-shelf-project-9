@@ -17,8 +17,12 @@
 .header__container {
     display: flex;
     align-items: center;
-    padding: 18px 0px 18px 0px;
+    padding: 13px 0px 13px 0px;
     justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+            padding: 0px;
+        }
 
     @media screen and (min-width: 1440px) {
         width: 100%;
@@ -206,7 +210,7 @@ label:active:after {
     position: relative;
     min-width: 184;
     height: 48;
-    background-color: blue;
+    background-color: var(--clr-back-ground-primary-modified);
     text-align: left;
     align-items: center;
     border: 1.5px solid black;
@@ -299,9 +303,9 @@ label:active:after {
     letter-spacing: -0.02em;
 
     color: white;
-    border: 1px solid blue;
+    border: 1px solid var(--clr-back-ground-primary-modified);
     border-radius: 36px;
-    background-color: blue;
+    background-color: var(--clr-back-ground-primary-modified);
     cursor: pointer;
 
     height: 45px;
@@ -330,12 +334,12 @@ label:active:after {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
-    fill: yellow;
+    fill: var(--clr-back-ground-secondary-modified);
     transition: background-color var(--time-function), fill var(--time-function);
 
     &:hover {
-        fill: blue;
-        background-color: yellow;
+        fill: var(--clr-back-ground-primary-modified);
+        background-color:var(--clr-back-ground-secondary-modified);
     }
 }
 
@@ -346,7 +350,7 @@ label:active:after {
     align-items: center;
     justify-content: center;
 
-    background-color: yellow;
+    background-color:var(--clr-back-ground-secondary-modified);
     width: 35px;
     height: 35px;
     border-radius: 50%;

@@ -1,4 +1,4 @@
-
+import AMAZON_LOGO_DARK from '../images/amazon-logo-dark.png'
 import AMAZON_LOGO from '../images/shopping-list/amazon-logo.png'
 import APPLE_BOOKS_LOGO from '../images/shopping-list/apple-books-logo.png'
 import BOOKSHOP_LOGO from '../images/shopping-list/booksshop-logo.png'
@@ -120,7 +120,10 @@ async function renderPopUp(event) {
     popUpRemoveBtn.classList.remove('popup-hidden')
     popUpRemoveBtn.nextElementSibling.classList.remove('popup-hidden')
   }
-  
+  if (localStorage.getItem('theme') === 'dark') {
+    const amazonImage = document.querySelector('[alt="amazon"]')
+    amazonImage.src = AMAZON_LOGO_DARK
+  }
 }
 
 async function addPopUpBook(event) {
