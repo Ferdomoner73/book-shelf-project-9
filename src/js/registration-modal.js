@@ -53,13 +53,20 @@ const submitBtn = document.querySelector('.modal-submit-up-btn');
 
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
-  form.reportValidity(); // Перевірка валідності форми
 
-  if (form.checkValidity()) {
-    // Збереження даних реєстрації у локальне сховище
+  const isUsernameValid = document
+    .querySelector('.username-input')
+    .checkValidity();
+  const isEmailValid = document.querySelector('.email-input').checkValidity();
+  const isPasswordValid = document
+    .querySelector(`.password-input`)
+    .checkValidity();
+
+  if (isUsernameValid && isEmailValid && isPasswordValid) {
     const username = document.querySelector('.username-input').value;
     const email = document.querySelector('.email-input').value;
     const password = document.querySelector(`.password-input`).value;
+
     // Додати нового користувача до масиву
     const newUser = {
       username,
@@ -84,11 +91,38 @@ submitBtn.addEventListener('click', event => {
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
 
-    // Зміна видимості кнопок після реєстрації
+    // Виклик функції для перевірки облікових даних та авторизації
+    loginUser(username, password);
+  } else {
+    // Виконати додаткові дії, якщо форма не пройшла валідацію
+    // Наприклад, показати повідомлення про помилку або виділити невалідні поля
+  }
+});
+
+function loginUser(username, password) {
+  // Перевірити облікові дані користувача та встановити статус авторизації
+
+  // Приклад реалізації:
+  const usersDataString = localStorage.getItem('usersData');
+  const usersData = JSON.parse(usersDataString);
+
+  const user = usersData.find(
+    userData => userData.username === username && userData.password === password
+  );
+
+  if (user) {
+    // Зберегти статус авторизації в локальному сховищі
+    const userData = {
+      auth: true,
+    };
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+
+    // Зміна видимості кнопок після авторизації
     registrationButton.classList.add('hidden');
     userButton.classList.remove('hidden');
   }
-});
+}
 
 const escapeKeyListener = event => {
   if (event.key === 'Escape') {
@@ -119,3 +153,29 @@ authModal.addEventListener('click', event => {
 backdrop.addEventListener('click', () => {
   closeModal(); // Закриття модального вікна при кліку на бекдроп
 });
+
+// Перевірка авторизації при завантаженні сторінки
+const isLoggedIn = checkAuthorizationStatus();
+
+if (isLoggedIn) {
+  registrationButton.classList.add('hidden');
+  userButton.classList.remove('hidden');
+} else {
+  registrationButton.classList.remove('hidden');
+  userButton.classList.add('hidden');
+}
+
+export function checkAuthorizationStatus() {
+  // Перевірка, чи користувач авторизований
+  // Повернення true, якщо користувач авторизований, або false в іншому випадку
+
+  // Приклад реалізації:
+  const userDataString = localStorage.getItem('userData');
+  const userData = JSON.parse(userDataString);
+
+  if (userData && userData.auth === true) {
+    return true; // Користувач авторизований
+  } else {
+    return false; // Користувач не авторизований
+  }
+}
