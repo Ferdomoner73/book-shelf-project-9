@@ -1,21 +1,24 @@
-// const signUpButton = document.querySelector('[data-sign="up"]');
-// const signInButton = document.querySelector('[data-sign="in"]');
+const signUpButton = document.querySelector('[data-sign="up"]');
+const signInButton = document.querySelector('[data-sign="in"]');
+const nameInput = document.querySelector('.username-input');
 
-// signUpButton.addEventListener('click', () => {
-//   if (!signUpButton.classList.contains('is-active')) {
-//     signUpButton.classList.add('is-active');
-//     signInButton.classList.remove('is-active');
-//     openModal();
-//   }
-// });
+signUpButton.addEventListener('click', () => {
+  if (!signUpButton.classList.contains('is-active')) {
+    signUpButton.classList.add('is-active');
+    signInButton.classList.remove('is-active');
+    nameInput.style.display = 'block';
+    openModal();
+  }
+});
 
-// signInButton.addEventListener('click', () => {
-//   if (!signInButton.classList.contains('is-active')) {
-//     signInButton.classList.add('is-active');
-//     signUpButton.classList.remove('is-active');
-//     openModal();
-//   }
-// });
+signInButton.addEventListener('click', () => {
+  if (!signInButton.classList.contains('is-active')) {
+    signInButton.classList.add('is-active');
+    signUpButton.classList.remove('is-active');
+    nameInput.style.display = 'none';
+    openModal();
+  }
+});
 
 const backdrop = document.getElementById('backdrop');
 const modal = document.getElementById('login-modal');

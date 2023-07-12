@@ -7,8 +7,8 @@
   background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
   z-index: 1000;
   transition: background var(--time-function);
-  display: none;
-  // display: block;
+  // display: none;
+  display: block;
   background-size: 200% 200%;
   animation: changeBackground 8s infinite;
 }
