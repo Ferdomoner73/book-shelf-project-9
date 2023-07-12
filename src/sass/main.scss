@@ -130,3 +130,17 @@ body {
         padding-top: 122px;
     }
 }
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.container-group {
+    display: flex;
+    flex-direction: column;
+}
