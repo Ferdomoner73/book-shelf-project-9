@@ -41,7 +41,7 @@ async function fetchingTopBooks() {
   }
 }
 
-renderingHomePage()
+renderingHomePage();
 function renderingHomePage() {
 
   // galleryRef.removeEventListener('click', onDeleteBtnClick);
@@ -79,9 +79,11 @@ function renderingHomePage() {
 
 export async function fetchByCategory(category) {
   try {
+    loaderShow();
     const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
     const response = await fetch(url);
     const data = await response.json();
+    loaderHidden();
     return data;
   } catch (error) {
     console.log(error);
@@ -116,24 +118,27 @@ export function createMoreBooks(booksArr) {
     })
     .join('');
 
-  return bookCard
+  return bookCard;
 }
 
-galleryRef.addEventListener('click', handleCategoryOnButton)
+galleryRef.addEventListener('click', handleCategoryOnButton);
 
 function handleCategoryOnButton(e) {
   if (e.target.nodeName !== 'BUTTON') {
-    return
+    return;
   }
-  console.dir(e.target.nodeName)
+  console.dir(e.target.nodeName);
 
   galleryRef.innerHTML = '';
-  const categoryNameByButton = e.target.dataset.category
+  const categoryNameByButton = e.target.dataset.category;
   galleryRef.innerHTML = `<h2>${categoryNameByButton}</h2>`;
-  galleryRef.insertAdjacentHTML('beforeend', `<ul class="gallery-list-each-category container"></ul>`)
-  
+  galleryRef.insertAdjacentHTML(
+    'beforeend',
+    `<ul class="gallery-list-each-category container"></ul>`
+  );
+
   const galleryListUl = galleryRef.lastElementChild;
   fetchByCategory(categoryNameByButton).then(response => {
-        galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
-    })
+    galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
+  });
 }
