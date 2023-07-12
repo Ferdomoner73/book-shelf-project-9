@@ -1,3 +1,8 @@
+
+import AMAZON_LOGO from '../images/shopping-list/amazon-logo.png'
+import APPLE_BOOKS_LOGO from '../images/shopping-list/apple-books-logo.png'
+import BOOKSHOP_LOGO from '../images/shopping-list/booksshop-logo.png'
+
 import LocalStorage from './classes/local-storage';
 const local = new LocalStorage();
 const popUpBackdrop = document.querySelector('.popup-backdrop');
@@ -5,10 +10,12 @@ const popUpBackdrop = document.querySelector('.popup-backdrop');
 const popUpContent = document.querySelector('.popup__content')
 
 const galleryEl = document.querySelector('.five-books-cards-wrapper')
-const popUpImage = document.querySelector('[popupimage]');
-const popUpBookName = document.querySelector('.popup__book_name')
-const popUpBookAuthor = document.querySelector('.popup__book_author')
-const popUpBookDescr = document.querySelector('.book__descr')
+
+// const popUpImage = document.querySelector('[popupimage]');
+// const popUpBookName = document.querySelector('.popup__book_name')
+// const popUpBookAuthor = document.querySelector('.popup__book_author')
+// const popUpBookDescr = document.querySelector('.book__descr')
+
 
 
 
@@ -53,15 +60,11 @@ function onEscClick(event) {
 async function renderPopUp(event) {
     const bookId = event.target.closest('.gallery-list-item-wrapper').dataset.bookId;
     const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json());
-    const AMAZON_LOGO = './images/shopping-list/amazon-logo.png'
-    const APPLE_BOOKS_LOGO = './images/shopping-list/apple-books-logo.png'
-  const BOOKSHOP_LOGO = './images/shopping-list/booksshop-logo.png'
+  
   
 
     popUpContent.innerHTML = `<button type="button" class="popup-close-btn">
-        <svg class="popup-close-icon">
-          <use href="./images/icons.svg#icon-x-close"></use>
-        </svg>
+        
       </button>
       
         <div class="popup__image"><img src="${book.book_image}" alt="обкладинка книги" id="popupimage" loading="lazy" /></div>
@@ -105,7 +108,7 @@ async function renderPopUp(event) {
   
     const popUpCloseBtn = document.querySelector('.popup-close-btn');
     popUpCloseBtn.addEventListener('click', onPopUpCloseBtnClick)
-    
+   
     const addBtn = document.querySelector('.popup-add-btn')
   addBtn.addEventListener('click', addPopUpBook)
   
