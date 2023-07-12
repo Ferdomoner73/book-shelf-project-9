@@ -1,10 +1,13 @@
 let loaderEl = document.querySelector('.loader');
+let spinerEl = document.querySelector('.spiner');
 
 function loaderShow() {
-  loaderEl.classList.remove('hidden');
+  spinerEl.classList.remove('load-hidden');
+  loaderEl.classList.add('loader-container');
 }
 function loaderHidden() {
-  loaderEl.classList.add('hidden');
+  spinerEl.classList.add('load-hidden');
+  loaderEl.classList.remove('loader-container');
 }
 
 export { loaderShow, loaderHidden };
