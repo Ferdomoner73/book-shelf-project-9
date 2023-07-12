@@ -4,11 +4,12 @@ import nothingToShowMarkup from '../templates/sl-book-nothing-to-show.js';
 import LocalStorage from './classes/local-storage.js';
 const local = new LocalStorage();
 
-// const shopListBtnRef = document.querySelector('.js-shopping-list-btn');
+const shopListBtnRef = document.querySelector('.js-shopping-list-btn');
 const categoriesListSecRef = document.querySelector('.categories-list-section');
 const galleryRef = document.querySelector('.five-books-cards-wrapper');
+const supportSectionRef = document.querySelector('.section_supportUkraine');
 
-// shopListBtnRef.addEventListener('click', onShoppingListBtnClick);
+shopListBtnRef.addEventListener('click', onShoppingListBtnClick);
 
 // працює при переході на shopping list
 function onShoppingListBtnClick() {
@@ -20,6 +21,10 @@ function onShoppingListBtnClick() {
 function prepareToRender() {
   console.log('We preparing now...');
   categoriesListSecRef.classList.add('visually-hidden');
+  const userScreenWidth = window.innerWidth;
+  if (userScreenWidth < 1440) {
+    supportSectionRef.classList.add('visually-hidden');
+  }
   galleryRef.innerHTML =
     '<h2 class="gallery-title">Shopping <span class="blue-title-color">List</span></h2>';
 }
