@@ -164,6 +164,10 @@
     @media screen and (min-width: 768px) {
       flex-wrap: wrap;
       flex-direction: row;
+      gap: 25px;
+    }
+
+    @media screen and (min-width: 1440px) {
       gap: 24px;
     }
 }
@@ -177,6 +181,17 @@
       
 //     }
 // }
+
+.gallery-list-item-each-category:hover .cards-quick-view-wrapper {
+  transform: translate(0, 0);
+}
+
+.gallery-list-item-each-category:hover {
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  cursor: pointer;
+}
 
 .gallery-book-img {
     border-radius: 8px;
