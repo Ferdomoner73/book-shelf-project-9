@@ -6,12 +6,27 @@
   height: 100%;
   background: linear-gradient(to bottom right, #ccece7, #4f2ee8);
   z-index: 1000;
-
+  transition: background var(--time-function);
   display: none;
   // display: block;
+  background-size: 200% 200%;
+  animation: changeBackground 8s infinite;
+}
+
+@keyframes changeBackground {
+  0% {
+    background-position: left top;
+  }
+  50% {
+    background-position: right bottom;
+  }
+  100% {
+    background-position: left top;
+  }
 }
 
 .auth-modal {
+  pointer-events: auto;
   position: absolute;
   position: absolute;
   left: 50%;
@@ -48,21 +63,34 @@
 
 .modal-icon {
   position: absolute;
-  top: 18px;
+  width: 18px;
+  height: 18px;
+  top: 16px;
   right: 24px;
   stroke: var(--clr-text-primary);
   fill: transparent;
+
   @media screen and (min-width: 768px) {
-    top: 15px;
     width: 24px;
     height: 24px;
+    top: 14px;
   }
+
   @media screen and (min-width: 1440px) {
     width: 28px;
     height: 28px;
     top: 18px;
     right: 32px;
   }
+}
+
+.modal-icon-user {
+  stroke: #111111;
+  transition: fill var(--time-function);
+}
+
+.modal-input:focus + .modal-icon-user {
+  fill: #4f2ee8;
 }
 
 .modal-input {
@@ -75,14 +103,14 @@
   font-weight: 700;
 
   background-color: var(--clr-back-ground-primary);
+  transition: border-color var(--time-function), stroke var(--time-function);
 
   &:focus {
     border-color: var(--clr-back-ground-primary-modified);
     outline: transparent;
-    transition: border-color var(--time-function);
+
     & ~ .modal-icon {
       stroke: var(--clr-back-ground-primary-modified);
-      transition: stroke var(--time-function);
     }
   }
 
@@ -109,12 +137,12 @@
   color: #f3f3f3;
   border-style: none;
   background-color: var(--clr-back-ground-secondary-dark-theme);
+  transition: background-color var(--time-function);
 }
 
 .modal-submit-btn:hover,
 .modal-submit-btn:focus {
   background-color: var(--clr-back-ground-primary-modified);
-  transition: background-color var(--time-function);
 }
 
 .modal-sign-btn {
@@ -129,6 +157,7 @@
   text-transform: uppercase;
   color: hsl(0, 0%, 60%);
   padding: 0;
+  transition: color var(--time-function);
   &.is-active {
     color: var(--clr-text-modified);
     text-decoration: underline;
@@ -137,7 +166,6 @@
   &:focus {
     color: var(--clr-text-modified);
     text-decoration: underline;
-    transition: color var(--time-function);
   }
 }
 
@@ -171,11 +199,11 @@
 
   border: none;
   background-color: transparent;
+  transition: stroke var(--time-function);
   &:hover,
   &:focus {
     .modal-close-icon {
       stroke: var(--clr-back-ground-primary-modified);
-      transition: stroke var(--time-function);
     }
   }
   @media screen and (min-width: 768px) {

@@ -1,7 +1,7 @@
+
 import AMAZON_LOGO from '../images/shopping-list/amazon-logo.png'
 import APPLE_BOOKS_LOGO from '../images/shopping-list/apple-books-logo.png'
 import BOOKSHOP_LOGO from '../images/shopping-list/booksshop-logo.png'
-
 
 import LocalStorage from './classes/local-storage';
 const local = new LocalStorage();
@@ -10,10 +10,12 @@ const popUpBackdrop = document.querySelector('.popup-backdrop');
 const popUpContent = document.querySelector('.popup__content')
 
 const galleryEl = document.querySelector('.five-books-cards-wrapper')
+
 // const popUpImage = document.querySelector('[popupimage]');
 // const popUpBookName = document.querySelector('.popup__book_name')
 // const popUpBookAuthor = document.querySelector('.popup__book_author')
 // const popUpBookDescr = document.querySelector('.book__descr')
+
 
 
 
@@ -106,7 +108,7 @@ async function renderPopUp(event) {
   
     const popUpCloseBtn = document.querySelector('.popup-close-btn');
     popUpCloseBtn.addEventListener('click', onPopUpCloseBtnClick)
-    
+   
     const addBtn = document.querySelector('.popup-add-btn')
   addBtn.addEventListener('click', addPopUpBook)
   
