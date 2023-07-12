@@ -23,7 +23,8 @@
           >
             Shopping list
             <svg width="20" height="20">
-              <use href="/src/images/icons.svg#icon-uil_cart"></use></svg>
+              <use href="/src/images/icons.svg#icon-uil_cart"></use>
+            </svg>
           </button>
         </li>
       </ul>
@@ -44,7 +45,7 @@
         <button
           type="button"
           class="menu__toggle visually-hidden js-close-menu"
-          data-action="close-modal "
+          data-action="close-modal"
           aria-label="Close modal"
           style="display: flex"
         >
@@ -103,3 +104,72 @@
     </div>
   </div>
 </header>
+<!-- backdrop modal nenu -->
+<div class="backdrop js-backdrop-mobile">
+  <div class="modal__menu">
+    <div class="modal__items">
+      <button
+        type="button"
+        class="registration__btn"
+        data-action="registration"
+        aria-label="Registration"
+        style="display: none"
+      >
+        <span>Sign up</span
+        ><span
+          ><svg class="registration__arrow" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </span>
+      </button>
+      <div class="modal__user">
+        <img
+          src="/src/images/bugg.png"
+          alt="user"
+          class="img-bugg"
+          width="26px"
+          height="26px"
+        />
+        <p>nazar</p>
+      </div>
+      <nav class="modal__nav">
+        <ul class="nav__list nav__List-menu">
+          <li class="home__item">
+            <a
+              href="/src/index.html"
+              class="nav__home nav__link nav__link--current"
+              aria-label="Link to home page"
+              >Home</a
+            >
+          </li>
+          <li class="shop__item">
+            <button
+              type="button"
+              class="nav__link_shopping js-shopping-list-btn"
+              aria-label="Link to Shopping list"
+            >
+              Shopping list
+              <svg width="20" height="20">
+                <use href="/src/images/icons.svg#icon-uil_cart"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <button
+        type="button"
+        class="exit_btn"
+        data-action="exit"
+        aria-label="Close modal"
+        style="display: flex"
+      >
+        <span>Log out</span
+        ><span
+          ><svg class="registration__arrow" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
