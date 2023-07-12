@@ -48,11 +48,6 @@ function closeModal() {
 // Додати обробник події для кнопки закриття
 closeButton.addEventListener('click', closeModal);
 
-// Додати обробник події для відкриття модального вікна
-// Наприклад, при кліку на кнопку "Sign up"
-// const signUpButton = document.querySelector('[data-sign="up"]');
-// signUpButton.addEventListener('click', openModal);
-
 const form = document.querySelector('.modal-form');
 const submitBtn = document.querySelector('.modal-submit-up-btn');
 
@@ -64,12 +59,12 @@ submitBtn.addEventListener('click', event => {
     // Збереження даних реєстрації у локальне сховище
     const username = document.querySelector('.username-input').value;
     const email = document.querySelector('.email-input').value;
-    // const password = document.querySelector(`.password-input`).value;
+    const password = document.querySelector(`.password-input`).value;
     // Додати нового користувача до масиву
     const newUser = {
       username,
       email,
-      // password,
+      password,
       auth: true,
     };
 
@@ -124,10 +119,3 @@ authModal.addEventListener('click', event => {
 backdrop.addEventListener('click', () => {
   closeModal(); // Закриття модального вікна при кліку на бекдроп
 });
-/* <button
-        type="button"
-        class="registration__btn"
-        data-action="registration"
-        aria-label="Registration"
-        style="display: flex"
-      ></button> */
