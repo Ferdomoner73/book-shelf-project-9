@@ -2,6 +2,9 @@ const signUpButton = document.querySelector('[data-sign="up"]');
 const signInButton = document.querySelector('[data-sign="in"]');
 const nameInput = document.querySelector('.username-input');
 const submitButton = document.querySelector('.modal-submit-up-btn');
+const registrationButton = document.querySelector('.auth__modal-open-js');
+
+registrationButton.addEventListener('click', openModal);
 
 signUpButton.addEventListener('click', () => {
   if (!signUpButton.classList.contains('is-active')) {
