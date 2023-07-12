@@ -8,3 +8,4 @@ import './js/registration-modal.js';
 import './js/shopping-list.js';
 import './js/support-ukraine.js';
 import './js/scroll-up.js';
+import './js/scroll-down.js';
