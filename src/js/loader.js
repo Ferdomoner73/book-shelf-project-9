@@ -1,10 +1,10 @@
 let loaderEl = document.querySelector('.loader');
 
 function loaderShow() {
-  loaderEl.classList.remove('hidden');
+  loaderEl.classList.remove('load-hidden');
 }
 function loaderHidden() {
-  loaderEl.classList.add('hidden');
+  loaderEl.classList.add('load-hidden');
 }
 
 export { loaderShow, loaderHidden };
