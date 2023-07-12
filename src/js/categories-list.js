@@ -45,14 +45,15 @@ function handleClickOnList(e) {
         return
     }
 
-    galleryRef.innerHTML = `<ul class="gallery-list-each-category container"></ul>`;
-    const galleryListUl = galleryRef.children[0];
-    console.log(galleryListUl)
-
     const categoryName = e.target.textContent;
+    galleryRef.innerHTML = `<h2>${categoryName}</h2>`;
+    galleryRef.insertAdjacentHTML('beforeend', `<ul class="gallery-list-each-category container"></ul>`)
+
+    const galleryListUl = galleryRef.lastElementChild;
+
+    
     console.dir(categoryName)
     fetchByCategory(categoryName).then(response => {
-        console.log(response)
         galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
     })
 }

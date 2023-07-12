@@ -39,7 +39,7 @@ async function fetchingTopBooks() {
   }
 }
 
-fetchingTopBooks().then(response => renderingHomePage(response));
+renderingHomePage()
 function renderingHomePage() {
   galleryRef.innerHTML = '';
   fetchingTopBooks().then(response => {
@@ -123,10 +123,11 @@ function handleCategoryOnButton(e) {
   console.dir(e.target.nodeName)
 
   galleryRef.innerHTML = '';
-  galleryRef.innerHTML = `<ul class="gallery-list-each-category container"></ul>`;
-  const galleryListUl = galleryRef.children[0];
-
   const categoryNameByButton = e.target.dataset.category
+  galleryRef.innerHTML = `<h2>${categoryNameByButton}</h2>`;
+  galleryRef.insertAdjacentHTML('beforeend', `<ul class="gallery-list-each-category container"></ul>`)
+  
+  const galleryListUl = galleryRef.lastElementChild;
   fetchByCategory(categoryNameByButton).then(response => {
         galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
     })

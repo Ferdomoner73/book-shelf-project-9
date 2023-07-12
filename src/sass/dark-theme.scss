@@ -30,7 +30,7 @@
             fill: var(--clr-back-ground-primary-modified);
         }
 }
-.dark body {
+.dark main {
     background-color: var(--clr-back-ground-primary-dark-theme);
 }
 .dark footer {
@@ -105,4 +105,29 @@ color: var(--clr-text-primary-dark-theme);
         background-color: var(--clr-text-primary-dark-theme);
         border-color: var(--clr-text-primary-dark-theme);
     }
+}
+.dark .auth-modal {
+    background-color: var(--clr-back-ground-primary-dark-theme);
+}
+.dark .modal-close-icon {
+    stroke: var(--clr-text-primary-dark-theme);
+    &:hover, &:focus {
+        stroke: var(--clr-back-ground-primary-modified);
+    }
+}
+.dark .modal-submit-btn {
+    background-color: var(--clr-text-primary-dark-theme);
+    color: var(--clr-back-ground-primary-dark-theme);
+    
+}
+.dark .modal-input {
+    background-color: transparent;
+    color: var(--clr-back-ground-primary);
+    border-color: var(--clr-back-ground-primary);
+    &::placeholder {
+        color: var(--clr-back-ground-primary);
+    }
+}
+.dark .modal-icon {
+    stroke: var(--clr-back-ground-primary);
 }
