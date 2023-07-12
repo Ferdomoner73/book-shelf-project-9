@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import { loaderShow, loaderHidden } from './loader';
 
+// import onDeleteBtnClick from './shopping-list.js';
+
 // // CODE FOR RENDERING MAINPAGE
 
 const galleryRef = document.querySelector('.five-books-cards-wrapper');
@@ -41,6 +43,9 @@ async function fetchingTopBooks() {
 
 renderingHomePage();
 function renderingHomePage() {
+
+  // galleryRef.removeEventListener('click', onDeleteBtnClick);
+
   galleryRef.innerHTML = '';
   fetchingTopBooks().then(response => {
     galleryRef.insertAdjacentHTML(

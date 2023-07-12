@@ -19,17 +19,16 @@ function onShoppingListBtnClick() {
 
 // відозмінює сторінку перед самим рендером
 function prepareToRender() {
-  console.log('We preparing now...');
   categoriesListSecRef.classList.add('visually-hidden');
   const userScreenWidth = window.innerWidth;
   if (userScreenWidth < 1440) {
     supportSectionRef.classList.add('visually-hidden');
   }
   galleryRef.innerHTML =
-    '<h2 class="gallery-title">Shopping <span class="blue-title-color">List</span></h2>';
+    '<h2 class="sl-title">Shopping <span class="sl-blue-title">List</span></h2>';
 }
 
-// перевіряє чи є що відображати з сховища
+// перевіряє чи є що відображати зі сховища
 function chooseWhatToRender() {
   const savedList = local.getBooks();
   if (!savedList.length) {
@@ -41,15 +40,12 @@ function chooseWhatToRender() {
 
 // якщо нема що відобразити
 function renderNothingToShow() {
-  console.log('There is nothing to show');
   prepareToRender();
   galleryRef.insertAdjacentHTML('beforeend', nothingToShowMarkup());
 }
 
 // функція, що приймає масив об'єктів і рендерить картки
 function renderShopListBookCards(data) {
-  console.log('it is render function');
-  console.log(data);
   prepareToRender();
   const markup = data.map(cardTemplate).join('');
   galleryRef.insertAdjacentHTML('beforeend', markup);
@@ -57,33 +53,25 @@ function renderShopListBookCards(data) {
 
 // відмальовує збережені в сховищі об'єкти та додає слухач на видалення
 function renderBooksCards(data) {
-  console.log('Let me show what we have?');
   renderShopListBookCards(data);
   galleryRef.addEventListener('click', onDeleteBtnClick);
 }
 
 // видаляє картку з сховища по кліку на кнопці видалення
-function onDeleteBtnClick({ target }) {
-  console.log(target);
-  if (!target.classList.contains('sl-card-icon')) return;
-  local.deleteBookById(target.parentElement.parentElement.id);
-  chooseWhatToRender();
+export default function onDeleteBtnClick({ target }) {
+  if (target.classList.contains('sl-card-delete-icon')) {
+    local.deleteBookById(target.parentElement.parentElement.parentElement.id);
+    chooseWhatToRender();
+    return;
+  }
+  if (target.classList.contains('sl-card-delete-btn')) {
+    local.deleteBookById(target.parentElement.id);
+    chooseWhatToRender();
+    return;
+  }
+  if (target.classList.contains('sl-card-icon')) {
+    local.deleteBookById(target.parentElement.parentElement.id);
+    chooseWhatToRender();
+    return;
+  }
 }
-
-// // тимчасові елементи, що замінюють хедер і поп ап
-// const btnAddRef = document.querySelector('.js-add-book-btn');
-// btnAddRef.addEventListener('click', addBookToStorage);
-
-// // тимчасова функція для отримання даних та їх завантаження у сховище
-// let counter = 0;
-// function addBookToStorage() {
-//   fetch('https://books-backend.p.goit.global/books/top-books')
-//     .then(r => r.json())
-//     .then(data => {
-//       const oneBook = data[0].books;
-
-//       console.dir(oneBook[0]);
-//       local.addBook(oneBook[counter]);
-//       counter += 1;
-//     });
-// }

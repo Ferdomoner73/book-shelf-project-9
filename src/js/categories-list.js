@@ -1,61 +1,65 @@
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.min.css';
+import { loaderShow, loaderHidden } from './loader';
 
-import { fetchByCategory, createMoreBooks } from './gallery.js'
+import { fetchByCategory, createMoreBooks } from './gallery.js';
 
-
-const categoriesContainer = document.querySelector('.categories-list-container');
+const categoriesContainer = document.querySelector(
+  '.categories-list-container'
+);
 const galleryRef = document.querySelector('.five-books-cards-wrapper');
 new SimpleBar(categoriesContainer);
-
-
 
 const categoriesListEl = document.querySelector('.categories-list');
 
 async function getCategoriesList() {
-    try {
-        const url = 'https://books-backend.p.goit.global/books/category-list';
-        const response = await fetch(url);
-        const data = await response.json();
+  try {
+    loaderShow();
+    const url = 'https://books-backend.p.goit.global/books/category-list';
+    const response = await fetch(url);
+    const data = await response.json();
 
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getCategoriesList().then(response => renderCategoriesList(response));
 
 function renderCategoriesList(data) {
-    const listOfCategories = data.map((array) => {
-        return `
+  const listOfCategories = data
+    .map(array => {
+      return `
     <li class='categories-list-item'>
             <p class='categories-list-text'>${array.list_name}</p>
     </li>
-    `}).join('');
+    `;
+    })
+    .join('');
 
-    categoriesListEl.insertAdjacentHTML('beforeend', listOfCategories);
+  categoriesListEl.insertAdjacentHTML('beforeend', listOfCategories);
 }
 
-categoriesListEl.addEventListener('click', handleClickOnList)
+categoriesListEl.addEventListener('click', handleClickOnList);
 
 function handleClickOnList(e) {
-    galleryRef.innerHTML = '';
-    if (!e.target.classList.contains('categories-list-text')) {
-        return
-    }
+  galleryRef.innerHTML = '';
+  if (!e.target.classList.contains('categories-list-text')) {
+    return;
+  }
 
-    const categoryName = e.target.textContent;
-    galleryRef.innerHTML = `<h2>${categoryName}</h2>`;
-    galleryRef.insertAdjacentHTML('beforeend', `<ul class="gallery-list-each-category container"></ul>`)
+  const categoryName = e.target.textContent;
+  galleryRef.innerHTML = `<h2>${categoryName}</h2>`;
+  galleryRef.insertAdjacentHTML(
+    'beforeend',
+    `<ul class="gallery-list-each-category container"></ul>`
+  );
 
-    const galleryListUl = galleryRef.lastElementChild;
+  const galleryListUl = galleryRef.lastElementChild;
 
-    
-    console.dir(categoryName)
-    fetchByCategory(categoryName).then(response => {
-        galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
-    })
+  console.dir(categoryName);
+  fetchByCategory(categoryName).then(response => {
+    galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
+  });
 }
-
-

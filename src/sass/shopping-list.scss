@@ -1,12 +1,32 @@
-// Nothing to show
+// ЗАГОЛОВОК
+.sl-title {
+  width: 335px;
+  margin-top: 40px;
+  margin-bottom: 120px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  text-align: left;
+
+  color: var(--clr-text-primary);
+}
+
+.sl-blue-title {
+  color: var(--clr-text-modified);
+}
+
+// НІЧОГО ПОКАЗУВАТИ
 .sl-wrap {
   margin-left: auto;
   margin-right: auto;
 }
 .sl-text {
-  max-width: 349px;
-  font-size: 18px;
-  line-height: 1.25;
+  margin-bottom: 14px;
+
+  max-width: 215px;
+
+  line-height: 1.29;
   letter-spacing: -0.02em;
   text-align: center;
 
@@ -16,38 +36,11 @@
 .sl-img-container {
   margin-left: auto;
   margin-right: auto;
+  width: 265px;
+  height: 198px;
 }
 
-:root {
-  --clr-text-primary: #111111;
-  --clr-text-primary-dark-theme: #ffffff;
-  --clr-text-secondary-light-theme: #ffffff;
-  --clr-text-secondary: #b4afaf;
-  --clr-text-logo: #000000;
-
-  --clr-text-modified: #4f2ee8;
-  --clr-text-modified-dark-theme: #eac645;
-
-  --clr-text-modal: #000000;
-  --clr-text-modal-modified: #fcf1e0;
-
-  --clr-back-ground-primary: #f6f6f6;
-  --clr-back-ground-secondary: #ffffff;
-  --clr-back-ground-primary-dark-theme: #202024;
-  --clr-back-ground-secondary-dark-theme: #111111;
-
-  --clr-back-ground-primary-modified: #4f2ee8;
-  --clr-back-ground-secondary-modified: #eac645;
-
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-// -------------------------------------------------
-// обгортка картки
+// ОБГОРТКА КАРТКИ
 .sl-card-item {
   position: relative;
 
@@ -78,6 +71,7 @@
 .sl-card-info-wrap {
   display: flex;
   flex-direction: column;
+  width: 193px;
 }
 
 .sl-book-title {
@@ -167,65 +161,108 @@
   background-color: var(--clr-back-ground-primary-modified);
 }
 
+.sl-card-delete-btn:hover,
+.sl-card-delete-btn:focus {
+  background-color: var(--clr-back-ground-secondary-modified);
+  fill: var(--clr-back-ground-secondary-modified);
+  stroke: var(--clr-text-primary);
+}
+
 .sl-card-icon {
   flex-shrink: 0;
 }
 @media screen and (min-width: 768px) {
- // обгортка картки
-.sl-card-item {
-  width: 704px;
+ // ЗАГОЛОВОК
+.sl-title {
+  width: 335px;
+ 
+  margin-bottom: 140px;
+  font-size: 48px;
+  line-height: 1.09;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
 
-  gap: 24px;
-
+// НІЧОГО ПОКАЗУВАТИ
+.sl-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+.sl-text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 349px;
+  font-size: 18px;
   margin-bottom: 20px;
-  padding: 24px;
-  border: 2px solid var(--clr-back-ground-primary-modified);
-  border-radius: 16px;
-}
-// зображення книги
-.sl-img-wrap {
-  width: 116px;
-  height: 165px;
+  line-height: 1.33;
+  
 }
 
-// інформація про книгу
+.sl-img-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 322px;
+  height: 241px;
+}
+ 
+ 
+  // обгортка картки
+  .sl-card-item {
+    width: 704px;
+    gap: 24px;
+  }
+  // зображення книги
+  .sl-img-wrap {
+    width: 116px;
+    height: 165px;
+  }
 
-.sl-book-category {
-  margin-bottom: 14px;
-}
+  // інформація про книгу
+  .sl-card-info-wrap {
+    width: 516px;
+  }
+  .sl-book-category {
+    margin-bottom: 14px;
+  }
 
-// кнопки магазинів
-.sl-book-card-shops {
-  gap: 16px;
-}
+  // кнопки магазинів
+  .sl-book-card-shops {
+    gap: 16px;
+  }
+  .sl-amazon-logo-wrap {
+    width: 48px;
+    height: 15px;
+  }
+  .sl-apple-logo-wrap {
+    width: 28;
+    height: 27;
+  }
+  .sl-bookshop-logo-wrap {
+    width: 32;
+    height: 30;
+  }
 
-.sl-amazon-logo-wrap {
-  width: 48px;
-  height: 15px;
-}
-
-.sl-apple-logo-wrap {
-   width: 28;
-  height: 27;
-}
-.sl-bookshop-logo-wrap {
-  width: 32;
-  height: 30;
-}
-// кнопка видалити
-.sl-card-delete-btn {
-  top: 24px;
-  right: 24px;
-   width: 34px;
-  height: 34px;
- }
-
-.sl-card-icon {
-  width: 18px;
-  height: 18px;
-}
+  // кнопка видалити
+  .sl-card-delete-btn {
+    top: 24px;
+    right: 24px;
+    width: 34px;
+    height: 34px;
+  }
+  .sl-card-icon {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  // обгортка картки
+  .sl-card-item {
+    width: 996px;
+  }
 
+  // інформація про книгу
+  .sl-card-info-wrap {
+    width: 808px;
+  }
 }
