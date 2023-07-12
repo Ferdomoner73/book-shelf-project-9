@@ -39,7 +39,7 @@ async function fetchingTopBooks() {
   }
 }
 
-fetchingTopBooks().then(response => renderingHomePage(response));
+renderingHomePage()
 function renderingHomePage() {
   galleryRef.innerHTML = '';
   fetchingTopBooks().then(response => {
