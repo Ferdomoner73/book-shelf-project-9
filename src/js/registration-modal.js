@@ -1,12 +1,14 @@
 const signUpButton = document.querySelector('[data-sign="up"]');
 const signInButton = document.querySelector('[data-sign="in"]');
 const nameInput = document.querySelector('.username-input');
+const submitButton = document.querySelector('.modal-submit-up-btn');
 
 signUpButton.addEventListener('click', () => {
   if (!signUpButton.classList.contains('is-active')) {
     signUpButton.classList.add('is-active');
     signInButton.classList.remove('is-active');
     nameInput.style.display = 'block';
+    submitButton.textContent = 'SIGN UP';
     openModal();
   }
 });
@@ -16,6 +18,7 @@ signInButton.addEventListener('click', () => {
     signInButton.classList.add('is-active');
     signUpButton.classList.remove('is-active');
     nameInput.style.display = 'none';
+    submitButton.textContent = 'Sign in';
     openModal();
   }
 });
@@ -55,11 +58,12 @@ submitBtn.addEventListener('click', event => {
     // Збереження даних реєстрації у локальне сховище
     const username = document.querySelector('.username-input').value;
     const email = document.querySelector('.email-input').value;
-
+    // const password = document.querySelector(`.password-input`).value;
     // Додати нового користувача до масиву
     const newUser = {
       username,
       email,
+      // password,
       auth: true,
     };
 
