@@ -35,8 +35,10 @@ body.show-popup .popup-backdrop {
     opacity: 1;
     visibility: visible;
     pointer-events: initial;
+    
 }
 body.show-popup .popup__body {
+    overflow: hidden;
     transform: scale(1);
 }
 .popup__content {
