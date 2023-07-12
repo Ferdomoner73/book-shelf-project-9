@@ -1,5 +1,6 @@
-// імпортуємо розмітку для картки та клас для роботи із сховищем
+// імпортуємо розмітку для картки, відображення порожнього сховища та клас для роботи із сховищем
 import cardTemplate from '../templates/sl-book-card.js';
+import nothingToShowMarkup from '../templates/sl-book-nothing-to-show.js';
 import LocalStorage from './classes/local-storage.js';
 const local = new LocalStorage();
 
@@ -33,15 +34,11 @@ function chooseWhatToRender() {
   renderBooksCards(savedList);
 }
 
-
-
 // якщо нема що відобразити
 function renderNothingToShow() {
   console.log('There is nothing to show');
-    prepareToRender();
-    const markup =
-        '<div class="sl-wrap"><p class="sl-text">This page is empty, add some books and proceed to order.</p > <div class="sl-img-container"><img src="../images/shopping-list/books-tower.png" alt="Books tower" width="322" height="241"></div></div > ';
-  galleryRef.insertAdjacentHTML('beforeend', markup);
+  prepareToRender();
+  galleryRef.insertAdjacentHTML('beforeend', nothingToShowMarkup());
 }
 
 // функція, що приймає масив об'єктів і рендерить картки

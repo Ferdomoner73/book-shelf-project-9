@@ -1,3 +1,9 @@
+// імпортуємо зображення
+import AMAZON_LOGO from "../images/shopping-list/amazon-logo.png";
+import APPLE_BOOK_LOGO from "../images/shopping-list/apple-books-logo.png";
+import BOOKSSHOP_LOGO from '../images/shopping-list/booksshop-logo.png';
+import ICONS_SPRITE from "../images/icons.svg";
+
 // експортує розмітку для створення картки книги в shopping list
 export default 
 function slBookCardMarkup(book) {
@@ -21,7 +27,7 @@ function slBookCardMarkup(book) {
       <li class="sl-shop-item">
        <div class="sl-amazon-logo-wrap">
          <img
-          src="/src/images/shopping-list/amazon-logo.png"
+          src="${AMAZON_LOGO}"
           alt="Amazon shop logo"
           width="48"
           height="15"
@@ -31,7 +37,7 @@ function slBookCardMarkup(book) {
       <li class="sl-shop-item">
        <div class="sl-apple-logo-wrap">
          <img
-          src="/src/images/shopping-list/apple-books-logo.png"
+          src="${APPLE_BOOK_LOGO}"
           alt="Apple books shop logo"
           width="28"
           height="27"
@@ -41,7 +47,7 @@ function slBookCardMarkup(book) {
       <li class="sl-shop-item">
         <div class="sl-bookshop-logo-wrap">
           <img
-          src="/src/images/shopping-list/booksshop-logo.png"
+          src="${BOOKSSHOP_LOGO}"
           alt="Booksshop logo"
           width="32"
           height="30"
@@ -54,7 +60,7 @@ function slBookCardMarkup(book) {
  
   <button type="button" class="sl-card-delete-btn">
     <svg class="sl-card-icon" width="18" height="18">
-      <use href="/src/images/icons.svg#icon-trash-03"></use>
+      <use href="${ICONS_SPRITE}#icon-trash-03"></use>
     </svg>
   </button>
 </li>`;
