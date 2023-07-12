@@ -58,8 +58,7 @@ function renderBooksCards(data) {
 }
 
 // видаляє картку з сховища по кліку на кнопці видалення
-function onDeleteBtnClick({ target }) {
-  console.dir(target);
+export default function onDeleteBtnClick({ target }) {
   if (target.classList.contains('sl-card-delete-icon')) {
     local.deleteBookById(target.parentElement.parentElement.parentElement.id);
     chooseWhatToRender();
