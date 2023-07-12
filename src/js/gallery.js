@@ -87,7 +87,7 @@ export function createMoreBooks(booksArr) {
   const bookCard = booksArr
     .map(book => {
       const markup = `<li class="gallery-list-item-each-category">
-            <div data-book-id="${book._id}">
+            <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
                <div class="overlay-card-wrapper">
                <img
                  src="${book.book_image}"
@@ -117,18 +117,17 @@ export function createMoreBooks(booksArr) {
 galleryRef.addEventListener('click', handleCategoryOnButton)
 
 function handleCategoryOnButton(e) {
-  galleryRef.innerHTML = '';
-  console.dir(e.target.nodeName)
-  if (!e.target.nodeName === 'BUTTON') {
+  if (e.target.nodeName !== 'BUTTON') {
     return
   }
-  
+  console.dir(e.target.nodeName)
+
+  galleryRef.innerHTML = '';
   galleryRef.innerHTML = `<ul class="gallery-list-each-category container"></ul>`;
   const galleryListUl = galleryRef.children[0];
 
   const categoryNameByButton = e.target.dataset.category
   fetchByCategory(categoryNameByButton).then(response => {
-        console.log(response)
         galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
     })
 }

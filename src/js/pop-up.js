@@ -24,11 +24,13 @@ popUpBackdrop.addEventListener('click', onBackdropClick)
 galleryEl.addEventListener("click", onPopUpOpen)
 
 function onPopUpOpen(event) {
-    renderPopUp(event)
     event.preventDefault()
     if (event.target.classList.contains("gallery-list-item-wrapper") || event.target.classList.contains("gallery-book-img") || event.target.nodeName === "P" ) {
         document.body.classList.add('show-popup')
-    window.addEventListener('keydown', onEscClick)
+      window.addEventListener('keydown', onEscClick)
+      renderPopUp(event)
+    } else {
+      return
     }
     
 }
