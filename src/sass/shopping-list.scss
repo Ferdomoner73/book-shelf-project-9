@@ -45,28 +45,7 @@
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body {
-  font-family: 'DM Sans', sans-serif;
 
-  font-size: 12px;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
-  background-color: #f6f6f6;
-}
-
-.shopping-list-container {
-  width: 100%;
-  margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px;
-  max-width: 375px;
-}
 // -------------------------------------------------
 // обгортка картки
 .sl-card-item {
@@ -75,13 +54,10 @@ body {
   display: flex;
   gap: 14px;
 
+  margin-bottom: 20px;
   padding: 14px;
   border: 2px solid var(--clr-back-ground-primary-modified);
   border-radius: 16px;
-}
-
-.sl-card-item:not(:last-child) {
-  margin-bottom: 20px;
 }
 
 // зображення книги
@@ -102,7 +78,6 @@ body {
 .sl-card-info-wrap {
   display: flex;
   flex-direction: column;
- 
 }
 
 .sl-book-title {
@@ -114,7 +89,7 @@ body {
   letter-spacing: -0.04em;
   text-align: left;
 
-  color:  var(--clr-text-primary);
+  color: var(--clr-text-primary);
 }
 
 .sl-book-category {
@@ -130,39 +105,37 @@ body {
 }
 
 .sl-book-desc {
+  font-size: 14px;
 
-font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-align: left;
 
-line-height: 1.29;
-letter-spacing: -0.04em;
-text-align: left;
-
-color: var(--clr-text-primary);
+  color: var(--clr-text-primary);
 }
 
 .sl-card-footer {
   margin-top: auto;
   display: flex;
   justify-content: space-between;
-  
+  align-items: center;
 }
 
 .sl-book-author {
- 
-font-size: 12px;
-font-style: italic;
-font-weight: 400;
-line-height: 1.18;
-letter-spacing: -0.04em;
-text-align: left;
-color: var(--clr-text-secondary);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: var(--clr-text-secondary);
 }
 
 // кнопки магазинів
 .sl-book-card-shops {
   display: flex;
+  align-items: center;
   gap: 8px;
-
 }
 
 .sl-amazon-logo-wrap {
@@ -184,6 +157,9 @@ color: var(--clr-text-secondary);
   align-items: center;
   justify-content: center;
 
+  stroke: var(--clr-text-secondary-light-theme);
+  fill: var(--clr-back-ground-primary-modified);
+
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -195,19 +171,61 @@ color: var(--clr-text-secondary);
   flex-shrink: 0;
 }
 @media screen and (min-width: 768px) {
-  .shopping-list-container {
-    max-width: 768px;
-    padding-right: 32px;
-    padding-left: 32px;
-  }
+ // обгортка картки
+.sl-card-item {
+  width: 704px;
+
+  gap: 24px;
+
+  margin-bottom: 20px;
+  padding: 24px;
+  border: 2px solid var(--clr-back-ground-primary-modified);
+  border-radius: 16px;
+}
+// зображення книги
+.sl-img-wrap {
+  width: 116px;
+  height: 165px;
+}
+
+// інформація про книгу
+
+.sl-book-category {
+  margin-bottom: 14px;
+}
+
+// кнопки магазинів
+.sl-book-card-shops {
+  gap: 16px;
+}
+
+.sl-amazon-logo-wrap {
+  width: 48px;
+  height: 15px;
+}
+
+.sl-apple-logo-wrap {
+   width: 28;
+  height: 27;
+}
+.sl-bookshop-logo-wrap {
+  width: 32;
+  height: 30;
+}
+// кнопка видалити
+.sl-card-delete-btn {
+  top: 24px;
+  right: 24px;
+   width: 34px;
+  height: 34px;
+ }
+
+.sl-card-icon {
+  width: 18px;
+  height: 18px;
+}
 }
 
 @media screen and (min-width: 1440px) {
-  .shopping-list-container {
-    max-width: 1440px;
-    padding-right: 24px;
-    padding-left: 24px;
-  }
+
 }
-
-
