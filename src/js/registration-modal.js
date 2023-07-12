@@ -3,6 +3,7 @@ const signInButton = document.querySelector('[data-sign="in"]');
 const nameInput = document.querySelector('.username-input');
 const submitButton = document.querySelector('.modal-submit-up-btn');
 const registrationButton = document.querySelector('.auth__modal-open-js');
+const userButton = document.querySelector('.auth-btn__user-js');
 
 registrationButton.addEventListener('click', openModal);
 
@@ -12,6 +13,7 @@ signUpButton.addEventListener('click', () => {
     signInButton.classList.remove('is-active');
     nameInput.style.display = 'block';
     submitButton.textContent = 'SIGN UP';
+    userButton.classList.add('hidden');
     openModal();
   }
 });
@@ -22,6 +24,7 @@ signInButton.addEventListener('click', () => {
     signUpButton.classList.remove('is-active');
     nameInput.style.display = 'none';
     submitButton.textContent = 'Sign in';
+    userButton.classList.remove('hidden');
     openModal();
   }
 });
@@ -85,6 +88,10 @@ submitBtn.addEventListener('click', event => {
 
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
+
+    // Зміна видимості кнопок після реєстрації
+    registrationButton.classList.add('hidden');
+    userButton.classList.remove('hidden');
   }
 });
 
