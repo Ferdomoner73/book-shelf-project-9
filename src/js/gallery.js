@@ -113,3 +113,22 @@ export function createMoreBooks(booksArr) {
 
   return bookCard
 }
+
+galleryRef.addEventListener('click', handleCategoryOnButton)
+
+function handleCategoryOnButton(e) {
+  galleryRef.innerHTML = '';
+  console.dir(e.target.nodeName)
+  if (!e.target.nodeName === 'BUTTON') {
+    return
+  }
+  
+  galleryRef.innerHTML = `<ul class="gallery-list-each-category container"></ul>`;
+  const galleryListUl = galleryRef.children[0];
+
+  const categoryNameByButton = e.target.dataset.category
+  fetchByCategory(categoryNameByButton).then(response => {
+        console.log(response)
+        galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
+    })
+}

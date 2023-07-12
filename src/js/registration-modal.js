@@ -1,21 +1,33 @@
-// const signUpButton = document.querySelector('[data-sign="up"]');
-// const signInButton = document.querySelector('[data-sign="in"]');
+const signUpButton = document.querySelector('[data-sign="up"]');
+const signInButton = document.querySelector('[data-sign="in"]');
+const nameInput = document.querySelector('.username-input');
+const submitButton = document.querySelector('.modal-submit-up-btn');
+const registrationButton = document.querySelector('.auth__modal-open-js');
+const userButton = document.querySelector('.auth-btn__user-js');
 
-// signUpButton.addEventListener('click', () => {
-//   if (!signUpButton.classList.contains('is-active')) {
-//     signUpButton.classList.add('is-active');
-//     signInButton.classList.remove('is-active');
-//     openModal();
-//   }
-// });
+registrationButton.addEventListener('click', openModal);
 
-// signInButton.addEventListener('click', () => {
-//   if (!signInButton.classList.contains('is-active')) {
-//     signInButton.classList.add('is-active');
-//     signUpButton.classList.remove('is-active');
-//     openModal();
-//   }
-// });
+signUpButton.addEventListener('click', () => {
+  if (!signUpButton.classList.contains('is-active')) {
+    signUpButton.classList.add('is-active');
+    signInButton.classList.remove('is-active');
+    nameInput.style.display = 'block';
+    submitButton.textContent = 'SIGN UP';
+    userButton.classList.add('hidden');
+    openModal();
+  }
+});
+
+signInButton.addEventListener('click', () => {
+  if (!signInButton.classList.contains('is-active')) {
+    signInButton.classList.add('is-active');
+    signUpButton.classList.remove('is-active');
+    nameInput.style.display = 'none';
+    submitButton.textContent = 'Sign in';
+    userButton.classList.remove('hidden');
+    openModal();
+  }
+});
 
 const backdrop = document.getElementById('backdrop');
 const modal = document.getElementById('login-modal');
@@ -52,11 +64,12 @@ submitBtn.addEventListener('click', event => {
     // Збереження даних реєстрації у локальне сховище
     const username = document.querySelector('.username-input').value;
     const email = document.querySelector('.email-input').value;
-
+    // const password = document.querySelector(`.password-input`).value;
     // Додати нового користувача до масиву
     const newUser = {
       username,
       email,
+      // password,
       auth: true,
     };
 
@@ -75,6 +88,10 @@ submitBtn.addEventListener('click', event => {
 
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
+
+    // Зміна видимості кнопок після реєстрації
+    registrationButton.classList.add('hidden');
+    userButton.classList.remove('hidden');
   }
 });
 
