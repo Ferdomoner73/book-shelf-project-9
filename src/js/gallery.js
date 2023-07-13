@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import _ from 'lodash';
 import { loaderShow, loaderHidden } from './loader';
 
@@ -37,7 +38,7 @@ async function fetchingTopBooks() {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error);
+    Notiflix.Notify.failure('Не вдалось завантажити жодної книги!');
   }
 }
 
@@ -86,7 +87,7 @@ export async function fetchByCategory(category) {
     loaderHidden();
     return data;
   } catch (error) {
-    console.log(error);
+    Notiflix.Notify.failure('Не вдалось завантажити жодної книги!');
   }
 }
 

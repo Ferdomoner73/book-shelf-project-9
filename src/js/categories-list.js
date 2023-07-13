@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.min.css';
 import { loaderShow, loaderHidden } from './loader';
@@ -24,7 +25,7 @@ async function getCategoriesList() {
 
     return data;
   } catch (error) {
-    console.log(error);
+    Notiflix.Notify.failure('Не двалось завантажити жодної книги!');
   }
 }
 
