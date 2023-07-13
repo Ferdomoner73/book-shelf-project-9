@@ -226,11 +226,16 @@ label:active:after {
     align-items: center;
     border: 1.5px solid black;
     border-radius: 18px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;    
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
     cursor: pointer;
-    padding-left: 14px;
+  padding: 15px 0px 15px 14px;
+  margin: 12px 0px;
     transition: background-color var(--time-function), box-shadow var(--time-function);
 
     @media screen and (min-width: 768px) {
@@ -326,12 +331,13 @@ label:active:after {
     }
 }
 
+
 .auth-btn__logOut {
     position: absolute;
     top: 100%;
     right: 0%;
 
-    display: none;
+    
     align-items: center;
     justify-content: center;
     min-width: 100px;
@@ -543,18 +549,18 @@ body.show-modal .modal {
     margin-right: auto;
 }
 
-.nav__link {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    color: white;
-}
+// .nav__link {
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     font-family: 'DM Sans';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 14px;
+//     line-height: 1.29;
+//     letter-spacing: -0.04em;
+//     text-transform: uppercase;
+//     color: white;
+// }
 
 .shopping-list-icon {
     fill: currentColor;

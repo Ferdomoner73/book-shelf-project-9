@@ -90,7 +90,32 @@ submitBtn.addEventListener('click', event => {
 
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
+    const BtnRegEl = document.querySelector('.registration__btnMain');
+    BtnRegEl.classList.add('visually-hidden');
+    const BtnUserEl = document.querySelector('.auth-btn__user-js');
+    BtnUserEl.classList.remove('visually-hidden');
+    const BtnHomeEl = document.querySelector('.nav__link_home');
+    BtnHomeEl.classList.remove('visually-hidden');  
+    const BtnShoplistEl = document.querySelector('.nav__link_shopping');
+    BtnShoplistEl.classList.remove('visually-hidden');
+    const BtnLogoutEl = document.querySelector('.auth-btn__logOut');
+    BtnUserEl.addEventListener('click', () => {
+      
+      BtnLogoutEl.classList.remove('visually-hidden')
 
+      
+
+    })
+    BtnLogoutEl.addEventListener('click', () => {
+      BtnHomeEl.classList.add('visually-hidden'); 
+      BtnShoplistEl.classList.add('visually-hidden');
+      BtnUserEl.classList.add('visually-hidden');
+      BtnLogoutEl.classList.add('visually-hidden');
+      BtnRegEl.classList.remove('visually-hidden');
+
+      
+
+    })
     // Виклик функції для перевірки облікових даних та авторизації
     loginUser(username, password);
   } else {

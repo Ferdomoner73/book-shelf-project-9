@@ -64,7 +64,7 @@ window.addEventListener('resize', debounce (onAdaptiveView, 1000));
 onAdaptiveView();
 
 function onAdaptiveView() { 
-    //Є два варіанти отримати ширіну екрану користувача для атаптивної верстці, якій використовувати правільніше - не розібрався.. один використовую, інший закоментил на всяк випадок
+    //Є два варіанти отримати ширину екрану користувача для атаптивної верстці, якій використовувати правельніше - не розібрався.. один використовую, інший закоментив на всякий випадок
     //const clientScreenWidth = document.documentElement.clientWidth; 
     const userScreenWidth = window.innerWidth;
     if (userScreenWidth < 768) {

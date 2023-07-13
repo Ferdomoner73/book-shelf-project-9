@@ -26,3 +26,11 @@ btnHeaderEls.addEventListener('click', (e) => {
 } )
 
 // logic mobile
+// const BtnUserEl = document.querySelector('.auth-btn__user-js');
+// const BtnRegEl = document.querySelector('.registration__btnMain');
+// const BtnLogoutEl = document.querySelector('.auth-btn__logOut');
+
+// BtnRegEl.addEventListener('click', () => {
+//     const storageX = localStorage.getItem('usersData');
+//     console.dir(storageX)
+// });
