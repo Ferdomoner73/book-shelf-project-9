@@ -16,7 +16,6 @@ img: new URL('/src/images/logo_HOPE.png', import.meta.url),
 title: 'UNITED24',
 url: 'https://u24.gov.ua/uk',
 img: new URL('/src/images/logo_UNITED24.png', import.meta.url),
-//img: '../images/logo_UNITED24.png',
 },
 {
 title: 'International Medical Corps',
@@ -56,27 +55,28 @@ const btnNextPage = document.querySelector('.supportUkraine__button');
 let MAX_ROW = 0;
 let PAGE = 1;
 let listNumber = null;
+
 const TOTAL_ROW = array_supportUkraine.length;
 
 btnNextPage.addEventListener('click', onClickBtn);
-window.addEventListener('resize', debounce (onAdaptiveView, 1000));
+window.addEventListener('resize', onAdaptiveView);
 
 onAdaptiveView();
 
-function onAdaptiveView() { 
-    //Є два варіанти отримати ширіну екрану користувача для атаптивної верстці, якій використовувати правільніше - не розібрався.. один використовую, інший закоментил на всяк випадок
-    const clientScreenWidth = document.documentElement.clientWidth; 
-    const userScreenWidth = window.innerWidth;
-    if (userScreenWidth < 768 || clientScreenWidth <768) {
-        MAX_ROW = 4;
-    } else {
-        MAX_ROW = 6;
-    }
+function onAdaptiveView() {
+
+    let clientScreenWidth = document.documentElement.clientWidth;
+    let userScreenWidth = window.innerWidth;
+        if (userScreenWidth < 768 || clientScreenWidth < 768) {
+            MAX_ROW = 4;
+        } else {
+            MAX_ROW = 6;
+        }    
     createListOrg(array_supportUkraine, MAX_ROW);
 }
 
 function onClickBtn() {
-    
+
     if (Math.ceil(TOTAL_ROW / MAX_ROW) === PAGE) {
         btnNextPage.classList.toggle('rotate');
         updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW);
