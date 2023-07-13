@@ -44,16 +44,17 @@ function renderCategoriesList(data) {
 categoriesListEl.addEventListener('click', handleClickOnList);
 
 function handleClickOnList(e) {
-  galleryRef.innerHTML = '';
   if (!e.target.classList.contains('categories-list-text')) {
     return;
   }
 
+  galleryRef.innerHTML = '';
+
   const categoryName = e.target.textContent;
-  galleryRef.innerHTML = `<h2>${categoryName}</h2>`;
+  galleryRef.innerHTML = `<h2 class='each-category-header'>${categoryName}</h2>`;
   galleryRef.insertAdjacentHTML(
     'beforeend',
-    `<ul class="gallery-list-each-category container"></ul>`
+    `<ul class="gallery-list-each-category gallery-each-category-container"></ul>`
   );
 
   const galleryListUl = galleryRef.lastElementChild;
