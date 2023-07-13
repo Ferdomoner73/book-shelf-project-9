@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 300;
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
     width: 100%;
@@ -13,7 +13,15 @@
 
    
 }
-
+.user__name {
+    color: #FFF;
+        font-family: DM Sans;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.44px;
+}
 .header__container {
     display: flex;
     align-items: center;
@@ -186,6 +194,7 @@ label:active:after {
 
     
 }
+
 // current for shop-list
 .current__page__shop {
     display: flex;
@@ -405,8 +414,15 @@ label:active:after {
         transform: scale(0);
     }
 }
+
+.js-backdrop-mobile.is-open, .js-close-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+}
 .icon-burger {
-background-color: var(--clr-back-ground-primary);
+background-color: transparent;
+
 }
 
 .menu__toggle:hover {
@@ -437,7 +453,7 @@ body.show-modal .modal {
     transform-origin: top left;
     width: 100vw;
     height: 91vh;
-    z-index: 99;
+    z-index: 200;
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
@@ -523,6 +539,8 @@ body.show-modal .modal {
     flex-direction: column;
     align-items: center;
     margin-top: 130px;
+    margin-left:auto ;
+    margin-right: auto;
 }
 
 .nav__link {
