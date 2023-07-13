@@ -170,3 +170,7 @@ color: var(--clr-text-primary-dark-theme);
         color: var(--clr-text-modified-dark-theme);
     } 
 }
+
+.dark .categories-list-text.active {
+    color: var(--clr-text-modified-dark-theme);
+}

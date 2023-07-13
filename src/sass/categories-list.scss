@@ -12,11 +12,6 @@
     width: 335px;
 }
 
-
-// .categories-list {
-//     width: 309px;
-// }
-
 .simplebar-scrollbar:before {
     background-color: #E0E0E0 !important;
 }
@@ -33,15 +28,7 @@
 
 
 .categories-list-item {
-    font-size: 16px;
-    line-height: 1.125;
-    font-weight: var(--font-weight-regular);
-    color: #11111199;
-
-    // padding: 12px 0;
-
-
-    cursor: pointer;
+  cursor: pointer;
 
     @media screen and (min-width: 768px) {
       font-size: 18px;
@@ -51,6 +38,10 @@
 }
 
 .categories-list-text {
+  font-size: 16px;
+  line-height: 1.125;
+  font-weight: var(--font-weight-regular);
+  color: #11111199;
   transition: var(--time-function);
 }
 
@@ -59,7 +50,8 @@
   color: var(--clr-text-modified);
 }
 
-.categories-list-item.active {
+.categories-list-text.active {
+    font-size: 14px;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     color: var(--clr-text-modified);
