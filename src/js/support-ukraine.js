@@ -67,7 +67,7 @@ function onAdaptiveView() {
     //Є два варіанти отримати ширіну екрану користувача для атаптивної верстці, якій використовувати правільніше - не розібрався.. один використовую, інший закоментил на всяк випадок
     const clientScreenWidth = document.documentElement.clientWidth; 
     const userScreenWidth = window.innerWidth;
-    if (userScreenWidth < 768 && clientScreenWidth <768) {
+    if (userScreenWidth < 768 || clientScreenWidth <768) {
         MAX_ROW = 4;
     } else {
         MAX_ROW = 6;
