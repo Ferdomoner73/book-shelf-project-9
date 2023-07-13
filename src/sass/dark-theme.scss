@@ -60,20 +60,31 @@ color: var(--clr-text-primary-dark-theme);
         }
 
 }
-
 .dark .btn-to-down {
     border-color: var(--clr-back-ground-secondary-modified);
 }
+
+.dark .scroll-down-icon:hover,
+.dark .scroll-down-icon:focus {
+  fill: white;
+}
+
 .dark .scroll-down-icon {
     fill: var(--clr-back-ground-secondary-modified);
 }
 .dark .btn-to-top {
-    border: 2px solid var(--clr-back-ground-secondary-modified);
-    background-color: transparent;
+    background-color: var(--clr-back-ground-secondary-modified);
 }
 .dark .scroll-top-icon {
-    stroke: var(--clr-back-ground-secondary-modified);
+    fill: var(--clr-back-ground-secondary-dark-theme);
 }
+
+.dark .btn-to-top:hover,
+.dark .btn-to-top:focus {
+  background-color: white;
+  transition: all 0.3s;
+}
+
 .dark .categories-list-item.active {
     color: var(--clr-text-modified-dark-theme);
 }
