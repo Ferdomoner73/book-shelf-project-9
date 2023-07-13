@@ -14,7 +14,6 @@ const categoriesListEl = document.querySelector('.categories-list');
 const mainCategoryFromListEl = document.querySelector('.categories-list-text')
 
 let currentCategory = mainCategoryFromListEl.classList;
-console.dir(currentCategory);
 
 async function getCategoriesList() {
   try {
@@ -57,8 +56,6 @@ function handleClickOnList(e) {
   galleryRef.innerHTML = '';
 
   const categoryName = e.target.textContent;
-  console.dir(e.target.classList)
-  console.dir(categoryName)
   galleryRef.innerHTML = `<h2 class='each-category-header'>${categoryName}</h2>`;
   galleryRef.insertAdjacentHTML(
     'beforeend',
@@ -68,7 +65,6 @@ function handleClickOnList(e) {
 
   const galleryListUl = galleryRef.lastElementChild;
 
-  console.dir(categoryName);
   fetchByCategory(categoryName).then(response => {
     galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
   });
