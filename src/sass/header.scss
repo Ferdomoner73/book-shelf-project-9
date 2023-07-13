@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 300;
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
     width: 100%;
@@ -13,7 +13,15 @@
 
    
 }
-
+.user__name {
+    color: #FFF;
+        font-family: DM Sans;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.44px;
+}
 .header__container {
     display: flex;
     align-items: center;
@@ -87,7 +95,7 @@ label:active:after {
 
 // burger
 .menu__toggle{
-    background-color:var(--clr-back-ground-primary);
+    background-color:transparent;
     height: 28px;
     width: 28px;
     stroke: #111;
@@ -165,7 +173,7 @@ label:active:after {
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--clr-text-primary);
-    background-color: var(--clr-back-ground-primary);
+    background-color: transparent;
     border: none;
 
     @media screen and (min-width: 1280px) {
@@ -186,6 +194,7 @@ label:active:after {
 
     
 }
+
 // current for shop-list
 .current__page__shop {
     display: flex;
@@ -217,11 +226,16 @@ label:active:after {
     align-items: center;
     border: 1.5px solid black;
     border-radius: 18px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;    
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
     cursor: pointer;
-    padding-left: 14px;
+  padding: 15px 0px 15px 14px;
+  margin: 12px 0px;
     transition: background-color var(--time-function), box-shadow var(--time-function);
 
     @media screen and (min-width: 768px) {
@@ -317,12 +331,13 @@ label:active:after {
     }
 }
 
+
 .auth-btn__logOut {
     position: absolute;
     top: 100%;
     right: 0%;
 
-    display: none;
+    
     align-items: center;
     justify-content: center;
     min-width: 100px;
@@ -390,23 +405,25 @@ label:active:after {
     display: flex;
     padding: 0;
     border: none;
-    background-color: #ffffff;
+    background-color: transparent;
     height: 28px;
     width: 28px;
     stroke: #111111;
-
-    html.dark & {
-        stroke: #ffffff;
-        background-color: #111;
-    }
 
     @media screen and (min-width: 768px) {
         opacity: 0;
         transform: scale(0);
     }
 }
+
+.js-backdrop-mobile.is-open, .js-close-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+}
 .icon-burger {
-background-color: var(--clr-back-ground-primary);
+background-color: transparent;
+
 }
 
 .menu__toggle:hover {
@@ -437,7 +454,7 @@ body.show-modal .modal {
     transform-origin: top left;
     width: 100vw;
     height: 91vh;
-    z-index: 99;
+    z-index: 200;
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
@@ -523,20 +540,22 @@ body.show-modal .modal {
     flex-direction: column;
     align-items: center;
     margin-top: 130px;
+    margin-left:auto ;
+    margin-right: auto;
 }
 
-.nav__link {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    color: white;
-}
+// .nav__link {
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     font-family: 'DM Sans';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 14px;
+//     line-height: 1.29;
+//     letter-spacing: -0.04em;
+//     text-transform: uppercase;
+//     color: white;
+// }
 
 .shopping-list-icon {
     fill: currentColor;
