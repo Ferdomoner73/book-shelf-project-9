@@ -69,7 +69,7 @@ async function renderPopUp(event) {
         
       </button>
       
-        <div class="popup__image"><img src="${book.book_image}" alt="обкладинка книги" id="popupimage" loading="lazy" /></div>
+        <div class="popup__image"><img src="${book.book_image}" srcset="${book.book_image}" alt="обкладинка книги" id="popupimage" loading="lazy" /></div>
         <div class="popup__book__info"><h3 class="popup__book_name">${book.title}</h3>
         <p class="popup__book_author">${book.author}</p>
       
@@ -77,20 +77,20 @@ async function renderPopUp(event) {
       <ul class="popup__market__list">
         <li class="popup__market__list__item">
           <a href="${book.buy_links[0].url}" target="_blank"
-            ><img src="${AMAZON_LOGO}" alt="amazon"
+            ><img src="${AMAZON_LOGO}" srcset="${AMAZON_LOGO}" alt="amazon"
           /></a>
         </li>
         <li class="popup__market__list__item">
           <a href="${book.buy_links[1].url}" target="_blank"
             ><img
-              src="${APPLE_BOOKS_LOGO}"
+              src="${APPLE_BOOKS_LOGO}" srcset="${APPLE_BOOKS_LOGO}"
               alt="apple books"
           /></a>
         </li>
         <li class="popup__market__list__item">
           <a href="${book.buy_links[4].url}" target="_blank"
             ><img
-              src="${BOOKSHOP_LOGO}"
+              src="${BOOKSHOP_LOGO}" srcset="${BOOKSHOP_LOGO}"
               alt="bookshop"
           /></a>
         </li>
