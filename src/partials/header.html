@@ -9,7 +9,7 @@
       <ul class="list nav__list">
         <li class="nav__item">
           <a
-            class="nav__link_home current__page visually-hidden"
+            class="nav__link_home current__page visually-hidden nav__link_home"
             href="/src/index.html"
             aria-label="Link to home page"
             >Home</a
@@ -18,7 +18,7 @@
         <li class="nav__item">
           <button
             type="button"
-            class="nav__link_shopping js-shopping-list-btn visually-hidden"
+            class="nav__link_shopping js-shopping-list-btn visually-hidden nav__link_shopping"
             aria-label="Link to Shopping list"
           >
             Shopping list
@@ -93,7 +93,7 @@
           </svg>
         </button>
         <button
-          class="auth-btn__logOut auth-btn__logOut-js visually-hidden"
+          class="auth-btn__logOut auth-btn__logOut visually-hidden"
           type="button"
           aria-label="LogOut"
         >
@@ -112,7 +112,7 @@
     <div class="modal__items">
       <button
         type="button"
-        class="registration__btn"
+        class="registration__btn registration__btnMain-js auth__modal-open-js"
         data-action="registration"
         aria-label="Registration"
       >
@@ -123,7 +123,7 @@
           </svg>
         </span>
       </button>
-      <div class="modal__user visually-hidden">
+      <div class="modal__user auth-btnM__user-js visually-hidden">
         <img
           src="/src/images/bugg.png"
           alt="user"
@@ -134,11 +134,11 @@
         <p class="user__name">nazar</p>
       </div>
       <nav class="modal__nav">
-        <ul class="nav__list nav__List-menu visually-hidden">
+        <ul class="nav__list nav__List-menu">
           <li class="home__item">
             <a
               href="/src/index.html"
-              class="nav__home nav__link nav__link--current"
+              class="nav__home nav__link nav__link--current nav__link_home-js visually-hidden"
               aria-label="Link to home page"
               >Home</a
             >
@@ -146,7 +146,7 @@
           <li class="shop__item">
             <button
               type="button"
-              class="nav__link_shopping js-shopping-list-btn"
+              class="nav__link_shopping js-shopping-list-btn nav__link_shopping-js visually-hidden"
               aria-label="Link to Shopping list"
             >
               Shopping list
@@ -159,7 +159,7 @@
       </nav>
       <button
         type="button"
-        class="exit_btn visually-hidden"
+        class="exit_btn auth-btn__logOut-js visually-hidden"
         data-action="exit"
         aria-label="Close modal"
         style="display: flex"
