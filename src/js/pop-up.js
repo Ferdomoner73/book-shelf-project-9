@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import AMAZON_LOGO_DARK from '../images/amazon-logo-dark.png'
 import AMAZON_LOGO from '../images/shopping-list/amazon-logo.png'
 import APPLE_BOOKS_LOGO from '../images/shopping-list/apple-books-logo.png'
@@ -61,7 +62,7 @@ function onEscClick(event) {
 
 async function renderPopUp(event) {
     const bookId = event.target.closest('.gallery-list-item-wrapper').dataset.bookId;
-    const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json());
+    const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json()).catch(error => Notiflix.Notify.failure('Не вдалось завантажити жодної книги!'));
   
   
 
@@ -130,7 +131,7 @@ async function renderPopUp(event) {
 
 async function addPopUpBook(event) {
     const bookId = event.target.dataset.bookId;
-  const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json());
+  const book = await fetch(`https://books-backend.p.goit.global/books/${bookId}`).then(response => response.json()).catch(error => Notiflix.Notify.failure('Не вдалось завантажити жодної книги!'));
   
   
   
