@@ -18,7 +18,7 @@
         <li class="nav__item">
           <button
             type="button"
-            class="nav__link_shopping js-shopping-list-btn visually-hidden nav__link_shopping"
+            class="nav__link_shopping js-shopping-list-btn visually-hidden"
             aria-label="Link to Shopping list"
           >
             Shopping list
@@ -75,13 +75,14 @@
             <!-- <svg class="auth-btn__icon-user" width="20px" height="20px">
               <use href="/src/images/icons.svg#icon-buggs"></use>
             </svg> -->
-            <img
-              src="/src/images/bugg.png"
-              alt="bugg"
-              class="img-bugg"
-              width="26px"
-              height="26px"
-            />
+            <div class="img_container">
+              <img
+                srcset="/src/images/bugg.png"
+                src="/src/images/bugg.png"
+                alt="bugg"
+                class="img-bugg"
+              />
+            </div>
           </span>
           <span class="auth-btn__user-text">User</span>
           <svg
@@ -124,14 +125,15 @@
         </span>
       </button>
       <div class="modal__user auth-btnM__user-js visually-hidden">
-        <img
-          src="/src/images/bugg.png"
-          alt="user"
-          class="img-bugg"
-          width="35px"
-          height="35px"
-        />
-        <p class="user__name">nazar</p>
+        <div class="img_container">
+          <img
+            srcset="/src/images/bugg.png"
+            src="/src/images/bugg.png"
+            alt="user"
+            class="img-bugg"
+          />
+        </div>
+        <p class="user__name">user</p>
       </div>
       <nav class="modal__nav">
         <ul class="nav__list nav__List-menu">
@@ -146,11 +148,11 @@
           <li class="shop__item">
             <button
               type="button"
-              class="nav__link_shopping js-shopping-list-btn nav__link_shopping-js visually-hidden"
+              class="nav__link_shoppingMobile js-shopping-list-btn nav__link_shopping-js visually-hidden"
               aria-label="Link to Shopping list"
             >
               Shopping list
-              <svg width="20" height="20">
+              <svg width="20" height="20" class="uil_icon">
                 <use href="/src/images/icons.svg#icon-uil_cart"></use>
               </svg>
             </button>
