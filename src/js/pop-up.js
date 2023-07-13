@@ -124,7 +124,7 @@ async function renderPopUp(event) {
   }
   if (localStorage.getItem('theme') === 'dark') {
     const amazonImage = document.querySelector('[alt="amazon"]')
-    amazonImage.src = AMAZON_LOGO_DARK
+    amazonImage.srcset = AMAZON_LOGO_DARK
   }
 }
 
