@@ -1,4 +1,4 @@
-import debounce from 'lodash';
+//import throttle from 'lodash';
 //можливо правільніше винести массив в окремий файл
 const array_supportUkraine = [
 {
@@ -66,9 +66,11 @@ let PAGE = 1;
 let listNumber = null;
 
 const TOTAL_ROW = array_supportUkraine.length;
+const optimizedLoad = throttle(onAdaptiveView, 500);
 
 btnNextPage.addEventListener('click', onClickBtn);
-window.addEventListener('resize', onAdaptiveView);
+window.addEventListener('resize', optimizedLoad);
+
 
 onAdaptiveView();
 
@@ -158,4 +160,21 @@ function createListOrg(array_supportUkraine, MAX_ROW) {
 
 function clearListOrg() { 
     supportUkraineList.innerHTML = '';
+}
+
+
+function throttle(callee, timeout) {
+
+    let timer = null
+
+  return function perform(...args) {
+    if (timer) return
+
+    timer = setTimeout(() => {
+      callee(...args)
+
+      clearTimeout(timer)
+      timer = null
+    }, timeout)
+  }
 }
