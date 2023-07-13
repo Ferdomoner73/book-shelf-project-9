@@ -14,7 +14,7 @@
    
 }
 .user__name {
-    color: #FFF;
+    color: var(--clr-text-primary-dark-theme);
         font-family: DM Sans;
         font-size: 22px;
         font-style: normal;
@@ -92,6 +92,14 @@ input:checked+label:after {
 label:active:after {
     width: 40px;
 }
+.img_container{
+    width: 30px;
+    height: 30px;
+}
+.img-bugg {
+    width: 100%;
+    height: 100%;
+}
 
 // burger
 .menu__toggle{
@@ -157,8 +165,10 @@ label:active:after {
 
     
 }
-
-.nav__link_shopping {
+.uil_icon{
+    fill: var(--clr-text-primary-dark-theme);
+}
+.nav__link_shopping,.nav__link_shoppingMobile  {
     display: flex;
     gap: 7px;
     align-items: center;
@@ -172,7 +182,7 @@ label:active:after {
     line-height: 1.29;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: var(--clr-text-primary);
+    color:var(--clr-text-primary);
     background-color: transparent;
     border: none;
 
@@ -182,6 +192,10 @@ label:active:after {
     }
 
     
+}
+.nav__link_shoppingMobile{
+color: 
+var(--clr-text-primary-dark-theme);
 }
 
 .current__page {
@@ -471,7 +485,7 @@ body.show-modal .modal {
     border-radius: 4px;
     width: 100%;
     height: 100%;
-    background-image: url(../images/img-toggle.png),
+    background-image: url(../images/mobile-png.png),
         radial-gradient(183.6% 183.01% at 59.76% -23.42%,
             #4F2EE8 18.03%,
             white 100%);
