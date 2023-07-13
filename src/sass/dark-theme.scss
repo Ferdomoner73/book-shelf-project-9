@@ -2,6 +2,9 @@
  background-color: var(--clr-back-ground-secondary-dark-theme);
  border-color: var(--clr-back-ground-secondary);
 }
+.dark .header__container {
+    padding-bottom: 19px;
+}
 .dark .header_logo_icon {
     fill: var(--clr-text-primary-dark-theme);
     stroke: var(--clr-text-primary-dark-theme);
@@ -9,9 +12,12 @@
     
 }
 .dark .menu__toggle {
-    background-color: var(--clr-back-ground-secondary-dark-theme);
     stroke: var(--clr-back-ground-secondary);
 
+    
+}
+.dark .icon-burger {
+    
     &:hover,
         &:focus {
             stroke: var(--clr-back-ground-primary-modified);

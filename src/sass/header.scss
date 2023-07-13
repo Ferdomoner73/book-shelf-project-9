@@ -87,7 +87,7 @@ label:active:after {
 
 // burger
 .menu__toggle{
-    background-color:var(--clr-back-ground-primary);
+    background-color:transparent;
     height: 28px;
     width: 28px;
     stroke: #111;
@@ -390,15 +390,10 @@ label:active:after {
     display: flex;
     padding: 0;
     border: none;
-    background-color: #ffffff;
+    background-color: transparent;
     height: 28px;
     width: 28px;
     stroke: #111111;
-
-    html.dark & {
-        stroke: #ffffff;
-        background-color: #111;
-    }
 
     @media screen and (min-width: 768px) {
         opacity: 0;
@@ -406,7 +401,8 @@ label:active:after {
     }
 }
 .icon-burger {
-background-color: var(--clr-back-ground-primary);
+background-color: transparent;
+
 }
 
 .menu__toggle:hover {
