@@ -128,7 +128,7 @@ submitBtn.addEventListener('click', event => {
     BtnUserElM.classList.remove('visually-hidden');
     const BtnHomeElM = document.querySelector('.nav__link_home-js');
     BtnHomeElM.classList.remove('visually-hidden');  
-    const BtnShoplistElM = document.querySelector('.nav__link_shopping-js');
+    const BtnShoplistElM = document.querySelector('.nav__link_shoppingMobile-js');
     BtnShoplistElM.classList.remove('visually-hidden');
     const BtnLogoutElM = document.querySelector('.auth-btn__logOut-js');
     BtnLogoutElM.classList.remove('visually-hidden');
