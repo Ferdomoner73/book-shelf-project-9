@@ -142,14 +142,14 @@ submitBtn.addEventListener('click', event => {
       BtnRegElM.classList.remove('visually-hidden');
     })
     // Виклик функції для перевірки облікових даних та авторизації
-    loginUser(username, password);
+    loginUser(email, password);
   } else {
     // Виконати додаткові дії, якщо форма не пройшла валідацію
     // Наприклад, показати повідомлення про помилку або виділити невалідні поля
   }
 });
 
-function loginUser(username, password) {
+function loginUser(email, password) {
   // Перевірити облікові дані користувача та встановити статус авторизації
 
   // Приклад реалізації:
@@ -157,7 +157,7 @@ function loginUser(username, password) {
   const usersData = JSON.parse(usersDataString);
 
   const user = usersData.find(
-    userData => userData.username === username && userData.password === password
+    userData => userData.email === email && userData.password === password
   );
 
   if (user) {
