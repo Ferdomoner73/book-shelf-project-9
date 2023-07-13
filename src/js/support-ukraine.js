@@ -113,6 +113,7 @@ function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
                         <p>${listNumber.slice(-2)}</p>
                         <a href="${url}" target ="_blank">
                         <img class="photo-img" srcset="${img} 1x, ${img_x2} 2x" src="${img}" alt="${title}" height="32"/>
+
                         </a>
                         </div>`;
                 } else if ((TOTAL_ROW - MAX_ROW * (PAGE - 1)) < MAX_ROW && (index + 1) > TOTAL_ROW - MAX_ROW)
@@ -121,6 +122,8 @@ function updateList(array_supportUkraine, MAX_ROW, PAGE, TOTAL_ROW) {
                         <p>${listNumber.slice(-2)}</p>
                         <a href="${url}" target ="_blank">
                         <img class="photo-img" srcset="${img} 1x, ${img_x2} 2x" src="${img}" alt="${title}" height="32"/>
+
+
                         </a>
                         </div>`;
                     }
@@ -142,6 +145,8 @@ function createListOrg(array_supportUkraine, MAX_ROW) {
                     <p>${listNumber.slice(-2)}</p>
                     <a href="${url}" target ="_blank">
                     <img class="photo-img" srcset="${img} 1x, ${img_x2} 2x" src="${img}" alt="${title}" height="32"/>
+
+
                     </a>
                     </div>`;
                 } 

@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Authors: team Funny Bugs,
+    Illustrator: noOne, Category: Books, Price: $0,
+    Length: different count of pages"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Shelf</title>
     <link rel="stylesheet" href="./sass/main.scss" />
@@ -9,11 +15,15 @@
   <body>
     <include src="./partials/header.html"></include>
 
-    <main>
+    <main class="main">
       <include src="./partials/loader.html"></include>
-      <include src="./partials/categories-list.html"></include>
-      <include src="./partials/support-ukraine.html"></include>
-      <include src="./partials/gallery.html"></include>
+      <div class="container-main">
+        <div class="container-group">
+          <include src="./partials/categories-list.html"></include>
+          <include src="./partials/support-ukraine.html"></include>
+        </div>
+        <include src="./partials/gallery.html"></include>
+      </div>
       <include src="./partials/scroll-up.html"></include>
       <include src="./partials/pop-up-modal.html"></include>
       <include src="./partials/registration-modal.html"></include>

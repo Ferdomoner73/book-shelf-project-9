@@ -1,10 +1,13 @@
 /* MOBILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
 @media screen and (max-width: 767px) {
   .five-books-cards-wrapper {
+    max-width: 375px;
+    margin-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 40px;
   }
 
   .blue-title-color {
@@ -22,7 +25,7 @@
     margin-bottom: 8px;
   }
 
-  .gallery-list .gallery-list-item:nth-of-type(n+2) {
+  .gallery-list .gallery-list-item:nth-of-type(n + 2) {
     display: none;
   }
 
@@ -52,7 +55,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 335px;
+    // width: 335px;
   }
 
   .card-subtitle-and-description-wrapper {
@@ -71,6 +74,14 @@
     transform: translate(0, 100%);
     transition: transform 250ms linear;
     border-radius: 4px;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
   }
 
   .gallery-list-item-description {
@@ -83,6 +94,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 335px;
   }
 
   .gallery-list-item-subtitle {
@@ -95,6 +107,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 335px;
   }
 
   .gallery-list {
@@ -116,7 +129,7 @@
     border-radius: 4px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-      cursor: pointer;
+    cursor: pointer;
   }
 
   .see-more-button {
@@ -149,7 +162,7 @@
 }
 
 /* TABLETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .overlay-card-wrapper {
     position: relative;
     overflow: hidden;
@@ -171,12 +184,12 @@
     text-transform: uppercase;
   }
 
-  .gallery-list .gallery-list-item:nth-of-type(n+4) {
+  .gallery-list .gallery-list-item:nth-of-type(n + 4) {
     display: none;
   }
 
   .five-books-cards-wrapper {
-    width: 704px;
+    width: 768px;
     padding-right: 32px;
     padding-left: 32px;
     margin-right: auto;
@@ -208,6 +221,14 @@
     transform: translate(0, 100%);
     transition: transform 250ms linear;
     border-radius: 4px;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
   }
 
   .gallery-list-item-description {
@@ -253,7 +274,7 @@
     border-radius: 4px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-      cursor: pointer;
+    cursor: pointer;
   }
 
   .see-more-button {
@@ -286,7 +307,7 @@
 }
 
 /* DESCTOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .overlay-card-wrapper {
     position: relative;
     overflow: hidden;
@@ -299,9 +320,7 @@
   }
 
   .five-books-cards-wrapper {
-    width: 1004px;
-    padding-right: 24px;
-    padding-left: 24px;
+    min-width: 996px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -314,7 +333,7 @@
     letter-spacing: 0.42px;
     text-transform: uppercase;
   }
-  
+
   .gallery-title {
     margin-bottom: 40px;
     color: #111;
@@ -323,11 +342,11 @@
     line-height: 52px;
     letter-spacing: -1.92px;
   }
-  
+
   .card-subtitle-and-description-wrapper {
     padding-top: 14px;
   }
-  
+
   .cards-quick-view-wrapper {
     position: absolute;
     left: 0;
@@ -340,8 +359,16 @@
     transform: translate(0, 100%);
     transition: transform 250ms linear;
     border-radius: 4px;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
   }
-  
+
   .gallery-list-item-description {
     color: #b4afaf;
     font-size: 12px;
@@ -354,7 +381,7 @@
     text-overflow: ellipsis;
     max-width: 180px;
   }
-  
+
   .gallery-list-item-subtitle {
     color: #111;
     font-size: 16px;
@@ -367,7 +394,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  
+
   .gallery-list {
     display: flex;
     gap: 24px;
@@ -376,18 +403,18 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .gallery-list-item:hover .cards-quick-view-wrapper {
     transform: translate(0, 0);
   }
-  
+
   .gallery-list-item:hover {
     border-radius: 4px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-      cursor: pointer;
+    cursor: pointer;
   }
-  
+
   .see-more-button {
     color: #111;
     font-family: DM Sans;
@@ -410,7 +437,7 @@
     margin-left: auto;
     margin-bottom: 40px;
   }
-  
+
   .see-more-button:hover {
     color: #fff;
     background-color: #4f2ee8;
