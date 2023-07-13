@@ -3,6 +3,7 @@ const backdropMobile = document.querySelector('.js-backdrop-mobile');
 const openButtonMobile = document.querySelector('.js-open-menu');
 const svgOpenEl = openButtonMobile.firstElementChild;
 const closeButtonMobile = document.querySelector('.js-close-menu');
+const popupButtonEl = document.querySelector('.popup-btn');
 
 const btnHeaderEls = document.querySelector('.header__togglers')
 btnHeaderEls.addEventListener('click', (e) => {
