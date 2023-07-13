@@ -4,7 +4,7 @@ import SITE_LOGO_DARK from '../images/site-logo-dark.png'
 const themeToggler = document.querySelector('[for="switch"]')
 const headerLogoImage = document.querySelector('.header__logo')
 
-const headerDarkLogoMarkup = `<a href="/index.html" ><img src="${SITE_LOGO_DARK}" alt="site logo" height="28" width="109"></a>`;
+const headerDarkLogoMarkup = `<a href="/index.html" ><img src="${SITE_LOGO_DARK}" srcset="${SITE_LOGO_DARK}" alt="site logo" height="28" width="109"></a>`;
     
     headerLogoImage.insertAdjacentHTML("beforebegin", headerDarkLogoMarkup)
 
