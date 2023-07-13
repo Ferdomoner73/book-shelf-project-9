@@ -1,5 +1,6 @@
 import SITE_LOGO_DARK from '../images/site-logo-dark.png'
-
+import AMAZON_LOGO_DARK from '../images/amazon-logo-dark.png'
+import AMAZON_LOGO from '../images/shopping-list/amazon-logo.png'
 
 const themeToggler = document.querySelector('[for="switch"]')
 const headerLogoImage = document.querySelector('.header__logo')
@@ -43,7 +44,10 @@ try {
     }
     else {
         document.querySelector('html').classList.remove('dark')
-        
+        const amazonImages = document.querySelectorAll('[alt="Amazon shop logo"]')
+    for (let image of amazonImages) {
+      image.srcset = AMAZON_LOGO
+    }
     }
     } catch (error) { console.log(error) }
     
@@ -56,7 +60,10 @@ addDarkClass()
 
 function paintElementsInDark() {
     
-    
+    const amazonImages = document.querySelectorAll('[alt="Amazon shop logo"]')
+    for (let image of amazonImages) {
+      image.srcset = AMAZON_LOGO_DARK
+    }
     
 }
 function changeSiteLogo() {
