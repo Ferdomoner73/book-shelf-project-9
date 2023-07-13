@@ -292,10 +292,12 @@ color: #FFF;
 
 .registration__icon-arrow {
     position: absolute;
-    top: 40%;
-    right: 5px;
+    top: 30%;
+    right: 14px;
+    stroke: var(--clr-back-ground-secondary-modified);
+    width: 20px;
+    height: 20px;
 }
-
 .header__group {
     display: flex;
     align-items: center;
@@ -366,9 +368,19 @@ letter-spacing: -0.56px;
     &:hover {
         fill: var(--clr-back-ground-primary-modified);
         background-color:var(--clr-back-ground-secondary-modified);
+        stroke: var(--clr-back-ground-primary-modified);
     }
 }
+.auth-btn__logOut__icon-arrow {
+    position: absolute;
+    top: 32%;
+    right: 5%;
+    stroke: var(--clr-back-ground-secondary-modified);
 
+    & :hover {
+        stroke: var(--clr-back-ground-primary-modified);
+    }
+}
 .auth-btn__icon-user-fone {
     position: relative;
 
@@ -392,12 +404,7 @@ letter-spacing: -0.56px;
     fill: white;
 }
 
-.auth-btn__logOut__icon-arrow {
-    position: absolute;
-    top: 32%;
-    right: 5%;
-    stroke: var(--clr-back-ground-secondary-modified);
-}
+
 
 .is-hidden {
     display: none;
