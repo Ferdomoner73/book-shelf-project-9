@@ -2,6 +2,7 @@
 import cardTemplate from '../templates/sl-book-card.js';
 import nothingToShowMarkup from '../templates/sl-book-nothing-to-show.js';
 import LocalStorage from './classes/local-storage.js';
+import AMAZON_LOGO_DARK from '../images/amazon-logo-dark.png'
 const local = new LocalStorage();
 
 const shopListBtnRef = document.querySelector('.js-shopping-list-btn');
@@ -49,6 +50,13 @@ function renderShopListBookCards(data) {
   prepareToRender();
   const markup = data.map(cardTemplate).join('');
   galleryRef.insertAdjacentHTML('beforeend', markup);
+
+  if (localStorage.getItem('theme') === 'dark') {
+    const amazonImages = document.querySelectorAll('[alt="Amazon shop logo"]')
+    for (let image of amazonImages) {
+      image.src = AMAZON_LOGO_DARK
+    }
+  }
 }
 
 // відмальовує збережені в сховищі об'єкти та додає слухач на видалення
