@@ -10,18 +10,19 @@ function openModal(){
     footerModalEl.classList.add('footer-open')
     bodyEl.classList.add('no-scroll')
     window.addEventListener('keydown', downEsc)
+    footerModalEl.addEventListener('click', backdrope)
 }
 
 function closeModal(){
     footerModalEl.classList.remove('footer-open')
     bodyEl.classList.remove('no-scroll')
     window.removeEventListener('keydown', downEsc)
-
+    footerModalEl.removeEventListener('click', backdrope)
 }
 
-footerModalEl.addEventListener('click', (e) => {
+function backdrope(e){
     if(e.currentTarget === e.target)
-    closeModal()})
+    closeModal()}
 
 function downEsc(e){
     if (e.key === 'Escape') 
