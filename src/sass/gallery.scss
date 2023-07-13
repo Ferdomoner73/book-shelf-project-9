@@ -1,10 +1,13 @@
 /* MOBILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
 @media screen and (max-width: 767px) {
   .five-books-cards-wrapper {
+    max-width: 375px;
+    margin-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 40px;
   }
 
   .blue-title-color {
@@ -318,8 +321,6 @@
 
   .five-books-cards-wrapper {
     min-width: 1044px;
-    padding-right: 24px;
-    padding-left: 24px;
     margin-right: auto;
     margin-left: auto;
   }

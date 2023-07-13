@@ -11,6 +11,10 @@ const galleryRef = document.querySelector('.five-books-cards-wrapper');
 new SimpleBar(categoriesContainer);
 
 const categoriesListEl = document.querySelector('.categories-list');
+const mainCategoryFromListEl = document.querySelector('.categories-list-text')
+
+let currentCategory = mainCategoryFromListEl.classList;
+console.dir(currentCategory);
 
 async function getCategoriesList() {
   try {
@@ -44,16 +48,22 @@ function renderCategoriesList(data) {
 categoriesListEl.addEventListener('click', handleClickOnList);
 
 function handleClickOnList(e) {
-  galleryRef.innerHTML = '';
   if (!e.target.classList.contains('categories-list-text')) {
     return;
   }
 
+  
+
+  galleryRef.innerHTML = '';
+
   const categoryName = e.target.textContent;
-  galleryRef.innerHTML = `<h2>${categoryName}</h2>`;
+  console.dir(e.target.classList)
+  console.dir(categoryName)
+  galleryRef.innerHTML = `<h2 class='each-category-header'>${categoryName}</h2>`;
   galleryRef.insertAdjacentHTML(
     'beforeend',
-    `<ul class="gallery-list-each-category container"></ul>`
+    `<ul class="gallery-list-each-category gallery-each-category-container">
+    </ul>`
   );
 
   const galleryListUl = galleryRef.lastElementChild;
@@ -62,4 +72,12 @@ function handleClickOnList(e) {
   fetchByCategory(categoryName).then(response => {
     galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
   });
+
+  if (e.target.classList.contains('active')) {
+    return
+  } else {
+    currentCategory.remove('active');
+    e.target.classList.add('active');
+    currentCategory = e.target.classList;
+  }
 }

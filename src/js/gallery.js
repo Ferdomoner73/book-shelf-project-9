@@ -131,10 +131,10 @@ function handleCategoryOnButton(e) {
 
   galleryRef.innerHTML = '';
   const categoryNameByButton = e.target.dataset.category;
-  galleryRef.innerHTML = `<h2>${categoryNameByButton}</h2>`;
+  galleryRef.innerHTML = `<h2 class='each-category-header'>${categoryNameByButton}</h2>`;
   galleryRef.insertAdjacentHTML(
     'beforeend',
-    `<ul class="gallery-list-each-category container"></ul>`
+    `<ul class="gallery-list-each-category gallery-each-category-container"></ul>`
   );
 
   const galleryListUl = galleryRef.lastElementChild;

@@ -164,3 +164,13 @@ color: var(--clr-text-primary-dark-theme);
 .dark .sl-book-desc {
     color: var(--clr-text-primary-dark-theme);
 }
+
+.dark .categories-list-text {
+    &:hover {
+        color: var(--clr-text-modified-dark-theme);
+    } 
+}
+
+.dark .categories-list-text.active {
+    color: var(--clr-text-modified-dark-theme);
+}
