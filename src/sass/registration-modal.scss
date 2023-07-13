@@ -26,6 +26,7 @@
 }
 
 .auth-modal {
+  pointer-events: auto;
   position: absolute;
   position: absolute;
   left: 50%;
@@ -84,7 +85,7 @@
 }
 
 .modal-icon-user {
-  fill: #111111;
+  stroke: #111111;
   transition: fill var(--time-function);
 }
 
