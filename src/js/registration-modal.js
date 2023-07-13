@@ -1,21 +1,35 @@
-// const signUpButton = document.querySelector('[data-sign="up"]');
-// const signInButton = document.querySelector('[data-sign="in"]');
+const signUpButton = document.querySelector('[data-sign="up"]');
+const signInButton = document.querySelector('[data-sign="in"]');
+const nameInput = document.querySelector('.username-input');
+const submitButton = document.querySelector('.modal-submit-up-btn');
+const registrationButton = document.querySelector('.auth__modal-open-js');
+const secondaryRegistrationButton = document.querySelector('.registration__btn');
+const userButton = document.querySelector('.auth-btn__user-js');
 
-// signUpButton.addEventListener('click', () => {
-//   if (!signUpButton.classList.contains('is-active')) {
-//     signUpButton.classList.add('is-active');
-//     signInButton.classList.remove('is-active');
-//     openModal();
-//   }
-// });
+registrationButton.addEventListener('click', openModal);
+secondaryRegistrationButton.addEventListener('click', openModal)
 
-// signInButton.addEventListener('click', () => {
-//   if (!signInButton.classList.contains('is-active')) {
-//     signInButton.classList.add('is-active');
-//     signUpButton.classList.remove('is-active');
-//     openModal();
-//   }
-// });
+signUpButton.addEventListener('click', () => {
+  if (!signUpButton.classList.contains('is-active')) {
+    signUpButton.classList.add('is-active');
+    signInButton.classList.remove('is-active');
+    nameInput.style.display = 'block';
+    submitButton.textContent = 'SIGN UP';
+    userButton.classList.add('hidden');
+    openModal();
+  }
+});
+
+signInButton.addEventListener('click', () => {
+  if (!signInButton.classList.contains('is-active')) {
+    signInButton.classList.add('is-active');
+    signUpButton.classList.remove('is-active');
+    nameInput.style.display = 'none';
+    submitButton.textContent = 'Sign in';
+    userButton.classList.remove('hidden');
+    openModal();
+  }
+});
 
 const backdrop = document.getElementById('backdrop');
 const modal = document.getElementById('login-modal');
@@ -36,27 +50,30 @@ function closeModal() {
 // Додати обробник події для кнопки закриття
 closeButton.addEventListener('click', closeModal);
 
-// Додати обробник події для відкриття модального вікна
-// Наприклад, при кліку на кнопку "Sign up"
-// const signUpButton = document.querySelector('[data-sign="up"]');
-// signUpButton.addEventListener('click', openModal);
-
 const form = document.querySelector('.modal-form');
 const submitBtn = document.querySelector('.modal-submit-up-btn');
 
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
-  form.reportValidity(); // Перевірка валідності форми
 
-  if (form.checkValidity()) {
-    // Збереження даних реєстрації у локальне сховище
+  const isUsernameValid = document
+    .querySelector('.username-input')
+    .checkValidity();
+  const isEmailValid = document.querySelector('.email-input').checkValidity();
+  const isPasswordValid = document
+    .querySelector(`.password-input`)
+    .checkValidity();
+
+  if (isUsernameValid && isEmailValid && isPasswordValid) {
     const username = document.querySelector('.username-input').value;
     const email = document.querySelector('.email-input').value;
+    const password = document.querySelector(`.password-input`).value;
 
     // Додати нового користувача до масиву
     const newUser = {
       username,
       email,
+      password,
       auth: true,
     };
 
@@ -75,8 +92,87 @@ submitBtn.addEventListener('click', event => {
 
     form.reset(); // Очищення полів форми
     closeModal(); // Закриття модального вікна
+    const BtnRegEl = document.querySelector('.registration__btnMain');
+    BtnRegEl.classList.add('visually-hidden');
+    const BtnUserEl = document.querySelector('.auth-btn__user');
+    BtnUserEl.classList.remove('visually-hidden');
+    const BtnHomeEl = document.querySelector('.nav__link_home');
+    BtnHomeEl.classList.remove('visually-hidden');  
+    const BtnShoplistEl = document.querySelector('.nav__link_shopping');
+    BtnShoplistEl.classList.remove('visually-hidden');
+    const BtnLogoutEl = document.querySelector('.auth-btn__logOut');
+    BtnUserEl.addEventListener('click', () => {
+      if (!BtnLogoutEl.classList.contains('visually-hidden')) {
+        BtnLogoutEl.classList.add('visually-hidden')
+        return
+      }
+      
+      BtnLogoutEl.classList.remove('visually-hidden')
+
+      
+    })
+    BtnLogoutEl.addEventListener('click', () => {
+      BtnHomeEl.classList.add('visually-hidden'); 
+      BtnShoplistEl.classList.add('visually-hidden');
+      BtnUserEl.classList.add('visually-hidden');
+      BtnLogoutEl.classList.add('visually-hidden');
+      BtnRegEl.classList.remove('visually-hidden');
+
+      
+
+    })
+    
+    const BtnRegElM = document.querySelector('.registration__btnMain-js');
+    BtnRegElM.classList.add('visually-hidden');
+    const BtnUserElM = document.querySelector('.auth-btnM__user-js');
+    BtnUserElM.classList.remove('visually-hidden');
+    const BtnHomeElM = document.querySelector('.nav__link_home-js');
+    BtnHomeElM.classList.remove('visually-hidden');  
+    const BtnShoplistElM = document.querySelector('.nav__link_shopping-js');
+    BtnShoplistElM.classList.remove('visually-hidden');
+    const BtnLogoutElM = document.querySelector('.auth-btn__logOut-js');
+    BtnLogoutElM.classList.remove('visually-hidden');
+
+    
+    BtnLogoutElM.addEventListener('click', () => {
+      BtnHomeElM.classList.add('visually-hidden'); 
+      BtnShoplistElM.classList.add('visually-hidden');
+      BtnUserElM.classList.add('visually-hidden');
+      BtnLogoutElM.classList.add('visually-hidden');
+      BtnRegElM.classList.remove('visually-hidden');
+    })
+    // Виклик функції для перевірки облікових даних та авторизації
+    loginUser(username, password);
+  } else {
+    // Виконати додаткові дії, якщо форма не пройшла валідацію
+    // Наприклад, показати повідомлення про помилку або виділити невалідні поля
   }
 });
+
+function loginUser(username, password) {
+  // Перевірити облікові дані користувача та встановити статус авторизації
+
+  // Приклад реалізації:
+  const usersDataString = localStorage.getItem('usersData');
+  const usersData = JSON.parse(usersDataString);
+
+  const user = usersData.find(
+    userData => userData.username === username && userData.password === password
+  );
+
+  if (user) {
+    // Зберегти статус авторизації в локальному сховищі
+    const userData = {
+      auth: true,
+    };
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+
+    // Зміна видимості кнопок після авторизації
+    registrationButton.classList.add('hidden');
+    userButton.classList.remove('hidden');
+  }
+}
 
 const escapeKeyListener = event => {
   if (event.key === 'Escape') {
@@ -107,10 +203,29 @@ authModal.addEventListener('click', event => {
 backdrop.addEventListener('click', () => {
   closeModal(); // Закриття модального вікна при кліку на бекдроп
 });
-/* <button
-        type="button"
-        class="registration__btn"
-        data-action="registration"
-        aria-label="Registration"
-        style="display: flex"
-      ></button> */
+
+// Перевірка авторизації при завантаженні сторінки
+const isLoggedIn = checkAuthorizationStatus();
+
+if (isLoggedIn) {
+  registrationButton.classList.add('hidden');
+  userButton.classList.remove('hidden');
+} else {
+  registrationButton.classList.remove('hidden');
+  userButton.classList.add('hidden');
+}
+
+export function checkAuthorizationStatus() {
+  // Перевірка, чи користувач авторизований
+  // Повернення true, якщо користувач авторизований, або false в іншому випадку
+
+  // Приклад реалізації:
+  const userDataString = localStorage.getItem('userData');
+  const userData = JSON.parse(userDataString);
+
+  if (userData && userData.auth === true) {
+    return true; // Користувач авторизований
+  } else {
+    return false; // Користувач не авторизований
+  }
+}

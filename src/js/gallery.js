@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import { loaderShow, loaderHidden } from './loader';
 
+// import onDeleteBtnClick from './shopping-list.js';
+
 // // CODE FOR RENDERING MAINPAGE
 
 const galleryRef = document.querySelector('.five-books-cards-wrapper');
@@ -39,8 +41,11 @@ async function fetchingTopBooks() {
   }
 }
 
-renderingHomePage()
+renderingHomePage();
 function renderingHomePage() {
+
+  // galleryRef.removeEventListener('click', onDeleteBtnClick);
+
   galleryRef.innerHTML = '';
   fetchingTopBooks().then(response => {
     galleryRef.insertAdjacentHTML(
@@ -74,9 +79,11 @@ function renderingHomePage() {
 
 export async function fetchByCategory(category) {
   try {
+    loaderShow();
     const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
     const response = await fetch(url);
     const data = await response.json();
+    loaderHidden();
     return data;
   } catch (error) {
     console.log(error);
@@ -87,7 +94,7 @@ export function createMoreBooks(booksArr) {
   const bookCard = booksArr
     .map(book => {
       const markup = `<li class="gallery-list-item-each-category">
-            <div data-book-id="${book._id}">
+            <div class="gallery-list-item-wrapper" data-book-id="${book._id}">
                <div class="overlay-card-wrapper">
                <img
                  src="${book.book_image}"
@@ -111,5 +118,27 @@ export function createMoreBooks(booksArr) {
     })
     .join('');
 
-  return bookCard
+  return bookCard;
+}
+
+galleryRef.addEventListener('click', handleCategoryOnButton);
+
+function handleCategoryOnButton(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  console.dir(e.target.nodeName);
+
+  galleryRef.innerHTML = '';
+  const categoryNameByButton = e.target.dataset.category;
+  galleryRef.innerHTML = `<h2 class='each-category-header'>${categoryNameByButton}</h2>`;
+  galleryRef.insertAdjacentHTML(
+    'beforeend',
+    `<ul class="gallery-list-each-category gallery-each-category-container"></ul>`
+  );
+
+  const galleryListUl = galleryRef.lastElementChild;
+  fetchByCategory(categoryNameByButton).then(response => {
+    galleryListUl.insertAdjacentHTML('beforeend', createMoreBooks(response));
+  });
 }

@@ -26,32 +26,35 @@ function slBookCardMarkup(book) {
     <ul class="sl-book-card-shops">
       <li class="sl-shop-item">
        <div class="sl-amazon-logo-wrap">
-         <img
+        <a href="${book.buy_links[0].url}" target="_blank"
+            ><img class="sl-img"
           src="${AMAZON_LOGO}"
           alt="Amazon shop logo"
           width="48"
           height="15"
-        />
+        /></a>
        </div>
       </li>
       <li class="sl-shop-item">
        <div class="sl-apple-logo-wrap">
-         <img
+       <a href="${book.buy_links[1].url}" target="_blank"
+            ><img class="sl-img"
           src="${APPLE_BOOK_LOGO}"
           alt="Apple books shop logo"
           width="28"
           height="27"
-        />
+        /></a>
        </div>
       </li>
       <li class="sl-shop-item">
         <div class="sl-bookshop-logo-wrap">
-          <img
+        <a href="${book.buy_links[4].url}" target="_blank"
+            ><img class="sl-img"
           src="${BOOKSSHOP_LOGO}"
           alt="Booksshop logo"
           width="32"
           height="30"
-        />
+        /></a>
         </div>
       </li>
     </ul>
@@ -60,7 +63,7 @@ function slBookCardMarkup(book) {
  
   <button type="button" class="sl-card-delete-btn">
     <svg class="sl-card-icon" width="18" height="18">
-      <use href="${ICONS_SPRITE}#icon-trash-03"></use>
+      <use class="sl-card-delete-icon" href="${ICONS_SPRITE}#icon-trash-03"></use>
     </svg>
   </button>
 </li>`;

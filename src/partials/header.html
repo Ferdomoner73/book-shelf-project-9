@@ -9,29 +9,30 @@
       <ul class="list nav__list">
         <li class="nav__item">
           <a
-            class="nav__link_home current__page"
+            class="nav__link_home current__page visually-hidden nav__link_home"
             href="/src/index.html"
             aria-label="Link to home page"
             >Home</a
           >
         </li>
         <li class="nav__item">
-          <a
-            class="nav__link_shopping js-shopping-list-btn"
-            href="/src/partials/shopping-list.html"
+          <button
+            type="button"
+            class="nav__link_shopping js-shopping-list-btn visually-hidden nav__link_shopping"
             aria-label="Link to Shopping list"
           >
             Shopping list
             <svg width="20" height="20">
               <use href="/src/images/icons.svg#icon-uil_cart"></use>
             </svg>
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
     <div class="header__group">
       <div class="header__togglers">
         <input type="checkbox" id="switch" /><label for="switch">Toggle </label>
+
         <button
           type="button"
           class="menu__toggle js-open-menu"
@@ -42,10 +43,11 @@
             <use href="/src/images/icons.svg#icon-align-left"></use>
           </svg>
         </button>
+
         <button
           type="button"
           class="menu__toggle visually-hidden js-close-menu"
-          data-action="close-modal "
+          data-action="close-modal"
           aria-label="Close modal"
           style="display: flex"
         >
@@ -65,7 +67,7 @@
           Sign Up
         </button>
         <button
-          class="auth-btn__user auth-btn__user-js"
+          class="auth-btn__user auth-btn__user-js visually-hidden"
           type="button"
           aria-label="User"
         >
@@ -91,7 +93,7 @@
           </svg>
         </button>
         <button
-          class="auth-btn__logOut auth-btn__logOut-js"
+          class="auth-btn__logOut auth-btn__logOut visually-hidden"
           type="button"
           aria-label="LogOut"
         >
@@ -104,3 +106,71 @@
     </div>
   </div>
 </header>
+<!-- backdrop modal nenu -->
+<div class="backdrop js-backdrop-mobile">
+  <div class="modal__menu">
+    <div class="modal__items">
+      <button
+        type="button"
+        class="registration__btn registration__btnMain-js auth__modal-open-js"
+        data-action="registration"
+        aria-label="Registration"
+      >
+        <span>Sign up</span
+        ><span
+          ><svg class="registration__arrow" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </span>
+      </button>
+      <div class="modal__user auth-btnM__user-js visually-hidden">
+        <img
+          src="/src/images/bugg.png"
+          alt="user"
+          class="img-bugg"
+          width="35px"
+          height="35px"
+        />
+        <p class="user__name">nazar</p>
+      </div>
+      <nav class="modal__nav">
+        <ul class="nav__list nav__List-menu">
+          <li class="home__item">
+            <a
+              href="/src/index.html"
+              class="nav__home nav__link nav__link--current nav__link_home-js visually-hidden"
+              aria-label="Link to home page"
+              >Home</a
+            >
+          </li>
+          <li class="shop__item">
+            <button
+              type="button"
+              class="nav__link_shopping js-shopping-list-btn nav__link_shopping-js visually-hidden"
+              aria-label="Link to Shopping list"
+            >
+              Shopping list
+              <svg width="20" height="20">
+                <use href="/src/images/icons.svg#icon-uil_cart"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <button
+        type="button"
+        class="exit_btn auth-btn__logOut-js visually-hidden"
+        data-action="exit"
+        aria-label="Close modal"
+        style="display: flex"
+      >
+        <span>Log out</span
+        ><span
+          ><svg class="registration__arrow" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
