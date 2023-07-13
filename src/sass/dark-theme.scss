@@ -25,11 +25,14 @@
 }
 .dark .nav__link_shopping {
     fill: var(--clr-text-primary-dark-theme);
+    color: var(--clr-text-primary-dark-theme);
     &:hover,
     &:focus {
             fill: var(--clr-back-ground-primary-modified);
+            color: var(--clr-back-ground-primary-modified);
         }
 }
+.dark body, 
 .dark main {
     background-color: var(--clr-back-ground-primary-dark-theme);
 }
@@ -45,6 +48,15 @@ color: var(--clr-text-primary-dark-theme);
     border: 1.5px solid var(--clr-back-ground-secondary);
     border-radius: 10px;
 }
+.dark .teem-icon-close {
+    stroke: var(--clr-back-ground-secondary);
+    &:hover,
+    &:focus {
+            stroke: var(--clr-back-ground-primary-modified);
+        }
+
+}
+
 .dark .btn-to-down {
     border-color: var(--clr-back-ground-secondary-modified);
 }
@@ -76,6 +88,11 @@ color: var(--clr-text-primary-dark-theme);
 .dark .see-more-button {
     background-color: transparent;
     color: var(--clr-text-primary-dark-theme);
+    &:hover,
+    &:focus {
+        background-color: var(--clr-back-ground-primary);
+        color: var(--clr-text-primary);
+    }
 }
 .dark .popup__content {
     background-color: var(--clr-back-ground-primary-dark-theme);
@@ -130,4 +147,14 @@ color: var(--clr-text-primary-dark-theme);
 }
 .dark .modal-icon {
     stroke: var(--clr-back-ground-primary);
+}
+.dark .sl-title {
+    color: var(--clr-text-primary-dark-theme);
+}
+.dark .sl-text {
+    color: rgba(255, 255, 255, 0.6);
+}
+.dark .sl-book-title,
+.dark .sl-book-desc {
+    color: var(--clr-text-primary-dark-theme);
 }
