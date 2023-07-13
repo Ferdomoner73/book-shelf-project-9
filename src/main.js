@@ -9,3 +9,4 @@ import './js/shopping-list.js';
 import './js/support-ukraine.js';
 import './js/scroll-up.js';
 import './js/scroll-down.js';
+import './js/dark-theme.js';

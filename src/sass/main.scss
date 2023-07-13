@@ -11,6 +11,7 @@
 @import url('./shopping-list.scss');
 @import url('./support-ukraine.scss');
 @import url('./reset.scss');
+@import url('./dark-theme.scss');
 
 @font-face {
     font-display: swap;
@@ -64,11 +65,20 @@
     --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+.main {
+    min-height: 100vh;
+    flex: 1 1 auto;
+}
+
+
 html {
+    min-height: 100%;
     scroll-behavior: smooth;
 }
 
 body {
+    min-height: 100%;
     font-family: 'DM Sans', sans-serif;
     
     font-size: 12px;
@@ -96,7 +106,7 @@ body {
     overflow: hidden;
 }
 
-.container {
+.container-head-foot {
     width: 100%;
     margin: 0 auto;
     padding-right: 20px;
@@ -105,7 +115,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .container {
+    .container-head-foot {
         max-width: 768px;
         padding-right: 32px;
         padding-left: 32px;
@@ -113,19 +123,69 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
+    .container-head-foot {
         max-width: 1440px;
         padding-right: 24px;
         padding-left: 24px;
     }
 }
 
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding-right: 20px;
+        padding-left: 20px;
+        max-width: 375px;
+    }
+
+    .gallery-each-category-container {
+        width: 100%;
+        max-width: 375px;
+    }
+}
+
 .main {
     padding-top: 104px;
+    background-color: var(--clr-back-ground-primary);
 }
 
 @media screen and (min-width: 768px) {
 .main {
         padding-top: 122px;
+    }
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 1440px) {
+        flex-direction: row;
+        margin: 0 auto;
+        max-width: 1440px;
+        padding-right: 24px;
+        padding-left: 24px;
+        gap: 40px;
+    }
+}
+
+.container-group {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+        flex-direction: row;
+        margin: 0 auto;
+        max-width: 768px;
+        padding-right: 32px;
+        padding-left: 32px;
+        gap: 32px;
+        padding-bottom: 100px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        gap: 86px;
+        // padding-right: 40px;
     }
 }
