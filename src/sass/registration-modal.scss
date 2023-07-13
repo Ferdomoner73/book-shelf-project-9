@@ -35,7 +35,7 @@
 
   background-color: var(--clr-back-ground-primary);
   padding: 40px 20px;
-  border: 2px solid #111111;
+  border: 2px solid var(--clr-back-ground-secondary-dark-theme);
   border-radius: 18px;
   width: 100vw;
   max-width: 335px;
@@ -85,12 +85,12 @@
 }
 
 .modal-icon-user {
-  stroke: #111111;
-  transition: fill var(--time-function);
+  stroke: var(--clr-back-ground-secondary-dark-theme);
+  transition: stroke var(--time-function);
 }
 
 .modal-input:focus + .modal-icon-user {
-  fill: #4f2ee8;
+  fill: var(--clr-back-ground-primary-modified);
 }
 
 .modal-input {
