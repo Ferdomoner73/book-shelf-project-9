@@ -19,7 +19,7 @@ function createMainPageCard(book) {
         height="100%"
         class="gallery-book-img"
         loading="lazy"
-
+        srcset="${book.book_image}"
       />
       <p class="cards-quick-view-wrapper">quick view</p>
     </div>
@@ -104,6 +104,7 @@ export function createMoreBooks(booksArr) {
                  class="gallery-book-img"
                  loading="lazy"
                  id="${book._id}"
+                 srcset="${book.book_image}"
               />
               <p class="cards-quick-view-wrapper">quick view</p>
              </div>
@@ -127,7 +128,7 @@ function handleCategoryOnButton(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
-  console.dir(e.target.nodeName);
+  // console.dir(e.target.nodeName);
 
   galleryRef.innerHTML = '';
   const categoryNameByButton = e.target.dataset.category;
